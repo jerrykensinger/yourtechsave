@@ -141,6 +141,62 @@
           "source": "https://www.usmobile.com/help/docs/our-plans/core-plans/unlimited-data-plans"
         }
       ]
+    },
+    {
+      "id": "mint-mobile",
+      "name": "Mint Mobile",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://www.mintmobile.com/phone-plans/12-month-plans/",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "facts": [
+        {
+          "label": "Network",
+          "value": "Runs on T-Mobile's 5G and 4G LTE networks",
+          "source": "https://www.mintmobile.com/help/what-network-is-mint-mobile-on/"
+        },
+        {
+          "label": "Billing model",
+          "value": "Plans are sold in 3-, 6-, or 12-month terms with payment required up front; longer terms can have lower effective monthly rates",
+          "source": "https://www.mintmobile.com/whats-the-catch/"
+        },
+        {
+          "label": "Current 12-month plan family",
+          "value": "6GB, 17GB, 23GB, Unlimited",
+          "source": "https://www.mintmobile.com/phone-plans/12-month-plans/"
+        },
+        {
+          "label": "Taxes & fees",
+          "value": "Extra; not included in the advertised plan price",
+          "source": "https://www.mintmobile.com/phone-plans/12-month-plans/"
+        }
+      ],
+      "plans": [
+        {
+          "name": "6GB",
+          "standard_monthly_price": 15,
+          "pricing_note": "12-month regular rate equivalent; $180 paid up front for 12 months",
+          "source": "https://www.mintmobile.com/phone-plans/12-month-plans/"
+        },
+        {
+          "name": "17GB",
+          "standard_monthly_price": 20,
+          "pricing_note": "12-month regular rate equivalent; $240 paid up front for 12 months",
+          "source": "https://www.mintmobile.com/phone-plans/12-month-plans/"
+        },
+        {
+          "name": "23GB",
+          "standard_monthly_price": 25,
+          "pricing_note": "12-month regular rate equivalent; $300 paid up front for 12 months",
+          "source": "https://www.mintmobile.com/phone-plans/12-month-plans/"
+        },
+        {
+          "name": "Unlimited",
+          "standard_monthly_price": 30,
+          "pricing_note": "12-month regular rate equivalent; $360 paid up front; speeds may be reduced after 50GB in a cycle and hotspot includes up to 20GB",
+          "source": "https://www.mintmobile.com/unlimited-data-phone-plans/"
+        }
+      ]
     }
   ]
 }
