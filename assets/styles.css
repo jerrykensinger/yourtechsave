@@ -68,3 +68,29 @@ html[data-theme="dark"] .savings-summary.neutral,html[data-theme="dark"] .saving
 html[data-theme="dark"] .footer{background:#050d18}
 @media(max-width:850px){.nav-actions{margin-left:auto}.nav.open .nav-links{background:#0d1929}html:not([data-theme="dark"]) .nav.open .nav-links{background:#fff}}
 @media(max-width:520px){.theme-label{display:none}.theme-toggle{width:42px;padding:0}}
+
+/* YourTechSave logo in the primary site header */
+.site-header .brand{
+  display:block;
+  width:138px;
+  height:76px;
+  flex:0 0 138px;
+  font-size:0;
+  line-height:0;
+  letter-spacing:0;
+  background-image:url('/assets/yourtechsave-logo.webp');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+}
+.site-header .brand span{display:none}
+.site-header .nav{min-height:84px}
+html[data-theme="dark"] .site-header .brand{
+  background-color:#fff;
+  border-radius:12px;
+  box-shadow:0 2px 12px rgba(0,0,0,.22);
+}
+@media(max-width:520px){
+  .site-header .brand{width:118px;height:66px;flex-basis:118px}
+  .site-header .nav{min-height:76px}
+}
