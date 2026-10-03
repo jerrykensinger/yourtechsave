@@ -42,7 +42,7 @@
    const box=document.createElement('div');
    box.id='analyticsConsent';
    box.className='analytics-consent';
-   box.innerHTML='<div><strong>Help us improve YourTechSave</strong><p>With your permission, we use Google Analytics to understand which pages and tools are useful. We do not send the dollar amounts or answers you enter in the Tech Spending Checkup to Analytics. <a href="/privacy.html">Privacy details</a>.</p></div><div class="analytics-consent-actions"><button class="btn btn-primary" type="button" data-consent="accept">Allow analytics</button><button class="btn btn-outline" type="button" data-consent="decline">No thanks</button></div>';
+   box.innerHTML='<div><strong>Help us improve YourTechSave</strong><p>With your permission, we use Google Analytics to understand which pages and tools are useful. We do not send the dollar amounts or answers you enter in our checkup or calculators to Analytics. <a href="/privacy.html">Privacy details</a>.</p></div><div class="analytics-consent-actions"><button class="btn btn-primary" type="button" data-consent="accept">Allow analytics</button><button class="btn btn-outline" type="button" data-consent="decline">No thanks</button></div>';
    document.body.appendChild(box);
    box.querySelector('[data-consent="accept"]').addEventListener('click',()=>{
      localStorage.setItem(CONSENT_KEY,'granted');
@@ -128,7 +128,7 @@
  const subTotal=subs.reduce((a,b)=>a+b.cost,0),rare=subs.filter(x=>x.use==='rarely'),rareTotal=rare.reduce((a,b)=>a+b.cost,0),total=wireless+internet+protection+devices+subTotal;
  monthlyTotal.textContent=money(total);annualTotal.textContent=money(total*12);rareAnnual.textContent=money(rareTotal*12);wirelessPerLine.textContent=money(wireless/lines);
  const o=[];if(rareTotal)o.push(['Review rarely used subscriptions',money(rareTotal)+'/mo identified','Canceling only the subscriptions you marked as rarely used would reduce spending by '+money(rareTotal*12)+' per year.']);
- if(wireless)o.push(['Benchmark your wireless service',money(wireless/lines)+'/line','This is your current service cost per line. Verified carrier comparisons will be added after the plan-data process is operating.']);
+ if(wireless)o.push(['Benchmark your wireless service',money(wireless/lines)+'/line','This is your current service cost per line. Use the Wireless Plan Finder and source-linked provider comparisons to evaluate alternatives.']);
  if(internet)o.push(['Review your internet tier',money(internet)+'/mo','Compare the speed you pay for with the way your household actually uses the connection.']);
  if(protection)o.push(['Review device protection',money(protection*12)+'/yr','Compare annual protection cost with the devices covered, deductibles and replacement rules.']);
  opportunities.innerHTML=(o.length?o:[['Add a few costs to see opportunities','No estimate yet','Enter current technology spending to build a useful snapshot.']]).map((x,i)=>'<div class="opp"><div class="opp-top"><h3>'+(i+1)+'. '+x[0]+'</h3><span class="pill">'+x[1]+'</span></div><p>'+x[2]+'</p></div>').join('');
