@@ -33,17 +33,20 @@
         {
           "name": "Visible",
           "standard_monthly_price": 25,
-          "pricing_note": "Standard monthly rate; temporary promotions excluded"
+          "pricing_note": "Standard monthly rate; temporary promotions excluded",
+          "source": "https://www.visible.com/m/plans"
         },
         {
           "name": "Visible+",
           "standard_monthly_price": 35,
-          "pricing_note": "Standard monthly rate; temporary promotions excluded"
+          "pricing_note": "Standard monthly rate; temporary promotions excluded",
+          "source": "https://www.visible.com/m/plans"
         },
         {
           "name": "Visible+ Pro",
           "standard_monthly_price": 45,
-          "pricing_note": "Standard monthly rate; temporary promotions excluded"
+          "pricing_note": "Standard monthly rate; temporary promotions excluded",
+          "source": "https://www.visible.com/m/plans"
         }
       ]
     },
@@ -86,6 +89,56 @@
           "name": "Unlimited Ultimate",
           "standard_monthly_price": null,
           "pricing_note": "See official pricing for current line-count pricing"
+        }
+      ]
+    },
+    {
+      "id": "us-mobile",
+      "name": "US Mobile",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://www.usmobile.com/plans",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "facts": [
+        {
+          "label": "Network options",
+          "value": "Offers service across all three major U.S. networks under Warp, Dark Star and Light Speed, with network transfers supported",
+          "source": "https://www.usmobile.com/plans"
+        },
+        {
+          "label": "Advertised taxes & fees",
+          "value": "Included in the displayed unlimited-plan prices",
+          "source": "https://www.usmobile.com/plans"
+        },
+        {
+          "label": "Current unlimited plan family",
+          "value": "Unlimited Flex, Unlimited Starter, Unlimited Premium",
+          "source": "https://www.usmobile.com/help/docs/our-plans/core-plans/unlimited-data-plans"
+        },
+        {
+          "label": "Regular monthly pricing",
+          "value": "Unlimited Flex $17.50, Unlimited Starter $25, Unlimited Premium $44",
+          "source": "https://www.usmobile.com/blog/best-phone-plans-for-one-august-2026/"
+        }
+      ],
+      "plans": [
+        {
+          "name": "Unlimited Flex",
+          "standard_monthly_price": 17.5,
+          "pricing_note": "Regular monthly rate; 10 GB high-speed data and 5 GB hotspot before reduced speeds",
+          "source": "https://www.usmobile.com/blog/best-phone-plans-for-one-august-2026/"
+        },
+        {
+          "name": "Unlimited Starter",
+          "standard_monthly_price": 25,
+          "pricing_note": "Regular monthly rate; high-speed data and hotspot allowances vary by selected network",
+          "source": "https://www.usmobile.com/help/docs/our-plans/core-plans/unlimited-data-plans"
+        },
+        {
+          "name": "Unlimited Premium",
+          "standard_monthly_price": 44,
+          "pricing_note": "Regular monthly rate; high-priority data on Warp and Dark Star, with the largest included roaming allowance",
+          "source": "https://www.usmobile.com/help/docs/our-plans/core-plans/unlimited-data-plans"
         }
       ]
     }

@@ -6,15 +6,18 @@
  const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
  try{
    const data=await fetch('/data/wireless-providers.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('data unavailable');return r.json()});
+   const requested=(root.dataset.providerIds||'').split(',').map(x=>x.trim()).filter(Boolean);
+   const providers=requested.length?data.providers.filter(p=>requested.includes(p.id)):data.providers;
+   if(!providers.length)throw new Error('no provider records');
    const now=new Date(),max=data.policy.max_age_days;
    const aged=p=>Math.floor((now-new Date(p.last_verified+'T23:59:59'))/86400000);
-   const stale=data.providers.some(p=>aged(p)>max);
+   const stale=providers.some(p=>aged(p)>max);
    status.className='freshness '+(stale?'stale':'fresh');
    status.innerHTML=stale
     ? '<strong>Re-verification required.</strong> Specific provider prices are hidden because at least one record is more than '+max+' days old. Use the official provider links below for current pricing.'
-    : '<strong>Provider facts verified '+fmt(data.providers[0].last_verified)+'.</strong> Standard prices shown below exclude temporary promotions. We re-check time-sensitive plan data at least weekly.';
+    : '<strong>Provider facts verified '+fmt(providers.reduce((a,p)=>a<p.last_verified?a:p.last_verified,providers[0].last_verified))+'.</strong> Standard prices shown below exclude temporary promotions. We re-check time-sensitive plan data at least weekly.';
    let html='';
-   for(const p of data.providers){
+   for(const p of providers){
      const isStale=aged(p)>max;
      const out=p.affiliate_url||p.official_plans_url;
      const linkType=p.affiliate_url?'affiliate':'official';
@@ -25,7 +28,7 @@
      html+='</div><h3>Current plan records</h3><div class="plan-grid">';
      p.plans.forEach(pl=>{
        const price=(!stale && !isStale && typeof pl.standard_monthly_price==='number')?'$'+pl.standard_monthly_price+'/mo':'See official pricing';
-       html+='<div class="plan-card"><strong>'+esc(pl.name)+'</strong><div class="plan-price">'+price+'</div><div class="micro">'+esc(pl.pricing_note)+'</div></div>';
+       html+='<div class="plan-card"><strong>'+esc(pl.name)+'</strong><div class="plan-price">'+price+'</div><div class="micro">'+esc(pl.pricing_note)+'</div>'+(pl.source?'<div class="micro" style="margin-top:8px"><a href="'+esc(pl.source)+'" rel="external">Price/source details</a></div>':'')+'</div>';
      });
      html+='</div></section>';
    }

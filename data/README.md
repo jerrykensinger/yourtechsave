@@ -14,9 +14,12 @@ This folder powers time-sensitive provider comparisons on YourTechSave.
 8. If an official source is unclear or contradictory, suppress the claim until reviewed.
 9. Re-check the public page after every update.
 
-## Current first comparison
+## Current provider records
 
 - Visible
 - Verizon
+- US Mobile
+
+Current live comparisons: Visible vs. Verizon and Visible vs. US Mobile.
 
 The provider JSON intentionally uses no affiliate URLs yet.
