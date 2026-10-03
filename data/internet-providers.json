@@ -1,0 +1,16 @@
+{
+  "policy": {
+    "last_verified": "2026-10-03",
+    "availability_rule": "Do not label a provider available at a home until an address-level availability source confirms it.",
+    "location_rule": "ZIP code may be used inside the browser to organize a search, but exact provider availability requires an address-level check.",
+    "promotion_policy": "Temporary promotions should be kept separate from regular pricing."
+  },
+  "national_or_broad_availability_checks": [
+    {"id":"fcc-map","name":"FCC National Broadband Map","type":"independent availability map","url":"https://broadbandmap.fcc.gov/home","note":"Shows providers and technologies reported at individual U.S. serviceable locations."},
+    {"id":"t-mobile-home","name":"T-Mobile Home Internet","type":"5G fixed wireless","url":"https://www.t-mobile.com/home-internet/eligibility.html","note":"Availability can vary by address based on network capacity and signal conditions."},
+    {"id":"verizon-home","name":"Verizon 5G Home Internet","type":"5G fixed wireless","url":"https://www.verizon.com/home/internet/5g/","note":"Requires an address-level availability check."},
+    {"id":"starlink","name":"Starlink Residential","type":"low-Earth-orbit satellite","url":"https://starlink.com/res-plans","note":"Residential availability and equipment options vary by address."},
+    {"id":"hughesnet","name":"Hughesnet","type":"satellite / hybrid Fusion in select areas","url":"https://www.hughesnet.com/home-satellite-internet-plans","note":"Plan and Fusion availability vary by location."},
+    {"id":"viasat","name":"Viasat","type":"satellite","url":"https://www.viasat.com/","note":"Residential plans and offers vary by address."}
+  ]
+}

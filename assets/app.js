@@ -42,7 +42,7 @@
    const box=document.createElement('div');
    box.id='analyticsConsent';
    box.className='analytics-consent';
-   box.innerHTML='<div><strong>Help us improve YourTechSave</strong><p>With your permission, we use Google Analytics to understand which pages and tools are useful. We do not send the dollar amounts or answers you enter in our checkup or calculators to Analytics. <a href="/privacy.html">Privacy details</a>.</p></div><div class="analytics-consent-actions"><button class="btn btn-primary" type="button" data-consent="accept">Allow analytics</button><button class="btn btn-outline" type="button" data-consent="decline">No thanks</button></div>';
+   box.innerHTML='<div><strong>Help us improve YourTechSave</strong><p>With your permission, we use Google Analytics to understand which pages and tools are useful. We do not send the dollar amounts, ZIP codes, or answers you enter in our checkup, calculators, or finders to Analytics. <a href="/privacy.html">Privacy details</a>.</p></div><div class="analytics-consent-actions"><button class="btn btn-primary" type="button" data-consent="accept">Allow analytics</button><button class="btn btn-outline" type="button" data-consent="decline">No thanks</button></div>';
    document.body.appendChild(box);
    box.querySelector('[data-consent="accept"]').addEventListener('click',()=>{
      localStorage.setItem(CONSENT_KEY,'granted');
@@ -136,3 +136,5 @@
  document.getElementById('copyShare')?.addEventListener('click',async()=>{const t="I used YourTechSave's free Tech Spending Checkup. Try yours at https://yourtechsave.com/checkup.html";try{await navigator.clipboard.writeText(t);copyShare.textContent='Copied'}catch(e){alert(t)}});show(0);
 })();
 (function(){const n=document.querySelector('.nav-links');if(n&&!n.querySelector('a[href="/compare/"]')){const a=document.createElement('a');a.href='/compare/';a.textContent='Compare';const before=n.querySelector('a[href="/methodology.html"]');n.insertBefore(a,before||null)}})();
+
+(function(){const n=document.querySelector('.nav-links');if(n&&!n.querySelector('a[href="/internet/"]')){const a=document.createElement('a');a.href='/internet/';a.textContent='Internet';const before=n.querySelector('a[href="/guides/"]')||n.querySelector('a[href="/compare/"]');n.insertBefore(a,before||null)}})();
