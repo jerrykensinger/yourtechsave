@@ -62,14 +62,18 @@
 
    const checkup=document.getElementById('checkupForm');
    if(checkup){
-     let started=false;
-     checkup.addEventListener('click',e=>{
-       if(!started&&e.target.closest('[data-next]')){
+     let started=false,completed=false;
+     document.addEventListener('click',e=>{
+       if(!started&&e.target.closest('#checkupForm [data-next]')){
          started=true;
-         track('checkup_start');
+         track('checkup_start',{debug_mode:true});
        }
-     });
-     checkup.addEventListener('submit',()=>track('checkup_complete'));
+     },true);
+     checkup.addEventListener('submit',()=>{
+       if(completed)return;
+       completed=true;
+       track('checkup_complete',{debug_mode:true});
+     },true);
    }
 
    if(location.pathname==='/calculators.html'){
