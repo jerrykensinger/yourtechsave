@@ -1,0 +1,93 @@
+{
+  "policy": {
+    "max_age_days": 7,
+    "promotion_policy": "Promotional prices are excluded from comparison tables unless a source and explicit end date are recorded.",
+    "affiliate_policy": "Affiliate availability and commission amounts are stored separately and do not determine comparison ordering."
+  },
+  "providers": [
+    {
+      "id": "visible",
+      "name": "Visible",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://www.visible.com/m/plans",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "facts": [
+        {
+          "label": "Network",
+          "value": "Uses Verizon 5G and 4G LTE networks",
+          "source": "https://www.visible.com/m/plans"
+        },
+        {
+          "label": "Advertised taxes & fees",
+          "value": "Included in listed plan prices",
+          "source": "https://www.visible.com/m/plans"
+        },
+        {
+          "label": "Current standard monthly plans",
+          "value": "Visible, Visible+, Visible+ Pro",
+          "source": "https://www.visible.com/m/plans"
+        }
+      ],
+      "plans": [
+        {
+          "name": "Visible",
+          "standard_monthly_price": 25,
+          "pricing_note": "Standard monthly rate; temporary promotions excluded"
+        },
+        {
+          "name": "Visible+",
+          "standard_monthly_price": 35,
+          "pricing_note": "Standard monthly rate; temporary promotions excluded"
+        },
+        {
+          "name": "Visible+ Pro",
+          "standard_monthly_price": 45,
+          "pricing_note": "Standard monthly rate; temporary promotions excluded"
+        }
+      ]
+    },
+    {
+      "id": "verizon",
+      "name": "Verizon",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://www.verizon.com/support/current-unlimited-plans/",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "facts": [
+        {
+          "label": "Current unlimited plan family",
+          "value": "Unlimited Welcome, Unlimited Plus, Unlimited Ultimate",
+          "source": "https://www.verizon.com/support/current-unlimited-plans/"
+        },
+        {
+          "label": "Pricing structure",
+          "value": "Price depends on line count, Auto Pay/paper-free eligibility, discounts and optional perks",
+          "source": "https://www.verizon.com/support/unlimited-plus-faqs/"
+        },
+        {
+          "label": "Plan add-ons",
+          "value": "Optional perks can add to the monthly cost",
+          "source": "https://www.verizon.com/support/unlimited-plus-faqs/"
+        }
+      ],
+      "plans": [
+        {
+          "name": "Unlimited Welcome",
+          "standard_monthly_price": null,
+          "pricing_note": "See official pricing for current line-count pricing"
+        },
+        {
+          "name": "Unlimited Plus",
+          "standard_monthly_price": null,
+          "pricing_note": "See official pricing for current line-count pricing"
+        },
+        {
+          "name": "Unlimited Ultimate",
+          "standard_monthly_price": null,
+          "pricing_note": "See official pricing for current line-count pricing"
+        }
+      ]
+    }
+  ]
+}
