@@ -27,7 +27,28 @@
      p.facts.forEach(f=>html+='<div class="fact-row"><strong>'+esc(f.label)+'</strong><span>'+esc(f.value)+'</span><a href="'+esc(f.source)+'" rel="external">Source</a></div>');
      html+='</div><h3>Current plan records</h3><div class="plan-grid">';
      p.plans.forEach(pl=>{
-       const price=(!stale && !isStale && typeof pl.standard_monthly_price==='number')?'$'+pl.standard_monthly_price+'/mo':'See official pricing';
+       const price=(!stale && !isStale && typeof pl.standard_monthly_price==='number')?'
+       html+='<div class="plan-card"><strong>'+esc(pl.name)+'</strong><div class="plan-price">'+price+'</div><div class="micro">'+esc(pl.pricing_note)+'</div>'+(pl.source?'<div class="micro" style="margin-top:8px"><a href="'+esc(pl.source)+'" rel="external">Price/source details</a></div>':'')+'</div>';
+     });
+     html+='</div></section>';
+   }
+   root.innerHTML=html;
+   root.querySelectorAll('a.provider-outbound').forEach(link=>{
+     link.addEventListener('click',()=>{
+       const provider=link.dataset.provider||'unknown';
+       const linkType=link.dataset.linkType||'official';
+       if(window.ytsTrack) window.ytsTrack('provider_link_click',{
+         provider_name:provider,
+         link_type:linkType,
+         debug_mode:true
+       });
+     });
+   });
+ }catch(e){
+   status.className='freshness stale';status.innerHTML='<strong>Provider data could not be loaded.</strong> Specific prices are unavailable. Use the official provider links in the Sources section.';
+   root.innerHTML='';
+ }
+})();+pl.standard_monthly_price+'/mo':(!stale && !isStale && pl.display_price?esc(pl.display_price):'See official pricing');
        html+='<div class="plan-card"><strong>'+esc(pl.name)+'</strong><div class="plan-price">'+price+'</div><div class="micro">'+esc(pl.pricing_note)+'</div>'+(pl.source?'<div class="micro" style="margin-top:8px"><a href="'+esc(pl.source)+'" rel="external">Price/source details</a></div>':'')+'</div>';
      });
      html+='</div></section>';
