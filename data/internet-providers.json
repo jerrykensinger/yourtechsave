@@ -1,16 +1,329 @@
 {
   "policy": {
+    "max_age_days": 7,
     "last_verified": "2026-10-03",
     "availability_rule": "Do not label a provider available at a home until an address-level availability source confirms it.",
     "location_rule": "ZIP code may be used inside the browser to organize a search, but exact provider availability requires an address-level check.",
-    "promotion_policy": "Temporary promotions should be kept separate from regular pricing."
+    "promotion_policy": "Temporary promotions, bundle discounts and limited-time gift offers are stored separately from standard pricing and must not replace the regular plan price.",
+    "affiliate_policy": "Affiliate availability and compensation are stored separately and do not determine provider ordering or recommendation logic."
   },
-  "national_or_broad_availability_checks": [
-    {"id":"fcc-map","name":"FCC National Broadband Map","type":"independent availability map","url":"https://broadbandmap.fcc.gov/home","note":"Shows providers and technologies reported at individual U.S. serviceable locations."},
-    {"id":"t-mobile-home","name":"T-Mobile Home Internet","type":"5G fixed wireless","url":"https://www.t-mobile.com/home-internet/eligibility.html","note":"Availability can vary by address based on network capacity and signal conditions."},
-    {"id":"verizon-home","name":"Verizon 5G Home Internet","type":"5G fixed wireless","url":"https://www.verizon.com/home/internet/5g/","note":"Requires an address-level availability check."},
-    {"id":"starlink","name":"Starlink Residential","type":"low-Earth-orbit satellite","url":"https://starlink.com/res-plans","note":"Residential availability and equipment options vary by address."},
-    {"id":"hughesnet","name":"Hughesnet","type":"satellite / hybrid Fusion in select areas","url":"https://www.hughesnet.com/home-satellite-internet-plans","note":"Plan and Fusion availability vary by location."},
-    {"id":"viasat","name":"Viasat","type":"satellite","url":"https://www.viasat.com/","note":"Residential plans and offers vary by address."}
+  "availability_sources": [
+    {
+      "id": "fcc-map",
+      "name": "FCC National Broadband Map",
+      "type": "independent availability map",
+      "url": "https://broadbandmap.fcc.gov/home",
+      "note": "Shows providers, technologies and maximum advertised speeds reported at individual U.S. serviceable locations."
+    }
+  ],
+  "providers": [
+    {
+      "id": "t-mobile-home",
+      "name": "T-Mobile 5G Home Internet",
+      "technology": "5G fixed wireless",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://www.t-mobile.com/home-internet/plans",
+      "availability_check_url": "https://www.t-mobile.com/home-internet/eligibility.html",
+      "affiliate_url": null,
+      "availability_note": "Address eligibility depends on local network capacity, signal conditions and other location-specific factors.",
+      "facts": [
+        {
+          "label": "Current plan family",
+          "value": "Rely, Amplified, All-In",
+          "source": "https://www.t-mobile.com/home-internet/plans"
+        },
+        {
+          "label": "Billing",
+          "value": "Monthly service; no annual contract on current 5G Home Internet plans",
+          "source": "https://www.t-mobile.com/home-internet/plans"
+        },
+        {
+          "label": "Data",
+          "value": "Unlimited data; network management applies",
+          "source": "https://www.t-mobile.com/home-internet/plans"
+        },
+        {
+          "label": "Price guarantee",
+          "value": "5-Year Price Guarantee on eligible plans, with exclusions such as taxes and fees",
+          "source": "https://www.t-mobile.com/home-internet/plans"
+        }
+      ],
+      "plans": [
+        {
+          "name": "Rely",
+          "standard_monthly_price": 50,
+          "display_price": "$50/mo with AutoPay",
+          "pricing_note": "Advertised monthly price with AutoPay, plus taxes and fees; eligible voice-line discounts are separate.",
+          "source": "https://www.t-mobile.com/home-internet/plans"
+        },
+        {
+          "name": "Amplified",
+          "standard_monthly_price": 60,
+          "display_price": "$60/mo with AutoPay",
+          "pricing_note": "Advertised monthly price with AutoPay, plus taxes and fees; eligible voice-line discounts are separate.",
+          "source": "https://www.t-mobile.com/home-internet/plans"
+        },
+        {
+          "name": "All-In",
+          "standard_monthly_price": 70,
+          "display_price": "$70/mo with AutoPay",
+          "pricing_note": "Advertised monthly price with AutoPay, plus taxes and fees; eligible voice-line discounts are separate.",
+          "source": "https://www.t-mobile.com/home-internet/plans"
+        }
+      ],
+      "promotions": [
+        {
+          "label": "Eligible voice-line discount",
+          "summary": "Advertised rates can be lower when bundled with an eligible T-Mobile postpaid voice line.",
+          "source": "https://www.t-mobile.com/home-internet/plans",
+          "end_date": null
+        }
+      ]
+    },
+    {
+      "id": "verizon-home",
+      "name": "Verizon 5G Home Internet",
+      "technology": "5G fixed wireless",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://www.verizon.com/home/internet/5g/",
+      "availability_check_url": "https://www.verizon.com/home/internet/5g/",
+      "affiliate_url": null,
+      "availability_note": "5G Home availability is address-specific and does not automatically match Verizon mobile 5G coverage.",
+      "facts": [
+        {
+          "label": "Current plan family",
+          "value": "5G Home, 5G Home Plus, 5G Home Ultimate",
+          "source": "https://www.verizon.com/home/internet/5g/"
+        },
+        {
+          "label": "Equipment",
+          "value": "Router included on current 5G Home plans",
+          "source": "https://www.verizon.com/home/internet/5g/"
+        },
+        {
+          "label": "Contract",
+          "value": "No annual contract",
+          "source": "https://www.verizon.com/home/internet/5g/"
+        },
+        {
+          "label": "Price guarantees",
+          "value": "Current tiers advertise 3-, 4- and 5-year base-rate guarantees respectively",
+          "source": "https://www.verizon.com/home/internet/5g/"
+        }
+      ],
+      "plans": [
+        {
+          "name": "5G Home",
+          "standard_monthly_price": 60,
+          "display_price": "$60/mo before eligible discounts",
+          "pricing_note": "Current base advertised rate before eligible Auto Pay and Mobile + Home discounts.",
+          "source": "https://www.verizon.com/home/internet/5g/"
+        },
+        {
+          "name": "5G Home Plus",
+          "standard_monthly_price": 70,
+          "display_price": "$70/mo before eligible discounts",
+          "pricing_note": "Current base advertised rate before eligible discounts.",
+          "source": "https://www.verizon.com/home/internet/5g/"
+        },
+        {
+          "name": "5G Home Ultimate",
+          "standard_monthly_price": 85,
+          "display_price": "$85/mo before eligible discounts",
+          "pricing_note": "Current base advertised rate before eligible discounts.",
+          "source": "https://www.verizon.com/home/internet/5g/"
+        }
+      ],
+      "promotions": [
+        {
+          "label": "Mobile + Home / Auto Pay pricing",
+          "summary": "Verizon advertises lower effective pricing for eligible customers combining qualifying mobile service and Auto Pay.",
+          "source": "https://www.verizon.com/home/internet/5g/",
+          "end_date": null
+        }
+      ]
+    },
+    {
+      "id": "starlink",
+      "name": "Starlink Residential",
+      "technology": "low-Earth-orbit satellite",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://starlink.com/service-plans",
+      "availability_check_url": "https://starlink.com/res-plans",
+      "affiliate_url": null,
+      "availability_note": "Plan and hardware availability can vary by address; lower capped-speed Residential tiers are available only in select areas.",
+      "facts": [
+        {
+          "label": "Satellite architecture",
+          "value": "Low-Earth-orbit satellite constellation",
+          "source": "https://starlink.com/res-plans"
+        },
+        {
+          "label": "Data",
+          "value": "Current Residential plans advertise unlimited data",
+          "source": "https://starlink.com/service-plans"
+        },
+        {
+          "label": "Trial",
+          "value": "Current Residential plans advertise a 30-day trial",
+          "source": "https://starlink.com/service-plans"
+        },
+        {
+          "label": "Hardware",
+          "value": "Hardware and installation terms can vary by location and current offer",
+          "source": "https://starlink.com/res-plans"
+        }
+      ],
+      "plans": [
+        {
+          "name": "Residential - 100 Mbps",
+          "standard_monthly_price": 55,
+          "display_price": "$55/mo",
+          "pricing_note": "Select areas only; download speed is capped at 100 Mbps.",
+          "source": "https://starlink.com/service-plans"
+        },
+        {
+          "name": "Residential - 200 Mbps",
+          "standard_monthly_price": 85,
+          "display_price": "$85/mo",
+          "pricing_note": "Select areas only; download speed is capped at 200 Mbps.",
+          "source": "https://starlink.com/service-plans"
+        },
+        {
+          "name": "Residential - Max",
+          "standard_monthly_price": 130,
+          "display_price": "$130/mo",
+          "pricing_note": "Maximum available Residential speeds and top Residential network priority; availability varies.",
+          "source": "https://starlink.com/service-plans"
+        }
+      ],
+      "promotions": []
+    },
+    {
+      "id": "hughesnet",
+      "name": "Hughesnet",
+      "technology": "satellite / hybrid Fusion in select areas",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://www.hughesnet.com/home-satellite-internet-plans",
+      "availability_check_url": "https://www.hughesnet.com/get-started",
+      "affiliate_url": null,
+      "availability_note": "Plan pricing and Fusion availability vary by geographic area and address.",
+      "facts": [
+        {
+          "label": "Speed",
+          "value": "Current residential offerings advertise speeds up to 100 Mbps on eligible plans",
+          "source": "https://www.hughesnet.com/home-satellite-internet-plans"
+        },
+        {
+          "label": "Data structure",
+          "value": "Unlimited Standard Data; plan-specific Priority Data is used before Standard Data",
+          "source": "https://www.hughesnet.com/get-started"
+        },
+        {
+          "label": "Fusion",
+          "value": "Fusion combines satellite and terrestrial wireless technologies for lower-latency traffic and is available only in select areas",
+          "source": "https://www.hughesnet.com/home-satellite-internet-plans"
+        },
+        {
+          "label": "Term / equipment",
+          "value": "Minimum term and equipment lease or purchase fees can apply",
+          "source": "https://www.hughesnet.com/consumer-plans-pricing"
+        }
+      ],
+      "plans": [
+        {
+          "name": "Lite",
+          "standard_monthly_price": null,
+          "display_price": null,
+          "pricing_note": "Pricing and current offers vary by address; use the official availability checker.",
+          "source": "https://www.hughesnet.com/home-satellite-internet-plans"
+        },
+        {
+          "name": "Select",
+          "standard_monthly_price": null,
+          "display_price": null,
+          "pricing_note": "Pricing and Priority Data allowance vary by address and current offer.",
+          "source": "https://www.hughesnet.com/consumer-plans-pricing"
+        },
+        {
+          "name": "Elite",
+          "standard_monthly_price": null,
+          "display_price": null,
+          "pricing_note": "Advertised with speeds up to 100 Mbps; address-specific pricing applies.",
+          "source": "https://www.hughesnet.com/home-satellite-internet-plans"
+        },
+        {
+          "name": "Fusion",
+          "standard_monthly_price": null,
+          "display_price": null,
+          "pricing_note": "Hybrid satellite/wireless service in select areas; check address availability.",
+          "source": "https://www.hughesnet.com/home-satellite-internet-plans"
+        }
+      ],
+      "promotions": [
+        {
+          "label": "Introductory savings",
+          "summary": "Hughesnet currently advertises limited-time introductory savings on some plans; regular pricing and eligibility vary by area.",
+          "source": "https://www.hughesnet.com/home-satellite-internet-plans",
+          "end_date": null
+        }
+      ]
+    },
+    {
+      "id": "viasat",
+      "name": "Viasat",
+      "technology": "satellite",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://www.viasat.com/satellite-internet/plans/",
+      "availability_check_url": "https://www.viasat.com/satellite-internet/plans/",
+      "affiliate_url": null,
+      "availability_note": "Residential plan availability, pricing and offers vary by address.",
+      "facts": [
+        {
+          "label": "Current plan family",
+          "value": "Essentials and Unleashed",
+          "source": "https://www.viasat.com/satellite-internet/plans/"
+        },
+        {
+          "label": "Essentials data",
+          "value": "150 GB High-Speed Data, then unlimited Standard Data subject to network prioritization",
+          "source": "https://www.viasat.com/satellite-internet/plans/"
+        },
+        {
+          "label": "Unleashed data",
+          "value": "Unlimited High-Speed Data subject to Viasat network-management policies",
+          "source": "https://www.viasat.com/satellite-internet/plans/"
+        },
+        {
+          "label": "Installation / equipment",
+          "value": "Professional installation is used; equipment lease fees and other charges can apply",
+          "source": "https://www.viasat.com/satellite-internet/plans/"
+        }
+      ],
+      "plans": [
+        {
+          "name": "Essentials",
+          "standard_monthly_price": null,
+          "display_price": null,
+          "pricing_note": "Plan price and introductory offers vary by address; confirm the regular post-promotion rate before ordering.",
+          "source": "https://www.viasat.com/satellite-internet/plans/"
+        },
+        {
+          "name": "Unleashed",
+          "standard_monthly_price": null,
+          "display_price": null,
+          "pricing_note": "Address-specific pricing applies; current plan offers month-to-month service without an annual contract.",
+          "source": "https://www.viasat.com/satellite-internet/plans/"
+        }
+      ],
+      "promotions": [
+        {
+          "label": "Introductory pricing",
+          "summary": "Viasat currently advertises limited-time introductory rates on some residential plans; the regular rate and eligibility must be checked separately.",
+          "source": "https://www.viasat.com/satellite-internet/plans/",
+          "end_date": null
+        }
+      ]
+    }
   ]
 }
