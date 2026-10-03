@@ -257,6 +257,59 @@
           "source": "https://www.att.com/plans/wireless-b/"
         }
       ]
+    },
+    {
+      "id": "t-mobile",
+      "name": "T-Mobile",
+      "last_verified": "2026-10-03",
+      "official_plans_url": "https://www.t-mobile.com/cell-phone-plans",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "facts": [
+        {
+          "label": "Current popular plan family",
+          "value": "Experience Beyond 2.0, Experience More 2.0, Essentials 2.0",
+          "source": "https://www.t-mobile.com/cell-phone-plans"
+        },
+        {
+          "label": "4-line standard account pricing",
+          "value": "Essentials 2.0 $140, Experience More 2.0 $220, Experience Beyond 2.0 $280 before AutoPay or other discounts",
+          "source": "https://www.t-mobile.com/cell-phone-plans"
+        },
+        {
+          "label": "Taxes & fees",
+          "value": "Extra; provider recovery fees, government taxes and other surcharges may apply",
+          "source": "https://www.t-mobile.com/cell-phone-plans"
+        },
+        {
+          "label": "Data and hotspot",
+          "value": "Essentials 2.0 includes 50GB premium data; Experience More 2.0 includes unlimited premium data and 60GB high-speed hotspot; Experience Beyond 2.0 includes unlimited premium data and unlimited hotspot subject to plan terms",
+          "source": "https://www.t-mobile.com/cell-phone-plans"
+        }
+      ],
+      "plans": [
+        {
+          "name": "Essentials 2.0",
+          "standard_monthly_price": null,
+          "display_price": "$140/mo for 4 lines",
+          "pricing_note": "Standard 4-line account price before AutoPay or other discounts; 50GB premium data; taxes and fees extra",
+          "source": "https://www.t-mobile.com/cell-phone-plans"
+        },
+        {
+          "name": "Experience More 2.0",
+          "standard_monthly_price": null,
+          "display_price": "$220/mo for 4 lines",
+          "pricing_note": "Standard 4-line account price before AutoPay or other discounts; unlimited premium data and 60GB high-speed hotspot",
+          "source": "https://www.t-mobile.com/cell-phone-plans"
+        },
+        {
+          "name": "Experience Beyond 2.0",
+          "standard_monthly_price": null,
+          "display_price": "$280/mo for 4 lines",
+          "pricing_note": "Standard 4-line account price before AutoPay or other discounts; unlimited premium data plus higher-tier entertainment, international and upgrade benefits",
+          "source": "https://www.t-mobile.com/cell-phone-plans"
+        }
+      ]
     }
   ]
 }

@@ -21,7 +21,8 @@ This folder powers time-sensitive provider comparisons on YourTechSave.
 - US Mobile
 - Mint Mobile
 - AT&T
+- T-Mobile
 
-Current live comparisons: Visible vs. Verizon, Visible vs. US Mobile, Visible vs. Mint Mobile, and Visible vs. AT&T.
+Current live comparisons: Visible vs. Verizon, Visible vs. US Mobile, Visible vs. Mint Mobile, Visible vs. AT&T, and Visible vs. T-Mobile.
 
 The provider JSON intentionally uses no affiliate URLs yet.
