@@ -91,16 +91,20 @@
      });
    }
 
-   document.addEventListener('click',e=>{
+   let providerClickSent=false;
+   document.addEventListener('pointerdown',e=>{
      const link=e.target.closest('#providerComparison a.btn');
-     if(!link)return;
+     if(!link||providerClickSent)return;
+     providerClickSent=true;
      const panel=link.closest('.provider-panel');
      const provider=link.dataset.provider||panel?.querySelector('h2')?.textContent?.trim()||'unknown';
      track('provider_link_click',{
        provider_name:provider,
-       link_type:link.dataset.linkType||'official'
+       link_type:link.dataset.linkType||'official',
+       debug_mode:true,
+       transport_type:'beacon'
      });
-   });
+   },true);
  }
 
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindEvents);
