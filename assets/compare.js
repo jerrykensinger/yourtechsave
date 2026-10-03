@@ -17,7 +17,9 @@
    for(const p of data.providers){
      const isStale=aged(p)>max;
      const out=p.affiliate_url||p.official_plans_url;
-     html+='<section class="provider-panel"><div class="provider-head"><div><div class="kicker">Provider</div><h2>'+esc(p.name)+'</h2><div class="micro">Last verified: '+fmt(p.last_verified)+'</div></div><a class="btn btn-outline" href="'+esc(out)+'" rel="external sponsored">'+(p.affiliate_url?'Visit provider (affiliate)':'View official plans')+'</a></div>';
+     const linkType=p.affiliate_url?'affiliate':'official';
+     const rel=linkType==='affiliate'?'external sponsored':'external';
+     html+='<section class="provider-panel"><div class="provider-head"><div><div class="kicker">Provider</div><h2>'+esc(p.name)+'</h2><div class="micro">Last verified: '+fmt(p.last_verified)+'</div></div><a class="btn btn-outline" href="'+esc(out)+'" rel="'+rel+'" data-provider="'+esc(p.name)+'" data-link-type="'+linkType+'">'+(p.affiliate_url?'Visit provider (affiliate)':'View official plans')+'</a></div>';
      html+='<div class="provider-facts">';
      p.facts.forEach(f=>html+='<div class="fact-row"><strong>'+esc(f.label)+'</strong><span>'+esc(f.value)+'</span><a href="'+esc(f.source)+'" rel="external">Source</a></div>');
      html+='</div><h3>Current plan records</h3><div class="plan-grid">';

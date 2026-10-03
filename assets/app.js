@@ -1,3 +1,108 @@
+(function(){
+ const MEASUREMENT_ID='G-DFTEWX4YVT';
+ const CONSENT_KEY='yts_analytics_consent';
+ window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+ const stored=localStorage.getItem(CONSENT_KEY);
+ gtag('consent','default',{
+   analytics_storage:'denied',
+   ad_storage:'denied',
+   ad_user_data:'denied',
+   ad_personalization:'denied',
+   wait_for_update:500
+ });
+ if(stored==='granted')gtag('consent','update',{analytics_storage:'granted'});
+ const tag=document.createElement('script');
+ tag.async=true;
+ tag.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(MEASUREMENT_ID);
+ document.head.appendChild(tag);
+ gtag('js',new Date());
+ gtag('config',MEASUREMENT_ID,{send_page_view:false});
+
+ let pageViewSent=false;
+ function track(name,params){
+   if(localStorage.getItem(CONSENT_KEY)!=='granted')return;
+   gtag('event',name,params||{});
+ }
+ function sendPageView(){
+   if(pageViewSent||localStorage.getItem(CONSENT_KEY)!=='granted')return;
+   pageViewSent=true;
+   gtag('event','page_view',{
+     page_title:document.title,
+     page_location:location.href,
+     page_path:location.pathname
+   });
+ }
+ window.ytsTrack=track;
+ if(stored==='granted')sendPageView();
+
+ function removeBanner(){document.getElementById('analyticsConsent')?.remove()}
+ function showBanner(){
+   if(document.getElementById('analyticsConsent')||localStorage.getItem(CONSENT_KEY))return;
+   const box=document.createElement('div');
+   box.id='analyticsConsent';
+   box.className='analytics-consent';
+   box.innerHTML='<div><strong>Help us improve YourTechSave</strong><p>With your permission, we use Google Analytics to understand which pages and tools are useful. We do not send the dollar amounts or answers you enter in the Tech Spending Checkup to Analytics. <a href="/privacy.html">Privacy details</a>.</p></div><div class="analytics-consent-actions"><button class="btn btn-primary" type="button" data-consent="accept">Allow analytics</button><button class="btn btn-outline" type="button" data-consent="decline">No thanks</button></div>';
+   document.body.appendChild(box);
+   box.querySelector('[data-consent="accept"]').addEventListener('click',()=>{
+     localStorage.setItem(CONSENT_KEY,'granted');
+     gtag('consent','update',{analytics_storage:'granted'});
+     removeBanner();
+     sendPageView();
+   });
+   box.querySelector('[data-consent="decline"]').addEventListener('click',()=>{
+     localStorage.setItem(CONSENT_KEY,'denied');
+     gtag('consent','update',{analytics_storage:'denied'});
+     removeBanner();
+   });
+ }
+
+ function bindEvents(){
+   if(!stored)showBanner();
+
+   const checkup=document.getElementById('checkupForm');
+   if(checkup){
+     let started=false;
+     checkup.addEventListener('click',e=>{
+       if(!started&&e.target.closest('[data-next]')){
+         started=true;
+         track('checkup_start');
+       }
+     });
+     checkup.addEventListener('submit',()=>track('checkup_complete'));
+   }
+
+   if(location.pathname==='/calculators.html'){
+     const sent=new Set();
+     document.addEventListener('input',e=>{
+       const id=e.target&&e.target.id;
+       if((id==='cw'||id==='cl')&&!sent.has('wireless')){
+         const cost=parseFloat(document.getElementById('cw')?.value||'0');
+         if(cost>0){sent.add('wireless');track('calculator_used',{calculator_type:'wireless_cost_per_line'})}
+       }
+       if(id==='cm'&&!sent.has('annual')){
+         const monthly=parseFloat(document.getElementById('cm')?.value||'0');
+         if(monthly>0){sent.add('annual');track('calculator_used',{calculator_type:'monthly_to_annual'})}
+       }
+     });
+   }
+
+   document.addEventListener('click',e=>{
+     const link=e.target.closest('#providerComparison a.btn');
+     if(!link)return;
+     const panel=link.closest('.provider-panel');
+     const provider=link.dataset.provider||panel?.querySelector('h2')?.textContent?.trim()||'unknown';
+     track('provider_link_click',{
+       provider_name:provider,
+       link_type:link.dataset.linkType||'official'
+     });
+   });
+ }
+
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindEvents);
+ else bindEvents();
+})();
+
 
 (function(){
  const nav=document.querySelector('.nav'),mb=document.querySelector('.menu-btn'); if(mb)mb.onclick=()=>nav.classList.toggle('open');
