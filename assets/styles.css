@@ -28,3 +28,43 @@
 .internet-provider-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.provider-check-card{display:block;padding:17px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink)}.provider-check-card:hover{text-decoration:none;border-color:#9db8d8;box-shadow:0 6px 18px rgba(8,40,90,.06)}.provider-check-card strong,.provider-check-card span{display:block}.provider-check-card span{font-size:.88rem;color:var(--muted);margin-top:5px}.internet-type-card{height:100%}@media(max-width:760px){.internet-provider-grid{grid-template-columns:1fr}}
 
 .calculator-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.calculator-feature-grid .calculator-feature{height:100%}.savings-metrics .metric.neutral{background:var(--soft);border-color:var(--line)}@media(max-width:760px){.calculator-feature-grid{grid-template-columns:1fr}}
+
+/* Light / dark theme toggle */
+html{color-scheme:light}html[data-theme="dark"]{color-scheme:dark;--navy:#d8e9ff;--blue:#66aaff;--green:#4ade80;--lime:#9adf3f;--ink:#e7eef8;--muted:#a9b7ca;--line:#2a3d56;--soft:#0f1d30;--success:#102c20;--shadow:0 12px 34px rgba(0,0,0,.34)}
+.nav-actions{display:flex;align-items:center;gap:9px}.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:inherit;font-size:.88rem;font-weight:800;cursor:pointer;white-space:nowrap}.theme-toggle:hover{border-color:#9db8d8}.theme-icon{font-size:1.05rem;line-height:1}
+html[data-theme="dark"] body{background:#08111f;color:var(--ink)}
+html[data-theme="dark"] .site-header{background:rgba(8,17,31,.94)}
+html[data-theme="dark"] .nav-links a{color:var(--ink)}
+html[data-theme="dark"] .theme-toggle{background:#101d2e;color:var(--ink);border-color:var(--line)}
+html[data-theme="dark"] .theme-toggle:hover{background:#172840;border-color:#46668d}
+html[data-theme="dark"] .btn-outline{background:#101d2e;color:var(--navy);border-color:#395473}
+html[data-theme="dark"] .hero{background:radial-gradient(circle at 90% 12%,rgba(96,165,250,.14),transparent 27%),radial-gradient(circle at 72% 62%,rgba(74,222,128,.10),transparent 25%),linear-gradient(#08111f,#0b1728)}
+html[data-theme="dark"] .page-hero{background:linear-gradient(#0b1728,#08111f)}
+html[data-theme="dark"] .hero-card,html[data-theme="dark"] .card,html[data-theme="dark"] .trustitem,html[data-theme="dark"] .metric,html[data-theme="dark"] .opp,html[data-theme="dark"] .guide-link,html[data-theme="dark"] .faq-item,html[data-theme="dark"] .provider-panel,html[data-theme="dark"] .finder-result-card,html[data-theme="dark"] .provider-check-card{background:#0d1929;border-color:var(--line)}
+html[data-theme="dark"] .mini-card,html[data-theme="dark"] .plan-card,html[data-theme="dark"] .finder-next,html[data-theme="dark"] .comparison-policy,html[data-theme="dark"] .related{background:#0f1d30;border-color:var(--line)}
+html[data-theme="dark"] .lead,html[data-theme="dark"] .card p,html[data-theme="dark"] .content p,html[data-theme="dark"] .content li,html[data-theme="dark"] .finder-result-card p{color:#b9c6d8}
+html[data-theme="dark"] .notice{background:#0e223b}
+html[data-theme="dark"] .disclosure{background:#102c20;border-color:#285f3e}
+html[data-theme="dark"] input,html[data-theme="dark"] select{background:#0d1929;color:var(--ink);border-color:#3b526f}
+html[data-theme="dark"] input::placeholder{color:#8091a8}
+html[data-theme="dark"] .choice{background:#0d1929;border-color:#344b68;color:var(--ink)}
+html[data-theme="dark"] .choice:has(input:checked){background:#102640;color:#8dc1ff;border-color:#5b9fe9}
+html[data-theme="dark"] .remove{background:#0d1929;color:var(--ink);border-color:var(--line)}
+html[data-theme="dark"] .calc-output,html[data-theme="dark"] .formula{background:#102640;border-color:#31577d;color:var(--navy)}
+html[data-theme="dark"] .comparison-table th{background:#0f1d30;color:var(--navy)}
+html[data-theme="dark"] .comparison-table th,html[data-theme="dark"] .comparison-table td{border-color:var(--line)}
+html[data-theme="dark"] .featured-guide,html[data-theme="dark"] .calculator-feature{background:linear-gradient(180deg,#102319,#0d1929);border-color:#2d6541}
+html[data-theme="dark"] .freshness.fresh{background:#102c20;border-color:#285f3e}
+html[data-theme="dark"] .freshness.stale{background:#302612;border-color:#6d5926}
+html[data-theme="dark"] .analytics-consent{background:#0d1929;border-color:var(--line);box-shadow:0 18px 55px rgba(0,0,0,.45)}
+html[data-theme="dark"] .analytics-consent p{color:#b9c6d8}
+html[data-theme="dark"] .comparison-strip a{background:#0d1929;color:var(--navy);border-color:var(--line)}
+html[data-theme="dark"] .comparison-strip a:hover{background:#14243a;border-color:#46668d}
+html[data-theme="dark"] .provider-check-card:hover{border-color:#46668d;box-shadow:0 6px 18px rgba(0,0,0,.22)}
+html[data-theme="dark"] .pill{background:#122b4b;color:#8dc1ff}
+html[data-theme="dark"] .pill.green,html[data-theme="dark"] .badge{background:#11311f;color:#7be69c}
+html[data-theme="dark"] .metric.green,html[data-theme="dark"] .savings-summary{background:#102c20;border-color:#285f3e}
+html[data-theme="dark"] .savings-summary.neutral,html[data-theme="dark"] .savings-metrics .metric.neutral{background:#0f1d30;border-color:var(--line)}
+html[data-theme="dark"] .footer{background:#050d18}
+@media(max-width:850px){.nav-actions{margin-left:auto}.nav.open .nav-links{background:#0d1929}html:not([data-theme="dark"]) .nav.open .nav-links{background:#fff}}
+@media(max-width:520px){.theme-label{display:none}.theme-toggle{width:42px;padding:0}}

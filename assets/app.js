@@ -1,4 +1,45 @@
 (function(){
+ const THEME_KEY='yts_theme';
+ const systemDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+ const saved=localStorage.getItem(THEME_KEY);
+ let theme=(saved==='dark'||saved==='light')?saved:(systemDark?'dark':'light');
+ document.documentElement.dataset.theme=theme;
+
+ function mountThemeToggle(){
+   const nav=document.querySelector('.nav'); if(!nav||document.getElementById('themeToggle'))return;
+   const menu=nav.querySelector('.menu-btn');
+   let actions=nav.querySelector('.nav-actions');
+   if(!actions){actions=document.createElement('div');actions.className='nav-actions';nav.appendChild(actions)}
+   const button=document.createElement('button');
+   button.id='themeToggle';
+   button.className='theme-toggle';
+   button.type='button';
+
+   function paint(){
+     const dark=document.documentElement.dataset.theme==='dark';
+     button.innerHTML='<span class="theme-icon" aria-hidden="true">'+(dark?'☀':'☾')+'</span><span class="theme-label">'+(dark?'Light':'Dark')+'</span>';
+     button.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+     button.setAttribute('title',dark?'Switch to light mode':'Switch to dark mode');
+     button.setAttribute('aria-pressed',dark?'true':'false');
+   }
+
+   button.addEventListener('click',()=>{
+     theme=document.documentElement.dataset.theme==='dark'?'light':'dark';
+     document.documentElement.dataset.theme=theme;
+     localStorage.setItem(THEME_KEY,theme);
+     paint();
+   });
+
+   actions.appendChild(button);
+   if(menu)actions.appendChild(menu);
+   paint();
+ }
+
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountThemeToggle);
+ else mountThemeToggle();
+})();
+
+(function(){
  const MEASUREMENT_ID='G-DFTEWX4YVT';
  const CONSENT_KEY='yts_analytics_consent';
  window.dataLayer=window.dataLayer||[];
