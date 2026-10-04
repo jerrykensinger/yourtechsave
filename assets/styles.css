@@ -105,3 +105,12 @@ html[data-theme="dark"] .site-header .brand{
 html[data-theme="dark"] .subscription-summary{background:#0f1d30;border-color:var(--line)}
 html[data-theme="dark"] .subscription-chip{background:#0d1929;border-color:var(--line);color:var(--ink)}
 @media(max-width:520px){.subscription-summary-head{align-items:flex-start}.subscription-chip{font-size:.82rem}}
+
+/* Live streaming/subscription list */
+.subscription-summary{margin:0 0 18px;padding:14px 16px;border:1px solid var(--border);border-radius:16px;background:var(--card)}
+.subscription-summary-title{font-weight:800;margin-bottom:8px}
+.subscription-summary-empty{color:var(--muted);font-size:.95rem}
+.subscription-summary-item{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--border)}
+.subscription-summary-item:first-of-type{border-top:0}
+.subscription-summary-item span{color:var(--muted);text-align:right}
+@media(max-width:520px){.subscription-summary-item{align-items:flex-start;flex-direction:column;gap:2px}.subscription-summary-item span{text-align:left}}

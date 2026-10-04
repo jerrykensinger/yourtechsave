@@ -162,25 +162,23 @@
  function show(i){current=Math.max(0,Math.min(steps.length-1,i));steps.forEach((s,x)=>s.classList.toggle('active',x===current));bar.style.width=((current+1)/steps.length*100)+'%';scrollTo({top:0,behavior:'smooth'})}
  document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>show(current+1));document.querySelectorAll('[data-prev]').forEach(b=>b.onclick=()=>show(current-1));
  const wrap=document.getElementById('subscriptions');
- const streamingServices=['Netflix','Hulu','Disney+','Max','Prime Video','Apple TV+','Peacock','Paramount+','YouTube TV','YouTube Premium','Sling TV','Fubo','DIRECTV STREAM','Philo','ESPN+','Crunchyroll','Discovery+','Starz','AMC+','BritBox','Acorn TV','Spotify','Apple Music','Amazon Music','SiriusXM','Other'];
+ const streamingServices=['Netflix','Hulu','Disney+','Max','Amazon Prime Video','Apple TV+','Peacock','Paramount+','YouTube TV','YouTube Premium','Sling TV','Fubo','Philo','ESPN','STARZ','MGM+','AMC+','Discovery+','Crunchyroll','Other'];
+ const summary=document.createElement('div');summary.id='subscriptionSummary';summary.className='subscription-summary';wrap.before(summary);
+ function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+ function updateSubSummary(){
+   const rows=[...document.querySelectorAll('.sub-row')].map(r=>({name:r.querySelector('.sub-name')?.value||'',cost:Math.max(0,parseFloat(r.querySelector('.sub-cost')?.value)||0),use:r.querySelector('.sub-use')?.value||''})).filter(x=>x.name||x.cost);
+   if(!rows.length){summary.innerHTML='<div class="subscription-summary-empty">Your added services will appear here as you enter them.</div>';return}
+   const labels={frequent:'Frequent',sometimes:'Sometimes',rarely:'Rarely'};
+   summary.innerHTML='<div class="subscription-summary-title">Services added ('+rows.length+')</div>'+rows.map(x=>'<div class="subscription-summary-item"><strong>'+escapeHtml(x.name||'Service')+'</strong><span>'+(x.cost?'$'+x.cost.toFixed(2)+'/mo':'Cost not entered')+' · '+(labels[x.use]||'')+'</span></div>').join('');
+ }
  function addSub(){
    const r=document.createElement('div');r.className='sub-row';
-   const options=['<option value="">Select a service</option>'].concat(streamingServices.map(s=>'<option value="'+s.replace(/"/g,'&quot;')+'">'+s+'</option>')).join('');
-   r.innerHTML='<label>Service<select class="sub-name">'+options+'</select></label><label>Monthly cost<input class="sub-cost" type="number" min="0" step=".01" placeholder="0"></label><label>Use<select class="sub-use"><option value="frequent">Frequent</option><option value="sometimes">Sometimes</option><option value="rarely">Rarely</option></select></label><button class="remove" type="button">Remove</button>';
-   r.querySelector('.remove').onclick=()=>{r.remove();renderSubSummary()};
-   r.querySelectorAll('select,input').forEach(el=>el.addEventListener('input',renderSubSummary));
-   wrap.appendChild(r);renderSubSummary();
+   r.innerHTML='<label>Service<select class="sub-name"><option value="">Choose a service</option>'+streamingServices.map(s=>'<option value="'+escapeHtml(s)+'">'+escapeHtml(s)+'</option>').join('')+'</select></label><label>Monthly cost<input class="sub-cost" type="number" min="0" step=".01" inputmode="decimal" placeholder="0"></label><label>Use<select class="sub-use"><option value="frequent">Frequent</option><option value="sometimes">Sometimes</option><option value="rarely">Rarely</option></select></label><button class="remove" type="button">Remove</button>';
+   r.addEventListener('input',updateSubSummary);r.addEventListener('change',updateSubSummary);
+   r.querySelector('.remove').onclick=()=>{r.remove();updateSubSummary()};wrap.appendChild(r);updateSubSummary();
  }
- function renderSubSummary(){
-   let summary=document.getElementById('subscriptionSummary');
-   if(!summary){summary=document.createElement('div');summary.id='subscriptionSummary';summary.className='subscription-summary';wrap.after(summary)}
-   const rows=[...wrap.querySelectorAll('.sub-row')].map(r=>({name:r.querySelector('.sub-name').value,cost:Math.max(0,parseFloat(r.querySelector('.sub-cost').value)||0),use:r.querySelector('.sub-use').value})).filter(x=>x.name||x.cost);
-   if(!rows.length){summary.innerHTML='<span class="micro">Services added</span><p class="subscription-empty">Your services will appear here as you add them.</p>';return}
-   const total=rows.reduce((n,x)=>n+x.cost,0);
-   summary.innerHTML='<div class="subscription-summary-head"><strong>Services added ('+rows.length+')</strong><span>'+money(total)+'/mo</span></div><div class="subscription-chips">'+rows.map(x=>'<span class="subscription-chip">'+(x.name||'Unnamed service')+(x.cost?' · '+money(x.cost):'')+'</span>').join('')+'</div>';
- }
- document.getElementById('addSub')?.addEventListener('click',addSub);addSub();renderSubSummary();
- form.onsubmit=e=>{e.preventDefault();const wireless=num('wirelessCost'),lines=Math.max(1,num('lines')||1),internet=num('internetCost'),protection=num('protectionCost'),devices=num('devicePayments');
+ document.getElementById('addSub')?.addEventListener('click',addSub);addSub();
+  form.onsubmit=e=>{e.preventDefault();const wireless=num('wirelessCost'),lines=Math.max(1,num('lines')||1),internet=num('internetCost'),protection=num('protectionCost'),devices=num('devicePayments');
  const subs=[...document.querySelectorAll('.sub-row')].map(r=>({name:r.querySelector('.sub-name').value.trim()||'Subscription',cost:Math.max(0,parseFloat(r.querySelector('.sub-cost').value)||0),use:r.querySelector('.sub-use').value})).filter(x=>x.cost>0);
  const subTotal=subs.reduce((a,b)=>a+b.cost,0),rare=subs.filter(x=>x.use==='rarely'),rareTotal=rare.reduce((a,b)=>a+b.cost,0),total=wireless+internet+protection+devices+subTotal;
  monthlyTotal.textContent=money(total);annualTotal.textContent=money(total*12);rareAnnual.textContent=money(rareTotal*12);wirelessPerLine.textContent=money(wireless/lines);
