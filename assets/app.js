@@ -162,7 +162,11 @@
  function show(i){current=Math.max(0,Math.min(steps.length-1,i));steps.forEach((s,x)=>s.classList.toggle('active',x===current));bar.style.width=((current+1)/steps.length*100)+'%';scrollTo({top:0,behavior:'smooth'})}
  document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>show(current+1));document.querySelectorAll('[data-prev]').forEach(b=>b.onclick=()=>show(current-1));
  const wrap=document.getElementById('subscriptions');
- const streamingServices=['Netflix','Hulu','Disney+','Max','Amazon Prime Video','Apple TV+','Peacock','Paramount+','YouTube TV','YouTube Premium','Sling TV','Fubo','Philo','ESPN','STARZ','MGM+','AMC+','Discovery+','Crunchyroll','Other'];
+ const serviceGroups=[
+   {label:'Streaming & live TV',items:['Netflix','Hulu','Disney+','Max','Amazon Prime Video','Apple TV+','Peacock','Paramount+','YouTube TV','YouTube Premium','Sling TV','Fubo','Philo','ESPN','STARZ','MGM+','AMC+','Discovery+','Crunchyroll']},
+   {label:'Cable & satellite TV',items:['Xfinity TV','Spectrum TV','DIRECTV','DISH','Verizon Fios TV','Cox Contour TV','Optimum TV','Breezeline TV','Cable / satellite TV (other)']},
+   {label:'Other',items:['Other subscription']}
+ ];
  const summary=document.createElement('div');summary.id='subscriptionSummary';summary.className='subscription-summary';wrap.before(summary);
  function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
  function updateSubSummary(){
@@ -173,7 +177,8 @@
  }
  function addSub(){
    const r=document.createElement('div');r.className='sub-row';
-   r.innerHTML='<label>Service<select class="sub-name"><option value="">Choose a service</option>'+streamingServices.map(s=>'<option value="'+escapeHtml(s)+'">'+escapeHtml(s)+'</option>').join('')+'</select></label><label>Monthly cost<input class="sub-cost" type="number" min="0" step=".01" inputmode="decimal" placeholder="0"></label><label>Use<select class="sub-use"><option value="frequent">Frequent</option><option value="sometimes">Sometimes</option><option value="rarely">Rarely</option></select></label><button class="remove" type="button">Remove</button>';
+   const serviceOptions=serviceGroups.map(g=>'<optgroup label="'+escapeHtml(g.label)+'">'+g.items.map(s=>'<option value="'+escapeHtml(s)+'">'+escapeHtml(s)+'</option>').join('')+'</optgroup>').join('');
+   r.innerHTML='<label>Service<select class="sub-name"><option value="">Choose a service</option>'+serviceOptions+'</select></label><label>Monthly cost<input class="sub-cost" type="number" min="0" step=".01" inputmode="decimal" placeholder="0"></label><label>Use<select class="sub-use"><option value="frequent">Frequent</option><option value="sometimes">Sometimes</option><option value="rarely">Rarely</option></select></label><button class="remove" type="button">Remove</button>';
    r.addEventListener('input',updateSubSummary);r.addEventListener('change',updateSubSummary);
    r.querySelector('.remove').onclick=()=>{r.remove();updateSubSummary()};wrap.appendChild(r);updateSubSummary();
  }
@@ -182,7 +187,7 @@
  const subs=[...document.querySelectorAll('.sub-row')].map(r=>({name:r.querySelector('.sub-name').value.trim()||'Subscription',cost:Math.max(0,parseFloat(r.querySelector('.sub-cost').value)||0),use:r.querySelector('.sub-use').value})).filter(x=>x.cost>0);
  const subTotal=subs.reduce((a,b)=>a+b.cost,0),rare=subs.filter(x=>x.use==='rarely'),rareTotal=rare.reduce((a,b)=>a+b.cost,0),total=wireless+internet+protection+devices+subTotal;
  monthlyTotal.textContent=money(total);annualTotal.textContent=money(total*12);rareAnnual.textContent=money(rareTotal*12);wirelessPerLine.textContent=money(wireless/lines);
- const o=[];if(rareTotal)o.push(['Review rarely used subscriptions',money(rareTotal)+'/mo identified','Canceling only the subscriptions you marked as rarely used would reduce spending by '+money(rareTotal*12)+' per year.']);
+ const o=[];if(rareTotal)o.push(['Review rarely used TV & subscriptions',money(rareTotal)+'/mo identified','Canceling only the TV or subscription services you marked as rarely used would reduce spending by '+money(rareTotal*12)+' per year.']);
  if(wireless)o.push(['Benchmark your wireless service',money(wireless/lines)+'/line','This is your current service cost per line. Use the Wireless Plan Finder and source-linked provider comparisons to evaluate alternatives.']);
  if(internet)o.push(['Review your internet tier',money(internet)+'/mo','Compare the speed you pay for with the way your household actually uses the connection.']);
  if(protection)o.push(['Review device protection',money(protection*12)+'/yr','Compare annual protection cost with the devices covered, deductibles and replacement rules.']);
