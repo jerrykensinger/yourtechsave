@@ -94,3 +94,14 @@ html[data-theme="dark"] .site-header .brand{
   .site-header .brand{width:118px;height:66px;flex-basis:118px}
   .site-header .nav{min-height:76px}
 }
+
+/* Streaming checkup service picker and running summary */
+.subscription-summary{margin:16px 0 4px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--soft)}
+.subscription-summary-head{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--navy)}
+.subscription-summary-head span{font-weight:900;color:var(--green)}
+.subscription-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.subscription-chip{display:inline-flex;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.88rem;font-weight:750;color:var(--ink)}
+.subscription-empty{margin:5px 0 0;color:var(--muted);font-size:.92rem}
+html[data-theme="dark"] .subscription-summary{background:#0f1d30;border-color:var(--line)}
+html[data-theme="dark"] .subscription-chip{background:#0d1929;border-color:var(--line);color:var(--ink)}
+@media(max-width:520px){.subscription-summary-head{align-items:flex-start}.subscription-chip{font-size:.82rem}}
