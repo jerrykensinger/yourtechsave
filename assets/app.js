@@ -198,3 +198,23 @@
 (function(){const n=document.querySelector('.nav-links');if(n&&!n.querySelector('a[href="/compare/"]')){const a=document.createElement('a');a.href='/compare/';a.textContent='Compare';const before=n.querySelector('a[href="/methodology.html"]');n.insertBefore(a,before||null)}})();
 
 (function(){const n=document.querySelector('.nav-links');if(n&&!n.querySelector('a[href="/internet/"]')){const a=document.createElement('a');a.href='/internet/';a.textContent='Internet';const before=n.querySelector('a[href="/guides/"]')||n.querySelector('a[href="/compare/"]');n.insertBefore(a,before||null)}})();
+
+(function(){
+ const mount=()=>{
+   const footer=document.querySelector('.footer'); if(!footer)return;
+   footer.dataset.sitewideContactFooter='true';
+   const legacy=[...footer.querySelectorAll('a[href="mailto:partners@yourtechsave.com"]')].find(a=>a.textContent.trim().toLowerCase()==='contact');
+   if(legacy){legacy.href='/contact.html';legacy.textContent='Contact'}
+   const trust=[...footer.querySelectorAll('strong')].find(el=>el.textContent.trim()==='Trust');
+   const ul=trust?.parentElement?.querySelector('ul');
+   if(ul){
+     if(!ul.querySelector('a[href="/contact.html"]')){
+       const li=document.createElement('li');li.innerHTML='<a href="/contact.html">Contact</a>';ul.appendChild(li);
+     }
+     if(!ul.querySelector('a[href="mailto:contact@yourtechsave.com"]')){
+       const li=document.createElement('li');li.innerHTML='<a href="mailto:contact@yourtechsave.com">contact@yourtechsave.com</a>';ul.appendChild(li);
+     }
+   }
+ };
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+})(); /* sitewide-contact-footer */
