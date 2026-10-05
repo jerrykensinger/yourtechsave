@@ -149,7 +149,7 @@ html[data-theme="dark"] .subscription-chip{background:#0d1929;border-color:var(-
 .quick-choice-grid.extras-grid{grid-template-columns:repeat(2,1fr)}
 .quick-choice.full{grid-column:1/-1}
 .quick-choice{display:flex;align-items:center;justify-content:center;min-height:58px;padding:12px;border:1px solid #c9d4e2;border-radius:13px;background:#fff;cursor:pointer;text-align:center;font-weight:800;transition:.15s}
-.quick-choice input{position:absolute;opacity:0;pointer-events:none}
+.quick-choice input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;min-height:0;margin:0;padding:0}
 .quick-choice:has(input:checked){border-color:var(--blue);background:#edf6ff;color:var(--blue);box-shadow:0 0 0 2px rgba(9,103,217,.08)}
 .quick-field-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;margin-bottom:28px}
 .quick-field-grid>label,.quick-wide-label{font-weight:800}
