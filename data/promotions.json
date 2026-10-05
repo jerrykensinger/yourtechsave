@@ -1,0 +1,85 @@
+{
+  "policy": {
+    "max_age_days": 7,
+    "current_rule": "A promotion is labeled Current only when its status is current, it has been verified within the freshness window, and any published end date has not passed.",
+    "end_date_rule": "If a provider does not publish an end date, do not invent one. Show the last-confirmed-active date instead.",
+    "ranking_rule": "Affiliate availability and commission amounts do not determine display order."
+  },
+  "promotions": [
+    {
+      "id": "att-200-bill-credit-2026-10",
+      "provider": "AT&T",
+      "category": "Wireless",
+      "title": "Up to $200 in bill credits on qualifying new-line activations",
+      "summary": "AT&T was advertising up to $200 in bill credits across 36 monthly credits on qualifying new-line activations tied to eligible device purchase or bring-your-own-device conditions.",
+      "eligibility": "Eligibility depends on the activation, device/BYOD path and AT&T offer terms. Verify the exact requirements before switching.",
+      "first_seen": "2026-10-05",
+      "last_verified": "2026-10-05",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.att.com/plans/wireless-b/",
+      "affiliate_url": null,
+      "affiliate_label": null
+    },
+    {
+      "id": "tmobile-home-voice-line-discount-2026-10",
+      "provider": "T-Mobile Home Internet",
+      "category": "Home Internet",
+      "title": "Eligible voice-line discount",
+      "summary": "T-Mobile advertises lower Home Internet pricing for some customers who also have an eligible T-Mobile postpaid voice line.",
+      "eligibility": "Requires eligible T-Mobile postpaid voice service and qualifying Home Internet service; availability and exact pricing can vary.",
+      "first_seen": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.t-mobile.com/home-internet/plans",
+      "affiliate_url": null,
+      "affiliate_label": null
+    },
+    {
+      "id": "verizon-home-mobile-home-autopay-2026-10",
+      "provider": "Verizon 5G Home Internet",
+      "category": "Home Internet",
+      "title": "Mobile + Home and Auto Pay discounts",
+      "summary": "Verizon advertises lower effective 5G Home Internet pricing for eligible customers combining qualifying mobile service and Auto Pay.",
+      "eligibility": "Requires qualifying Verizon services and discount eligibility; exact address availability and pricing must be confirmed with Verizon.",
+      "first_seen": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.verizon.com/home/internet/5g/",
+      "affiliate_url": null,
+      "affiliate_label": null
+    },
+    {
+      "id": "hughesnet-intro-savings-2026-10",
+      "provider": "Hughesnet",
+      "category": "Home Internet",
+      "title": "Limited-time introductory savings",
+      "summary": "Hughesnet advertises introductory savings on some residential plans. Regular pricing and eligibility vary by location and current offer.",
+      "eligibility": "Address-specific plan availability, pricing, equipment and term conditions apply.",
+      "first_seen": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.hughesnet.com/home-satellite-internet-plans",
+      "affiliate_url": null,
+      "affiliate_label": null
+    },
+    {
+      "id": "viasat-intro-pricing-2026-10",
+      "provider": "Viasat",
+      "category": "Home Internet",
+      "title": "Limited-time introductory pricing",
+      "summary": "Viasat advertises introductory rates on some residential internet plans, with regular pricing and eligibility varying by address.",
+      "eligibility": "Address-specific availability, regular post-promotion pricing and equipment charges should be confirmed before ordering.",
+      "first_seen": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.viasat.com/satellite-internet/plans/",
+      "affiliate_url": null,
+      "affiliate_label": null
+    }
+  ]
+}
