@@ -114,3 +114,84 @@ html[data-theme="dark"] .subscription-chip{background:#0d1929;border-color:var(-
 .subscription-summary-item:first-of-type{border-top:0}
 .subscription-summary-item span{color:var(--muted);text-align:right}
 @media(max-width:520px){.subscription-summary-item{align-items:flex-start;flex-direction:column;gap:2px}.subscription-summary-item span{text-align:left}}
+
+
+/* 90-second Quick Tech Savings Check */
+.quick-check-page{min-height:70vh}
+.quick-check-shell{max-width:880px;margin:auto}
+.quick-check-hero{padding-bottom:24px}
+.quick-check-hero h1{margin-bottom:12px}
+.quick-progress-wrap{margin-top:24px}
+.quick-progress{height:8px;border-radius:999px;background:#e5ecf5;overflow:hidden}
+.quick-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue));transition:width .25s ease}
+.quick-progress-meta{display:flex;justify-content:space-between;gap:16px;margin-top:8px;color:var(--muted);font-size:.85rem;font-weight:750}
+.quick-check-section{padding-top:36px}
+.quick-step{display:none}
+.quick-step.active{display:block}
+.quick-start{padding:34px;text-align:center;max-width:680px;margin:0 auto}
+.quick-start-icon{width:58px;height:58px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--success);color:var(--green);font-size:1.8rem;font-weight:900}
+.quick-start h2{font-size:2.35rem}
+.quick-start .lead{margin-left:auto;margin-right:auto}
+.quick-benefits{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left;margin:24px auto;max-width:560px}
+.quick-benefits>div{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--soft);font-weight:700}
+.quick-primary{min-width:240px}
+.quick-step-head{margin-bottom:28px}
+.quick-step-head .pill{margin-bottom:10px}
+.quick-step-head h2{font-size:2.25rem;margin-bottom:8px}
+.quick-step-head p{margin:0;color:var(--muted)}
+.quick-fieldset{border:0;padding:0;margin:0 0 28px}
+.quick-fieldset.compact{margin-bottom:0}
+.quick-fieldset legend,.quick-wide-label{display:block;width:100%;font-size:1.05rem;font-weight:850;color:var(--navy);margin-bottom:12px}
+.quick-choice-grid{display:grid;gap:10px}
+.quick-choice-grid.six{grid-template-columns:repeat(6,1fr)}
+.quick-choice-grid.three{grid-template-columns:repeat(3,1fr)}
+.quick-choice-grid.provider-grid{grid-template-columns:repeat(4,1fr)}
+.quick-choice-grid.extras-grid{grid-template-columns:repeat(2,1fr)}
+.quick-choice.full{grid-column:1/-1}
+.quick-choice{display:flex;align-items:center;justify-content:center;min-height:58px;padding:12px;border:1px solid #c9d4e2;border-radius:13px;background:#fff;cursor:pointer;text-align:center;font-weight:800;transition:.15s}
+.quick-choice input{position:absolute;opacity:0;pointer-events:none}
+.quick-choice:has(input:checked){border-color:var(--blue);background:#edf6ff;color:var(--blue);box-shadow:0 0 0 2px rgba(9,103,217,.08)}
+.quick-field-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;margin-bottom:28px}
+.quick-field-grid>label,.quick-wide-label{font-weight:800}
+.quick-field-grid small,.quick-wide-label small{display:block;color:var(--muted);font-weight:500;margin-top:7px}
+.money-input{display:flex;align-items:center;margin-top:7px;border:1px solid #bdc9da;border-radius:11px;background:#fff;overflow:hidden}
+.money-input span{padding-left:14px;font-weight:900;color:var(--muted)}
+.money-input input{border:0;margin:0;box-shadow:none}
+.quick-note{padding:15px 17px;border-radius:12px;background:#f1f7ff;border:1px solid #c9dcf5;color:#35506e;margin:10px 0 0}
+.quick-results-head{text-align:left;margin-bottom:24px}
+.quick-results-head h2{font-size:2.4rem;margin-top:7px}
+.quick-results-head p{color:var(--muted);max-width:700px}
+.quick-results-summary{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:30px}
+.quick-results-subhead{font-size:1.75rem;margin:0 0 16px}
+.quick-opportunities{display:grid;gap:14px}
+.quick-opportunity{padding:22px;border:1px solid var(--line);border-radius:17px;background:#fff;box-shadow:0 7px 24px rgba(8,40,90,.04)}
+.quick-opportunity.featured{border-color:#9dccad;background:linear-gradient(180deg,#fbfffc,#fff)}
+.quick-opportunity-rank{display:flex;align-items:center;gap:13px}
+.quick-opportunity-rank>span{width:40px;height:40px;flex:0 0 40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#eaf2ff;color:var(--blue);font-weight:900}
+.quick-opportunity.featured .quick-opportunity-rank>span{background:#e9f8ee;color:#147a35}
+.quick-opportunity-rank small{display:block;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.quick-opportunity-rank h3{margin:2px 0 0}
+.quick-opportunity-summary{margin:16px 0 8px;font-size:1.12rem;font-weight:900;color:var(--navy)}
+.quick-opportunity p{color:#4c5b73}
+.quick-results-footer{margin-top:24px}
+.quick-result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+html[data-theme="dark"] .quick-choice,html[data-theme="dark"] .money-input,html[data-theme="dark"] .quick-opportunity{background:#0d1929;border-color:var(--line)}
+html[data-theme="dark"] .quick-choice:has(input:checked){background:#102640;color:#8dc1ff;border-color:#5b9fe9}
+html[data-theme="dark"] .quick-note{background:#0e223b;border-color:#31577d;color:#b9c6d8}
+html[data-theme="dark"] .quick-opportunity.featured{background:linear-gradient(180deg,#102319,#0d1929);border-color:#2d6541}
+html[data-theme="dark"] .quick-opportunity p{color:#b9c6d8}
+@media(max-width:760px){
+  .quick-choice-grid.six{grid-template-columns:repeat(3,1fr)}
+  .quick-choice-grid.provider-grid{grid-template-columns:repeat(2,1fr)}
+  .quick-field-grid,.quick-results-summary{grid-template-columns:1fr}
+  .quick-benefits{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .quick-start{padding:24px 18px}
+  .quick-start h2,.quick-step-head h2,.quick-results-head h2{font-size:1.9rem}
+  .quick-choice-grid.six{grid-template-columns:repeat(3,1fr)}
+  .quick-choice-grid.three,.quick-choice-grid.extras-grid{grid-template-columns:1fr}
+  .quick-choice.full{grid-column:auto}
+  .quick-result-actions{display:grid}
+  .quick-result-actions .btn{width:100%}
+}
