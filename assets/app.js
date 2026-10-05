@@ -218,3 +218,19 @@
  };
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
 })(); /* sitewide-contact-footer */
+
+(function(){
+ const mount=()=>{
+   const n=document.querySelector('.nav-links');
+   if(n&&!n.querySelector('a[href="/promos/"]')){
+     const a=document.createElement('a');a.href='/promos/';a.textContent='Deals';
+     const before=n.querySelector('a[href="/methodology.html"]')||n.querySelector('a[href="/partners.html"]');
+     n.insertBefore(a,before||null);
+   }
+   const footer=document.querySelector('.footer');
+   const explore=[...footer?.querySelectorAll('strong')||[]].find(el=>el.textContent.trim()==='Explore');
+   const ul=explore?.parentElement?.querySelector('ul');
+   if(ul&&!ul.querySelector('a[href="/promos/"]')){const li=document.createElement('li');li.innerHTML='<a href="/promos/">Promos &amp; Deals</a>';ul.appendChild(li)}
+ };
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+})(); /* sitewide-promos-nav */
