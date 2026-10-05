@@ -195,3 +195,44 @@ html[data-theme="dark"] .quick-opportunity p{color:#b9c6d8}
   .quick-result-actions{display:grid}
   .quick-result-actions .btn{width:100%}
 }
+
+
+/* Promos & Deals */
+.promo-policy{margin-top:22px;padding:17px 19px;border:1px solid #c9dcf5;border-radius:14px;background:#f4f9ff;color:#35506e}
+.promo-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px}
+.promo-filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.promo-filter{appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;font:inherit;font-size:.9rem;font-weight:800;cursor:pointer}
+.promo-filter.active{border-color:var(--blue);background:#edf6ff;color:var(--blue)}
+.promo-section{margin-top:48px}
+.promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.promo-card{display:flex;flex-direction:column;padding:22px;border:1px solid var(--line);border-radius:17px;background:#fff;box-shadow:0 7px 24px rgba(8,40,90,.04)}
+.promo-card.current{border-color:#b7dfc3}
+.promo-card.ending{border-color:#e6c46e}
+.promo-card.ended{background:var(--soft)}
+.promo-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.promo-category,.promo-status{display:inline-flex;border-radius:999px;padding:5px 9px;font-size:.78rem;font-weight:900}
+.promo-category{background:#eaf2ff;color:#0d5cbe}
+.promo-status.current{background:#e9f8ee;color:#147a35}
+.promo-status.ending{background:#fff4d8;color:#8a5b00}
+.promo-status.ended{background:#eef1f5;color:#5c6675}
+.promo-card h3{font-size:1rem;color:var(--muted);margin-bottom:3px}
+.promo-card h4{font-size:1.22rem;line-height:1.25;color:var(--navy);margin:0 0 10px}
+.promo-card p{color:#4c5b73}
+.promo-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 14px}
+.promo-meta>div{padding:11px;border:1px solid var(--line);border-radius:11px;background:var(--soft)}
+.promo-meta span,.promo-meta strong{display:block}
+.promo-meta span{font-size:.76rem;color:var(--muted);font-weight:750}
+.promo-meta strong{font-size:.88rem;color:var(--navy);margin-top:3px}
+.promo-eligibility{font-size:.9rem;color:#45546c;margin:0 0 18px}
+.promo-source{margin-top:auto}
+.promo-empty{grid-column:1/-1;padding:22px;border:1px dashed #bdc9da;border-radius:14px;background:var(--soft);color:var(--muted)}
+.promo-disclosure{margin-top:48px}
+html[data-theme="dark"] .promo-policy{background:#102640;border-color:#31577d;color:#b9c6d8}
+html[data-theme="dark"] .promo-filter,html[data-theme="dark"] .promo-card{background:#0d1929;border-color:var(--line);color:var(--ink)}
+html[data-theme="dark"] .promo-filter.active{background:#102640;color:#8dc1ff;border-color:#5b9fe9}
+html[data-theme="dark"] .promo-card.current{border-color:#285f3e}
+html[data-theme="dark"] .promo-card.ending{border-color:#6d5926}
+html[data-theme="dark"] .promo-card.ended,html[data-theme="dark"] .promo-meta>div,html[data-theme="dark"] .promo-empty{background:#0f1d30}
+html[data-theme="dark"] .promo-card p,html[data-theme="dark"] .promo-eligibility{color:#b9c6d8}
+@media(max-width:850px){.promo-grid{grid-template-columns:1fr 1fr}.promo-toolbar{align-items:flex-start;flex-direction:column}.promo-filters{justify-content:flex-start}}
+@media(max-width:600px){.promo-grid{grid-template-columns:1fr}.promo-meta{grid-template-columns:1fr}}
