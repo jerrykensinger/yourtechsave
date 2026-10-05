@@ -201,7 +201,7 @@
     {
       "id": "att",
       "name": "AT&T",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-05",
       "official_plans_url": "https://www.att.com/plans/wireless-b/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -213,7 +213,12 @@
         },
         {
           "label": "4-line advertised pricing",
-          "value": "$30, $40, $50 and $70 per line per month respectively, after eligible AutoPay and paperless billing",
+          "value": "$30, $40, $50 and $70 per line per month respectively with 4 lines after a $10/line/month qualifying AutoPay + paperless billing discount; undiscounted base prices are $40, $50, $60 and $80 respectively. No additional temporary promotional discount applies to these plan rates.",
+          "source": "https://www.att.com/plans/wireless-b/"
+        },
+        {
+          "label": "AutoPay + paperless billing discount",
+          "value": "$10/line/month with bank account/ACH or AT&T Points Plus Card from Citi plus paperless billing; $5/line/month with debit-card AutoPay; other credit cards receive no AutoPay discount. Discount starts within 2 bills.",
           "source": "https://www.att.com/plans/wireless-b/"
         },
         {
@@ -232,28 +237,28 @@
           "name": "AT&T Value 2.0",
           "standard_monthly_price": null,
           "display_price": "$30/line with 4 lines",
-          "pricing_note": "Current advertised 4-line rate after eligible AutoPay and paperless billing; taxes and fees extra",
+          "pricing_note": "Per line with 4 lines and qualifying AutoPay + paperless billing; taxes and fees extra.",
           "source": "https://www.att.com/plans/wireless-b/"
         },
         {
           "name": "AT&T Extra 2.0",
           "standard_monthly_price": null,
           "display_price": "$40/line with 4 lines",
-          "pricing_note": "Current advertised 4-line rate after eligible AutoPay and paperless billing; includes 100GB high-speed data and 50GB hotspot",
+          "pricing_note": "Per line with 4 lines and qualifying AutoPay + paperless billing; taxes and fees extra.",
           "source": "https://www.att.com/plans/wireless-b/"
         },
         {
           "name": "AT&T Premium 2.0",
           "standard_monthly_price": null,
           "display_price": "$50/line with 4 lines",
-          "pricing_note": "Current advertised 4-line rate after eligible AutoPay and paperless billing; unlimited high-speed data and 100GB hotspot",
+          "pricing_note": "Per line with 4 lines and qualifying AutoPay + paperless billing; taxes and fees extra.",
           "source": "https://www.att.com/plans/wireless-b/"
         },
         {
           "name": "AT&T Elite 2.0",
           "standard_monthly_price": null,
           "display_price": "$70/line with 4 lines",
-          "pricing_note": "Current advertised 4-line rate after eligible AutoPay and paperless billing; 250GB hotspot plus additional international and connected-device benefits",
+          "pricing_note": "Per line with 4 lines and qualifying AutoPay + paperless billing; taxes and fees extra.",
           "source": "https://www.att.com/plans/wireless-b/"
         }
       ]
