@@ -1,7 +1,7 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>90-Second Tech Savings Check | YourTechSave</title><meta name="description" content="Find the household technology costs worth reviewing in about 90 seconds."><link rel="canonical" href="https://yourtechsave.com/checkup.html"><link rel="stylesheet" href="/assets/styles.css"></head><body><header class="site-header"><div class="container nav"><a class="brand" href="/">YourTech<span>Save</span></a><button class="menu-btn" aria-label="Menu">☰</button><nav class="nav-links"><a href="/checkup.html">Checkup</a><a href="/calculators.html">Calculators</a><a href="/guides/">Guides</a><a href="/methodology.html">Methodology</a><a href="/partners.html">Partners</a><a href="/about.html">About</a><a class="btn btn-primary" href="/checkup.html">Check My Spending</a></nav></div></header><main class="quick-check-page">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tech Spending Checkup | YourTechSave</title><meta name="description" content="Use the free YourTechSave Tech Spending Checkup to review wireless, internet, streaming and protection costs in about 90 seconds."><link rel="canonical" href="https://yourtechsave.com/checkup.html"><link rel="stylesheet" href="/assets/styles.css"></head><body><header class="site-header"><div class="container nav"><a class="brand" href="/">YourTech<span>Save</span></a><button class="menu-btn" aria-label="Menu">☰</button><nav class="nav-links"><a href="/checkup.html">Checkup</a><a href="/calculators.html">Calculators</a><a href="/guides/">Guides</a><a href="/methodology.html">Methodology</a><a href="/partners.html">Partners</a><a href="/about.html">About</a><a class="btn btn-primary" href="/checkup.html">Check My Spending</a></nav></div></header><main class="quick-check-page">
 <section class="page-hero quick-check-hero"><div class="container quick-check-shell">
   <div class="kicker">Free • About 90 seconds • No account required</div>
-  <h1>Quick Tech Savings Check</h1>
+  <h1>Tech Spending Checkup</h1>
   <p class="lead">Answer a few simple questions. We’ll show which parts of your household tech spending are worth a closer look and point you to the right next tool.</p>
   <div class="quick-progress-wrap" aria-label="Checkup progress">
     <div class="quick-progress"><span id="quickProgressBar"></span></div>
@@ -22,7 +22,7 @@
         <div>✓ Answers stay in your browser</div>
         <div>✓ Detailed tools only after you see what matters</div>
       </div>
-      <button class="btn btn-green quick-primary" type="button" data-next>Start Quick Check →</button>
+      <button class="btn btn-green quick-primary" type="button" data-next>Start Checkup →</button>
     </div>
   </section>
 
@@ -77,6 +77,12 @@
           <label class="quick-choice"><input type="radio" name="deviceIncluded" value="no"><span>No</span></label>
           <label class="quick-choice"><input type="radio" name="deviceIncluded" value="unsure" checked><span>Not sure</span></label>
         </div>
+        <div id="quickDevicePaymentWrap" class="quick-conditional">
+          <label>About how much of the monthly wireless total is phone payments? <span class="micro">(optional)</span>
+            <div class="money-input"><span>$</span><input id="quickDevicePayments" type="number" min="0" step="1" inputmode="decimal" placeholder="80"></div>
+            <small>We subtract this estimate before comparing service costs. Skip it if you are not sure.</small>
+          </label>
+        </div>
       </fieldset>
     </div>
     <div class="step-actions"><button class="btn btn-outline" type="button" data-prev>← Back</button><button class="btn btn-primary" type="button" data-next>Next: Internet →</button></div>
@@ -127,22 +133,22 @@
 
   <section class="quick-step" data-step="results">
     <div class="quick-results-head">
-      <div class="kicker">Your Quick Savings Check</div>
-      <h2 id="quickResultTitle">Here’s what looks worth reviewing.</h2>
-      <p>These are review opportunities, not guaranteed savings. Use the deeper tools only where the result is relevant to you.</p>
+      <div class="kicker">Your Tech Spending Checkup</div>
+      <h2 id="quickResultTitle">Here’s what your numbers suggest.</h2>
+      <p>When fresh provider data supports a direct benchmark, we show a concrete price range. These are comparison estimates, not guaranteed savings.</p>
     </div>
     <div class="quick-results-summary">
       <div class="metric"><span>Monthly tech spending entered</span><strong id="quickMonthlyTotal">—</strong><span class="micro">Wireless + internet + extras you entered</span></div>
-      <div class="metric green"><span>Areas worth reviewing</span><strong id="quickAreaCount">3</strong><span class="micro">Ranked by the information you provided</span></div>
+      <div class="metric green"><span id="quickSavingsLabel">Potential wireless difference</span><strong id="quickSavingsEstimate">—</strong><span id="quickSavingsNote" class="micro">Shown only when fresh provider data supports it</span></div>
     </div>
     <h2 class="quick-results-subhead">Your next best steps</h2>
     <div id="quickOpportunities" class="quick-opportunities"></div>
     <div class="quick-results-footer card">
       <h3>Want the detailed numbers?</h3>
-      <p>YourTechSave has deeper calculators, source-linked provider comparisons and guides when you’re ready. The quick check is just the front door.</p>
+      <p>YourTechSave has deeper calculators, source-linked provider comparisons and guides when you’re ready. The checkup is just the front door.</p>
       <div class="quick-result-actions"><a class="btn btn-outline" href="/calculators.html">Browse Calculators</a><a class="btn btn-outline" href="/compare/">Browse Comparisons</a><button class="btn btn-outline" id="quickStartOver" type="button">Start Over</button></div>
     </div>
   </section>
 </form>
 </div></section>
-</main><footer class="footer"><div class="container"><div class="footer-grid"><div><div class="brand">YourTech<span>Save</span></div><p>Practical tools to understand household technology costs and identify areas worth reviewing.</p><small>© 2026 YourTechSave LLC.</small></div><div><strong>Explore</strong><ul class="list-clean"><li><a href="/checkup.html">Tech Savings Checkup</a></li><li><a href="/calculators.html">Calculators</a></li><li><a href="/guides/">Guides</a></li><li><a href="/methodology.html">Methodology</a></li></ul></div><div><strong>Trust</strong><ul class="list-clean"><li><a href="/how-we-make-money.html">How We Make Money</a></li><li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="mailto:partners@yourtechsave.com">Contact</a></li></ul></div></div><div class="sep"></div><small>Information is educational and comparative. Prices, plans, promotions and terms can change. Verify current details directly with the provider.</small></div></footer><script src="/assets/app.js?v=20261003-2"></script><script src="/assets/quick-check.js?v=20261005-1"></script></body></html>
+</main><footer class="footer"><div class="container"><div class="footer-grid"><div><div class="brand">YourTech<span>Save</span></div><p>Practical tools to understand household technology costs and identify areas worth reviewing.</p><small>© 2026 YourTechSave LLC.</small></div><div><strong>Explore</strong><ul class="list-clean"><li><a href="/checkup.html">Tech Spending Checkup</a></li><li><a href="/calculators.html">Calculators</a></li><li><a href="/guides/">Guides</a></li><li><a href="/methodology.html">Methodology</a></li></ul></div><div><strong>Trust</strong><ul class="list-clean"><li><a href="/how-we-make-money.html">How We Make Money</a></li><li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="mailto:partners@yourtechsave.com">Contact</a></li></ul></div></div><div class="sep"></div><small>Information is educational and comparative. Prices, plans, promotions and terms can change. Verify current details directly with the provider.</small></div></footer><script src="/assets/app.js?v=20261003-2"></script><script src="/assets/quick-check.js?v=20261005-1"></script></body></html>
