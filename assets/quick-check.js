@@ -14,14 +14,34 @@
   const progress=[0,25,50,75,100,100];
   const counts=['0 of 4','1 of 4','2 of 4','3 of 4','4 of 4','Complete'];
 
+  const wirelessDataPromise=fetch('/data/wireless-providers.json',{cache:'no-store'})
+    .then(r=>r.ok?r.json():Promise.reject(new Error('provider data unavailable')))
+    .catch(()=>null);
+
   function money(n){
     return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n||0);
+  }
+  function moneyPerLine(n){
+    return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0,maximumFractionDigits:2}).format(n||0);
   }
   function numberValue(id){
     return Math.max(0,parseFloat(document.getElementById(id)?.value||'0')||0);
   }
   function checkedValue(name){
     return form.querySelector('input[name="'+name+'"]:checked')?.value||'';
+  }
+  function normalizeName(value){
+    return String(value||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+  }
+  function formatDate(iso){
+    const d=new Date(iso+'T12:00:00');
+    if(Number.isNaN(d.getTime()))return iso;
+    return new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric'}).format(d);
+  }
+  function daysOld(iso){
+    const d=new Date(iso+'T00:00:00');
+    if(Number.isNaN(d.getTime()))return Infinity;
+    return Math.floor((Date.now()-d.getTime())/86400000);
   }
   function show(i){
     current=Math.max(0,Math.min(steps.length-1,i));
@@ -34,7 +54,7 @@
   function beginIfNeeded(){
     if(started)return;
     started=true;
-    if(window.ytsTrack)window.ytsTrack('checkup_start',{checkup_type:'quick_90_second'});
+    if(window.ytsTrack)window.ytsTrack('checkup_start',{checkup_type:'tech_spending_checkup'});
   }
 
   form.querySelectorAll('[data-next]').forEach(btn=>{
@@ -57,36 +77,148 @@
     });
   });
 
+  const deviceWrap=document.getElementById('quickDevicePaymentWrap');
+  function syncDevicePayment(){
+    const choice=checkedValue('deviceIncluded');
+    if(deviceWrap)deviceWrap.classList.toggle('is-hidden',choice==='no');
+    if(choice==='no'){
+      const input=document.getElementById('quickDevicePayments');
+      if(input)input.value='';
+    }
+  }
+  form.querySelectorAll('input[name="deviceIncluded"]').forEach(radio=>radio.addEventListener('change',syncDevicePayment));
+  syncDevicePayment();
+
   function makeOpportunity(type,score,title,summary,detail,href,cta,badge){
     return {type:type,score:score,title:title,summary:summary,detail:detail,href:href,cta:cta,badge:badge};
   }
 
-  function buildResults(){
+  function buildWirelessBenchmark(data,lines,currentProvider,serviceTotal){
+    if(!data||!Array.isArray(data.providers)||!data.policy)return null;
+    const maxAge=Math.max(0,parseInt(data.policy.max_age_days||'7',10)||7);
+    const currentKey=normalizeName(currentProvider);
+    const candidates=[];
+
+    data.providers.forEach(provider=>{
+      if(!provider||normalizeName(provider.name)===currentKey)return;
+      if(daysOld(provider.last_verified)>maxAge)return;
+      (provider.plans||[]).forEach(plan=>{
+        if(typeof plan.standard_monthly_price!=='number')return;
+        const perLine=plan.standard_monthly_price;
+        candidates.push({
+          provider:provider.name,
+          plan:plan.name,
+          perLine:perLine,
+          monthlyTotal:perLine*lines,
+          verified:provider.last_verified,
+          note:plan.pricing_note||''
+        });
+      });
+    });
+
+    if(!candidates.length)return null;
+    candidates.sort((a,b)=>a.perLine-b.perLine);
+
+    const low=candidates[0];
+    const high=candidates[candidates.length-1];
+    const freshest=candidates.reduce((latest,c)=>!latest||c.verified>latest?c.verified:latest,'');
+
+    let annualLow=null;
+    let annualHigh=null;
+    if(serviceTotal>0){
+      const differences=candidates
+        .map(c=>Math.max(0,(serviceTotal-c.monthlyTotal)*12))
+        .filter(v=>v>0)
+        .sort((a,b)=>a-b);
+      if(differences.length){
+        annualLow=differences[0];
+        annualHigh=differences[differences.length-1];
+      }
+    }
+
+    return {
+      candidates,
+      low,
+      high,
+      annualLow,
+      annualHigh,
+      verified:freshest,
+      maxAge
+    };
+  }
+
+  async function buildResults(){
     const lines=Math.max(1,parseInt(checkedValue('lines')||'1',10));
     const provider=checkedValue('wirelessProvider');
     const wireless=numberValue('quickWirelessCost');
     const deviceIncluded=checkedValue('deviceIncluded');
+    const devicePayments=numberValue('quickDevicePayments');
     const internetProvider=document.getElementById('quickInternetProvider')?.value||'';
     const internet=numberValue('quickInternetCost');
     const internetHappy=checkedValue('internetHappy');
     const extras=extraBoxes.filter(b=>b.checked&&b!==none).map(b=>b.value);
     const extrasCost=numberValue('quickExtrasCost');
     const total=wireless+internet+extrasCost;
-    const perLine=wireless?wireless/lines:0;
+
+    let serviceTotal=wireless;
+    let serviceEstimateClean=true;
+    if(deviceIncluded==='yes'){
+      if(devicePayments>0)serviceTotal=Math.max(0,wireless-devicePayments);
+      else serviceEstimateClean=false;
+    }else if(deviceIncluded==='unsure'){
+      if(devicePayments>0)serviceTotal=Math.max(0,wireless-devicePayments);
+      else serviceEstimateClean=false;
+    }
+    const perLine=serviceTotal?serviceTotal/lines:0;
 
     document.getElementById('quickMonthlyTotal').textContent=total?money(total):'Not enough entered';
+
+    const wirelessData=await wirelessDataPromise;
+    const benchmark=(wireless&&serviceEstimateClean)
+      ? buildWirelessBenchmark(wirelessData,lines,provider,serviceTotal)
+      : null;
+
+    const savingsEstimate=document.getElementById('quickSavingsEstimate');
+    const savingsNote=document.getElementById('quickSavingsNote');
+    if(benchmark&&benchmark.annualHigh){
+      if(benchmark.annualLow&&Math.round(benchmark.annualLow)!==Math.round(benchmark.annualHigh)){
+        savingsEstimate.textContent=money(benchmark.annualLow)+'–'+money(benchmark.annualHigh)+'/yr';
+      }else{
+        savingsEstimate.textContent='Up to '+money(benchmark.annualHigh)+'/yr';
+      }
+      savingsNote.textContent='Compared with fresh tracked standard plan rates; features and taxes/fees vary';
+    }else if(wireless&&!serviceEstimateClean){
+      savingsEstimate.textContent='Need service-only cost';
+      savingsNote.textContent='Estimate phone payments above so we do not compare device financing with service';
+    }else{
+      savingsEstimate.textContent='No direct estimate';
+      savingsNote.textContent='We only show a dollar benchmark when fresh provider data supports it';
+    }
 
     let wirelessScore=1;
     if(perLine>=55)wirelessScore=4;
     else if(perLine>=40)wirelessScore=3;
     else if(perLine>=28)wirelessScore=2;
-    if(deviceIncluded==='yes'&&wirelessScore>1)wirelessScore-=0.5;
+    if(!serviceEstimateClean&&wirelessScore>1)wirelessScore-=0.5;
 
-    let wirelessSummary=wireless ? 'About '+money(perLine)+' per line each month' : (provider ? provider+' selected' : 'Wireless details were limited');
+    let wirelessSummary='';
     let wirelessDetail='';
-    if(deviceIncluded==='yes') wirelessDetail='Your estimate may include phone financing, so separate service from device payments before comparing carriers.';
-    else if(perLine>=40) wirelessDetail='Your current cost per line is worth benchmarking against lower-cost and alternative-network options.';
-    else wirelessDetail='A quick benchmark can confirm whether your current plan still fits your line count, network and feature needs.';
+    if(wireless){
+      if(serviceEstimateClean){
+        wirelessSummary='Estimated service cost: '+money(serviceTotal)+'/month • '+moneyPerLine(perLine)+' per line';
+        if(benchmark){
+          wirelessDetail='Fresh tracked standard plan rates currently range from '+moneyPerLine(benchmark.low.perLine)+' to '+moneyPerLine(benchmark.high.perLine)+' per line among the records we can compare directly. Data, hotspot, taxes/fees, billing terms and coverage can change the real fit. Freshest record used: '+formatDate(benchmark.verified)+'.';
+        }else{
+          wirelessDetail='We could not build a fresh dollar benchmark from the provider records available right now, so use the plan finder to compare features and current pricing directly.';
+        }
+      }else{
+        wirelessSummary='About '+money(wireless/lines)+' per line from the total you entered';
+        wirelessDetail='That amount may include phone financing. Add an estimate for monthly phone payments so the checkup can separate service from devices before comparing plan prices.';
+      }
+    }else{
+      wirelessSummary=provider?provider+' selected':'Wireless details were limited';
+      wirelessDetail='Add your monthly wireless cost to get a service-cost benchmark, or use the plan finder to compare providers by features.';
+    }
 
     let internetScore=1;
     if(internet>=110)internetScore=4;
@@ -95,7 +227,9 @@
     if(internetHappy==='no')internetScore+=1.5;
     else if(internetHappy==='mostly')internetScore+=0.5;
 
-    let internetSummary=internet ? money(internet)+'/month'+(internetProvider?' with '+internetProvider:'') : (internetProvider||'Home internet details were limited');
+    let internetSummary=internet
+      ? money(internet)+'/month • '+money(internet*12)+'/year'+(internetProvider?' with '+internetProvider:'')
+      : (internetProvider||'Home internet details were limited');
     let internetDetail=internetHappy==='no'
       ? 'Because you are not happy with speed or reliability, compare both price and connection type before paying for a faster tier.'
       : 'Check whether your current price, speed tier and connection type still match how your household uses the service.';
@@ -107,10 +241,10 @@
     if(extras.length>=3)extrasScore+=1;
     else if(extras.length>=1)extrasScore+=0.5;
 
-    let extrasSummary=extras.length ? extras.join(', ') : 'No specific extras selected';
-    if(extrasCost)extrasSummary+=' • about '+money(extrasCost)+'/month';
+    let extrasSummary=extras.length?extras.join(', '):'No specific extras selected';
+    if(extrasCost)extrasSummary+=' • '+money(extrasCost)+'/month • '+money(extrasCost*12)+'/year';
     const extrasDetail=extras.length
-      ? 'Review recurring entertainment and protection costs before canceling anything. Start with the services you use least or duplicate elsewhere.'
+      ? 'Review recurring entertainment and protection costs before canceling anything. Start with services you use least or may already receive through another plan or benefit.'
       : 'If you have recurring TV, streaming, music or protection charges, a quick audit can uncover costs that are easy to overlook.';
 
     const opportunities=[
@@ -119,7 +253,6 @@
       makeOpportunity('extras',extrasScore,'TV, streaming & protection',extrasSummary,extrasDetail,'/guides/streaming-subscription-audit.html','Review Subscriptions & Extras','Subscriptions')
     ].sort((a,b)=>b.score-a.score);
 
-    document.getElementById('quickAreaCount').textContent=opportunities.length;
     const mount=document.getElementById('quickOpportunities');
     mount.innerHTML=opportunities.map((o,index)=>{
       const label=index===0?'Highest impact':(index===1?'Next':'Also worth checking');
@@ -133,14 +266,14 @@
 
     if(!completed){
       completed=true;
-      if(window.ytsTrack)window.ytsTrack('checkup_complete',{checkup_type:'quick_90_second'});
+      if(window.ytsTrack)window.ytsTrack('checkup_complete',{checkup_type:'tech_spending_checkup'});
     }
   }
 
-  form.addEventListener('submit',e=>{
+  form.addEventListener('submit',async e=>{
     e.preventDefault();
     beginIfNeeded();
-    buildResults();
+    await buildResults();
     show(steps.length-1);
   });
 
@@ -148,6 +281,7 @@
     form.reset();
     completed=false;
     started=false;
+    syncDevicePayment();
     show(0);
   });
 
