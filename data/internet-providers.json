@@ -273,7 +273,7 @@
       "id": "viasat",
       "name": "Viasat",
       "technology": "satellite",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-08",
       "official_plans_url": "https://www.viasat.com/satellite-internet/plans/",
       "availability_check_url": "https://www.viasat.com/satellite-internet/plans/",
       "affiliate_url": null,
@@ -281,7 +281,7 @@
       "facts": [
         {
           "label": "Current plan family",
-          "value": "Essentials and Unleashed",
+          "value": "Essentials, Unleashed and Unleashed Max",
           "source": "https://www.viasat.com/satellite-internet/plans/"
         },
         {
@@ -295,8 +295,13 @@
           "source": "https://www.viasat.com/satellite-internet/plans/"
         },
         {
+          "label": "Unleashed Max data",
+          "value": "Unlimited High-Speed Data with higher network priority than standard Unleashed, subject to Viasat network-management policies",
+          "source": "https://www.viasat.com/satellite-internet/plans/"
+        },
+        {
           "label": "Installation / equipment",
-          "value": "Professional installation is used; equipment lease fees and other charges can apply",
+          "value": "Professional installation is used; a $15/mo equipment lease fee applies to current residential plans, with other charges possible.",
           "source": "https://www.viasat.com/satellite-internet/plans/"
         }
       ],
@@ -305,21 +310,28 @@
           "name": "Essentials",
           "standard_monthly_price": null,
           "display_price": null,
-          "pricing_note": "Plan price and introductory offers vary by address; confirm the regular post-promotion rate before ordering.",
+          "pricing_note": "Current public offer starts at $39.99/mo for the first 12 months, then $69.99/mo; address-specific availability applies and equipment lease fees are extra.",
           "source": "https://www.viasat.com/satellite-internet/plans/"
         },
         {
           "name": "Unleashed",
           "standard_monthly_price": null,
           "display_price": null,
-          "pricing_note": "Address-specific pricing applies; current plan offers month-to-month service without an annual contract.",
+          "pricing_note": "Current public offer starts at $69.99/mo for the first 12 months, then $99.99/mo; current plan is month-to-month with address-specific availability.",
+          "source": "https://www.viasat.com/satellite-internet/plans/"
+        },
+        {
+          "name": "Unleashed Max",
+          "standard_monthly_price": null,
+          "display_price": null,
+          "pricing_note": "Current public offer starts at $109.99/mo for the first 12 months, then $179.99/mo; includes higher network priority and current plan is month-to-month with address-specific availability.",
           "source": "https://www.viasat.com/satellite-internet/plans/"
         }
       ],
       "promotions": [
         {
           "label": "Introductory pricing",
-          "summary": "Viasat currently advertises limited-time introductory rates on some residential plans; the regular rate and eligibility must be checked separately.",
+          "summary": "Viasat currently advertises 12-month introductory pricing for new residential customers: Essentials $39.99/mo then $69.99/mo, Unleashed $69.99/mo then $99.99/mo, and Unleashed Max $109.99/mo then $179.99/mo. Equipment lease fees are additional.",
           "source": "https://www.viasat.com/satellite-internet/plans/",
           "end_date": null
         }
