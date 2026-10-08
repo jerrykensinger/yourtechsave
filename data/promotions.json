@@ -7,6 +7,36 @@
   },
   "promotions": [
     {
+      "id": "mint-10-year-anniversary-2026-10",
+      "provider": "Mint Mobile",
+      "category": "Wireless",
+      "title": "10-Year Anniversary: any 6-month plan for $10/mo",
+      "summary": "For a limited time, new Mint Mobile customers can get any 6-month plan, including Unlimited, for $10/mo. A $60 upfront payment is required for the first six months.",
+      "eligibility": "New customers only. Offer applies to the first 6 months; full-price plan options apply after the promotional term. Taxes and fees are extra. Purchase must be activated within Mint's stated activation window.",
+      "first_seen": "2026-10-08",
+      "last_verified": "2026-10-08",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.mintmobile.com/help/what-is-mints-10-year-anniversary-promotion/",
+      "affiliate_url": null,
+      "affiliate_label": null
+    },
+    {
+      "id": "viasat-intro-pricing-2026-10",
+      "provider": "Viasat",
+      "category": "Home Internet",
+      "title": "12-month introductory pricing on Essentials, Unleashed and Unleashed Max",
+      "summary": "Viasat advertises 12-month introductory pricing for new residential customers: Essentials starting at $39.99/mo then $69.99/mo, Unleashed starting at $69.99/mo then $99.99/mo, and Unleashed Max starting at $109.99/mo then $179.99/mo.",
+      "eligibility": "Limited-time offer for new residential customers on eligible plans. Address-specific availability applies, and a $15/mo equipment lease fee is additional. Verify current terms before ordering.",
+      "first_seen": "2026-10-03",
+      "last_verified": "2026-10-08",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.viasat.com/satellite-internet/plans/",
+      "affiliate_url": null,
+      "affiliate_label": null
+    },
+    {
       "id": "att-200-bill-credit-2026-10",
       "provider": "AT&T",
       "category": "Wireless",
@@ -33,21 +63,6 @@
       "end_date": null,
       "status": "current",
       "source": "https://www.hughesnet.com/home-satellite-internet-plans",
-      "affiliate_url": null,
-      "affiliate_label": null
-    },
-    {
-      "id": "viasat-intro-pricing-2026-10",
-      "provider": "Viasat",
-      "category": "Home Internet",
-      "title": "Limited-time introductory pricing",
-      "summary": "Viasat advertises introductory rates on some residential internet plans, with regular pricing and eligibility varying by address.",
-      "eligibility": "Address-specific availability, regular post-promotion pricing and equipment charges should be confirmed before ordering.",
-      "first_seen": "2026-10-03",
-      "last_verified": "2026-10-03",
-      "end_date": null,
-      "status": "current",
-      "source": "https://www.viasat.com/satellite-internet/plans/",
       "affiliate_url": null,
       "affiliate_label": null
     }
