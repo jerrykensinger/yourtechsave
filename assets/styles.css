@@ -252,3 +252,31 @@ html[data-theme="dark"] .founder-card{background:#0f1d30;border-color:var(--line
 .quick-conditional{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:13px;background:var(--soft)}
 .quick-conditional.is-hidden{display:none}
 html[data-theme="dark"] .quick-conditional{background:#0f1d30;border-color:var(--line)}
+
+
+/* Safer named wireless benchmark examples */
+.field-error{display:block;margin-top:7px;color:#a22727;font-weight:750}
+.field-error[hidden]{display:none}
+.quick-results-summary .metric.neutral{background:var(--soft);border-color:var(--line)}
+.wireless-examples{display:grid;gap:12px;margin:18px 0 20px}
+.wireless-examples-title{font-size:1rem;font-weight:900;color:var(--navy)}
+.wireless-example{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--soft)}
+.wireless-example-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.wireless-example-head strong,.wireless-example-head span{display:block}
+.wireless-example-head span{margin-top:4px;color:var(--muted);font-size:.9rem}
+.wireless-gap{max-width:245px;text-align:right;font-weight:850;color:var(--navy)!important}
+.wireless-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.wireless-meta span{padding:5px 8px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font-size:.8rem;font-weight:750}
+.wireless-note{margin:10px 0;color:#4c5b73;font-size:.9rem}
+.wireless-example>a{font-weight:800}
+.wireless-examples-foot{padding:12px 14px;border-radius:11px;background:#fff7e8;border:1px solid #eed49a;color:#6a5419;font-size:.86rem}
+html[data-theme="dark"] .quick-results-summary .metric.neutral{background:#0f1d30;border-color:var(--line)}
+html[data-theme="dark"] .wireless-example{background:#0f1d30;border-color:var(--line)}
+html[data-theme="dark"] .wireless-meta span{background:#0d1929;border-color:var(--line);color:#a9b7ca}
+html[data-theme="dark"] .wireless-note{color:#b9c6d8}
+html[data-theme="dark"] .wireless-examples-foot{background:#302612;border-color:#6d5926;color:#e6d18b}
+html[data-theme="dark"] .field-error{color:#ff9b9b}
+@media(max-width:650px){
+  .wireless-example-head{display:grid}
+  .wireless-gap{max-width:none;text-align:left}
+}
