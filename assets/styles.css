@@ -239,12 +239,14 @@ html[data-theme="dark"] .promo-card p,html[data-theme="dark"] .promo-eligibility
 
 
 /* Founder trust block */
-.founder-card{display:grid;grid-template-columns:88px 1fr;gap:22px;align-items:start;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--soft);margin:18px 0 34px}
-.founder-mark{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-size:1.35rem;font-weight:900;letter-spacing:.04em}
+.founder-card{display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:start;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--soft);margin:18px 0 34px}
+.founder-photo{display:block;width:100%;max-width:160px;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:16px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(8,40,90,.10)}
 .founder-card h3{margin:0 0 3px;font-size:1.45rem}
 .founder-role{margin:0 0 12px!important;color:var(--muted)!important;font-weight:750}
+.founder-home{display:grid;grid-template-columns:140px 1fr;gap:28px;align-items:center;max-width:900px}
+.founder-photo-home{max-width:140px}
 html[data-theme="dark"] .founder-card{background:#0f1d30;border-color:var(--line)}
-@media(max-width:560px){.founder-card{grid-template-columns:1fr}.founder-mark{width:64px;height:64px}}
+@media(max-width:560px){.founder-card,.founder-home{grid-template-columns:1fr}.founder-photo,.founder-photo-home{max-width:140px}}
 
 /* Conditional checkup fields */
 .quick-conditional{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:13px;background:var(--soft)}
