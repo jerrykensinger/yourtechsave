@@ -94,10 +94,47 @@
     }
   }
   form.querySelectorAll('input[name="deviceIncluded"]').forEach(radio=>radio.addEventListener('change',syncDevicePayment));
+  document.getElementById('quickDevicePayments')?.addEventListener('input',()=>{
+    const error=document.getElementById('quickDevicePaymentError');
+    if(error){error.hidden=true;error.textContent='';}
+  });
   syncDevicePayment();
 
-  function makeOpportunity(type,score,title,summary,detail,href,cta,badge){
-    return {type:type,score:score,title:title,summary:summary,detail:detail,href:href,cta:cta,badge:badge};
+  function makeOpportunity(type,score,title,summary,detail,href,cta,badge,extraHtml){
+    return {type:type,score:score,title:title,summary:summary,detail:detail,href:href,cta:cta,badge:badge,extraHtml:extraHtml||''};
+  }
+
+  function escapeHtml(value){
+    return String(value||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  }
+  function providerFact(provider,pattern){
+    return (provider.facts||[]).find(f=>pattern.test(String(f.label||'')))?.value||'';
+  }
+  function taxLabel(provider){
+    const text=providerFact(provider,/taxes?.*fees/i);
+    if(/included/i.test(text))return 'Taxes & fees included';
+    if(/extra|not included/i.test(text))return 'Taxes & fees extra';
+    return 'Taxes & fees vary';
+  }
+  function billingLabel(plan){
+    const note=String(plan.pricing_note||'');
+    if(/paid up front|12-month/i.test(note))return '12-month term • paid upfront';
+    return 'Monthly billing';
+  }
+  function comparisonHref(currentProvider,candidateProvider){
+    const key=[normalizeName(currentProvider),normalizeName(candidateProvider)].sort().join('|');
+    const map={
+      'att|visible':'/compare/visible-vs-att.html',
+      'att|tmobile':'/compare/att-vs-t-mobile.html',
+      'att|verizon':'/compare/verizon-vs-att.html',
+      'mintmobile|usmobile':'/compare/us-mobile-vs-mint-mobile.html',
+      'mintmobile|visible':'/compare/visible-vs-mint-mobile.html',
+      'tmobile|verizon':'/compare/verizon-vs-t-mobile.html',
+      'tmobile|visible':'/compare/visible-vs-t-mobile.html',
+      'usmobile|visible':'/compare/visible-vs-us-mobile.html',
+      'verizon|visible':'/compare/visible-vs-verizon.html'
+    };
+    return map[key]||'/compare/plan-finder.html';
   }
 
   function buildWirelessBenchmark(data,lines,currentProvider,serviceTotal){
@@ -117,8 +154,13 @@
           plan:plan.name,
           perLine:perLine,
           monthlyTotal:perLine*lines,
+          listedDifference:serviceTotal-(perLine*lines),
           verified:provider.last_verified,
-          note:plan.pricing_note||''
+          note:plan.pricing_note||'',
+          taxes:taxLabel(provider),
+          billing:billingLabel(plan),
+          href:comparisonHref(currentProvider,provider.name),
+          source:plan.source||provider.official_plans_url||''
         });
       });
     });
@@ -126,30 +168,21 @@
     if(!candidates.length)return null;
     candidates.sort((a,b)=>a.perLine-b.perLine);
 
-    const low=candidates[0];
-    const high=candidates[candidates.length-1];
-    const freshest=candidates.reduce((latest,c)=>!latest||c.verified>latest?c.verified:latest,'');
-
-    let annualLow=null;
-    let annualHigh=null;
-    if(serviceTotal>0){
-      const differences=candidates
-        .map(c=>Math.max(0,(serviceTotal-c.monthlyTotal)*12))
-        .filter(v=>v>0)
-        .sort((a,b)=>a-b);
-      if(differences.length){
-        annualLow=differences[0];
-        annualHigh=differences[differences.length-1];
+    const byProvider=new Map();
+    candidates.forEach(candidate=>{
+      const key=normalizeName(candidate.provider);
+      if(!byProvider.has(key)||candidate.perLine<byProvider.get(key).perLine){
+        byProvider.set(key,candidate);
       }
-    }
+    });
+    const examples=[...byProvider.values()].sort((a,b)=>a.perLine-b.perLine).slice(0,3);
+    if(!examples.length)return null;
 
+    const dates=examples.map(c=>c.verified).filter(Boolean).sort();
     return {
-      candidates,
-      low,
-      high,
-      annualLow,
-      annualHigh,
-      verified:freshest,
+      examples,
+      oldestVerified:dates[0]||'',
+      newestVerified:dates[dates.length-1]||'',
       maxAge
     };
   }
@@ -166,6 +199,21 @@
     const extras=extraBoxes.filter(b=>b.checked&&b!==none).map(b=>b.value);
     const extrasCost=numberValue('quickExtrasCost');
     const total=wireless+internet+extrasCost;
+    const deviceInput=document.getElementById('quickDevicePayments');
+    const deviceError=document.getElementById('quickDevicePaymentError');
+    if(devicePayments>wireless&&devicePayments>0){
+      if(deviceError){
+        deviceError.hidden=false;
+        deviceError.textContent='Phone payments cannot be greater than the wireless total you entered.';
+      }
+      show(2);
+      requestAnimationFrame(()=>deviceInput?.focus());
+      return false;
+    }
+    if(deviceError){
+      deviceError.hidden=true;
+      deviceError.textContent='';
+    }
 
     let serviceTotal=wireless;
     let serviceEstimateClean=true;
@@ -187,19 +235,15 @@
 
     const savingsEstimate=document.getElementById('quickSavingsEstimate');
     const savingsNote=document.getElementById('quickSavingsNote');
-    if(benchmark&&benchmark.annualHigh){
-      if(benchmark.annualLow&&Math.round(benchmark.annualLow)!==Math.round(benchmark.annualHigh)){
-        savingsEstimate.textContent=money(benchmark.annualLow)+'–'+money(benchmark.annualHigh)+'/yr';
-      }else{
-        savingsEstimate.textContent='Up to '+money(benchmark.annualHigh)+'/yr';
-      }
-      savingsNote.textContent='Directional standard-price comparison; promos excluded and taxes/fees, eligibility and features can differ';
+    if(benchmark&&benchmark.examples.length){
+      savingsEstimate.textContent=benchmark.examples.length+' plan'+(benchmark.examples.length===1?'':'s');
+      savingsNote.textContent='Named fresh examples below • not tier-matched savings estimates';
     }else if(wireless&&!serviceEstimateClean){
       savingsEstimate.textContent='Need service-only cost';
-      savingsNote.textContent='Estimate phone payments above so we do not compare device financing with service';
+      savingsNote.textContent='Estimate phone payments above before we compare plan prices';
     }else{
-      savingsEstimate.textContent='No direct estimate';
-      savingsNote.textContent='We only show a dollar benchmark when fresh provider data supports it';
+      savingsEstimate.textContent='No fresh examples';
+      savingsNote.textContent='Your cost per line still appears below with next-step guidance';
     }
 
     let wirelessScore=1;
@@ -210,13 +254,31 @@
 
     let wirelessSummary='';
     let wirelessDetail='';
+    let wirelessExamplesHtml='';
     if(wireless){
       if(serviceEstimateClean){
         wirelessSummary='Estimated service cost: '+money(serviceTotal)+'/month • '+moneyPerLine(perLine)+' per line';
         if(benchmark){
-          wirelessDetail='Fresh tracked standard plan rates currently range from '+moneyPerLine(benchmark.low.perLine)+' to '+moneyPerLine(benchmark.high.perLine)+' per line among the records we can compare directly. Promotions are excluded. Some advertised prices include taxes and fees while others do not, so treat the gap as directional. Data, hotspot, billing terms, eligibility and coverage can also change the real fit. Freshest record used: '+formatDate(benchmark.verified)+'.';
+          const dateText=benchmark.oldestVerified===benchmark.newestVerified
+            ? 'Verified '+formatDate(benchmark.oldestVerified)
+            : 'Verified '+formatDate(benchmark.oldestVerified)+'–'+formatDate(benchmark.newestVerified);
+          wirelessDetail='These are named recently verified plan examples, not a claim that they match your current plan tier. Compare data, hotspot, taxes/fees, billing terms, eligibility and coverage before switching. '+dateText+'.';
+          wirelessExamplesHtml='<div class="wireless-examples"><div class="wireless-examples-title">Fresh plan examples to review</div>'+
+            benchmark.examples.map(example=>{
+              const diff=Math.round(example.listedDifference);
+              let diffText='Listed total is about the same as your service-only estimate';
+              if(diff>0)diffText=money(diff)+'/month lower listed price than your service-only estimate';
+              if(diff<0)diffText=money(Math.abs(diff))+'/month higher listed price than your service-only estimate';
+              return '<div class="wireless-example">'+
+                '<div class="wireless-example-head"><div><strong>'+escapeHtml(example.provider)+' — '+escapeHtml(example.plan)+'</strong><span>'+moneyPerLine(example.perLine)+'/line • '+money(example.monthlyTotal)+'/month for '+lines+' line'+(lines===1?'':'s')+'</span></div><span class="wireless-gap">'+escapeHtml(diffText)+'</span></div>'+
+                '<div class="wireless-meta"><span>'+escapeHtml(example.taxes)+'</span><span>'+escapeHtml(example.billing)+'</span><span>Verified '+escapeHtml(formatDate(example.verified))+'</span></div>'+
+                '<div class="wireless-note">'+escapeHtml(example.note)+'</div>'+
+                '<a href="'+escapeHtml(example.href)+'">Review this option →</a>'+
+              '</div>';
+            }).join('')+
+            '<div class="wireless-examples-foot">Listed-price differences are not guaranteed savings. Promotions are excluded, and these examples are not automatically matched to your current data or feature tier.</div></div>';
         }else{
-          wirelessDetail='We could not build a fresh dollar benchmark from the provider records available right now, so use the plan finder to compare features and current pricing directly.';
+          wirelessDetail='We only show prices we have re-verified recently. Here is your cost per line so you can use the plan finder to compare features and current pricing without relying on stale numbers.';
         }
       }else{
         wirelessSummary='About '+money(wireless/lines)+' per line from the total you entered';
@@ -255,7 +317,7 @@
       : 'If you have recurring TV, streaming, music or protection charges, a quick audit can uncover costs that are easy to overlook.';
 
     const opportunities=[
-      makeOpportunity('wireless',wirelessScore,'Wireless',wirelessSummary,wirelessDetail,'/compare/plan-finder.html','Compare My Wireless Options','Wireless'),
+      makeOpportunity('wireless',wirelessScore,'Wireless',wirelessSummary,wirelessDetail,'/compare/plan-finder.html','Compare My Wireless Options','Wireless',wirelessExamplesHtml),
       makeOpportunity('internet',internetScore,'Home internet',internetSummary,internetDetail,'/internet/finder.html','Review My Internet','Internet'),
       makeOpportunity('extras',extrasScore,'TV, streaming & protection',extrasSummary,extrasDetail,'/guides/streaming-subscription-audit.html','Review Subscriptions & Extras','Subscriptions')
     ].sort((a,b)=>b.score-a.score);
@@ -267,6 +329,7 @@
         '<div class="quick-opportunity-rank"><span>'+(index+1)+'</span><div><small>'+label+'</small><h3>'+o.title+'</h3></div></div>'+
         '<div class="quick-opportunity-summary">'+o.summary+'</div>'+
         '<p>'+o.detail+'</p>'+
+        (o.extraHtml||'')+
         '<a class="btn '+(index===0?'btn-green':'btn-outline')+'" href="'+o.href+'">'+o.cta+' →</a>'+
       '</article>';
     }).join('');
@@ -280,8 +343,8 @@
   form.addEventListener('submit',async e=>{
     e.preventDefault();
     beginIfNeeded();
-    await buildResults();
-    show(steps.length-1);
+    const built=await buildResults();
+    if(built!==false)show(steps.length-1);
   });
 
   document.getElementById('quickStartOver')?.addEventListener('click',()=>{
