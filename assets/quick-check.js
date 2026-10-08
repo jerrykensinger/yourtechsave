@@ -43,13 +43,20 @@
     if(Number.isNaN(d.getTime()))return Infinity;
     return Math.floor((Date.now()-d.getTime())/86400000);
   }
-  function show(i){
+  function show(i,moveFocus=true){
     current=Math.max(0,Math.min(steps.length-1,i));
     steps.forEach((step,index)=>step.classList.toggle('active',index===current));
     if(bar)bar.style.width=progress[current]+'%';
     if(progressLabel)progressLabel.textContent=labels[current];
     if(progressCount)progressCount.textContent=counts[current];
     window.scrollTo({top:0,behavior:'smooth'});
+    if(moveFocus){
+      const heading=steps[current]?.querySelector('h2');
+      if(heading){
+        heading.setAttribute('tabindex','-1');
+        heading.focus({preventScroll:true});
+      }
+    }
   }
   function beginIfNeeded(){
     if(started)return;
@@ -186,7 +193,7 @@
       }else{
         savingsEstimate.textContent='Up to '+money(benchmark.annualHigh)+'/yr';
       }
-      savingsNote.textContent='Compared with fresh tracked standard plan rates; features and taxes/fees vary';
+      savingsNote.textContent='Directional standard-price comparison; promos excluded and taxes/fees, eligibility and features can differ';
     }else if(wireless&&!serviceEstimateClean){
       savingsEstimate.textContent='Need service-only cost';
       savingsNote.textContent='Estimate phone payments above so we do not compare device financing with service';
@@ -207,7 +214,7 @@
       if(serviceEstimateClean){
         wirelessSummary='Estimated service cost: '+money(serviceTotal)+'/month • '+moneyPerLine(perLine)+' per line';
         if(benchmark){
-          wirelessDetail='Fresh tracked standard plan rates currently range from '+moneyPerLine(benchmark.low.perLine)+' to '+moneyPerLine(benchmark.high.perLine)+' per line among the records we can compare directly. Data, hotspot, taxes/fees, billing terms and coverage can change the real fit. Freshest record used: '+formatDate(benchmark.verified)+'.';
+          wirelessDetail='Fresh tracked standard plan rates currently range from '+moneyPerLine(benchmark.low.perLine)+' to '+moneyPerLine(benchmark.high.perLine)+' per line among the records we can compare directly. Promotions are excluded. Some advertised prices include taxes and fees while others do not, so treat the gap as directional. Data, hotspot, billing terms, eligibility and coverage can also change the real fit. Freshest record used: '+formatDate(benchmark.verified)+'.';
         }else{
           wirelessDetail='We could not build a fresh dollar benchmark from the provider records available right now, so use the plan finder to compare features and current pricing directly.';
         }
@@ -285,5 +292,5 @@
     show(0);
   });
 
-  show(0);
+  show(0,false);
 })();
