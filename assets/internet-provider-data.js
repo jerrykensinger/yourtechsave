@@ -14,7 +14,7 @@
    if(status){
      status.className='freshness '+(stale?'stale':'fresh');
      status.innerHTML=stale
-       ? '<strong>Re-verification required.</strong> Time-sensitive internet prices are hidden because at least one provider record is more than '+max+' days old. Use the official address checks below for current pricing.'
+       ? '<strong>Re-verification required.</strong> Prices for individual outdated provider records are hidden because at least one record is more than '+max+' days old. Use the official address checks below for current pricing.'
        : '<strong>Internet provider facts verified '+fmt(providers.reduce((a,p)=>a<p.last_verified?a:p.last_verified,providers[0].last_verified))+'.</strong> Regular pricing is kept separate from temporary promotions and exact availability still requires an address check.';
    }
    let html='';
@@ -30,7 +30,7 @@
      html+='</div><h3>Current plan records</h3><div class="plan-grid">';
      (p.plans||[]).forEach(pl=>{
        let price='Check address pricing';
-       if(!stale&&!isStale){
+       if(!isStale){
          if(pl.display_price)price=esc(pl.display_price);
          else if(typeof pl.standard_monthly_price==='number')price='$'+pl.standard_monthly_price+'/mo';
        } else if(typeof pl.standard_monthly_price==='number'||pl.display_price) price='Price hidden until reverified';
