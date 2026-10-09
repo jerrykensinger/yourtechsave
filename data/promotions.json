@@ -7,6 +7,21 @@
   },
   "promotions": [
     {
+      "id": "att-prepaid-annual-20-2026-10",
+      "provider": "AT&T Prepaid",
+      "category": "Wireless",
+      "title": "12-month unlimited prepaid plan: $20/mo equivalent ($240 upfront)",
+      "summary": "New single-line customers can prepay $240 for 12 months of unlimited talk, text and data, with 16GB of high-speed data before speeds are limited to 1.5Mbps and 10GB hotspot data.",
+      "eligibility": "Online only; new single line, SIM or phone purchase and activation required. Taxes and fees extra. Annual upfront payment required; no published offer end date.",
+      "first_seen": "2026-10-09",
+      "last_verified": "2026-10-09",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.att.com/prepaid/plans/",
+      "affiliate_url": null,
+      "affiliate_label": null
+    },
+    {
       "id": "mint-10-year-anniversary-2026-10",
       "provider": "Mint Mobile",
       "category": "Wireless",
