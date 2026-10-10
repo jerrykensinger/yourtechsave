@@ -240,3 +240,13 @@
  };
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
 })(); /* sitewide-promos-nav */
+
+(function(){
+ const mount=()=>{
+   const ul=document.querySelector('.footer-grid ul.list-clean');
+   if(ul&&!ul.querySelector('a[href="/bill-explainer.html"]')){
+     const li=document.createElement('li');li.innerHTML='<a href="/bill-explainer.html">Bill Explainer (beta)</a>';ul.appendChild(li);
+   }
+ };
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+})(); /* bill-explainer-link */
