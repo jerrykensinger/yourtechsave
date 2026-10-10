@@ -260,6 +260,15 @@
           "display_price": "$70/line with 4 lines",
           "pricing_note": "Per line with 4 lines and qualifying AutoPay + paperless billing; taxes and fees extra.",
           "source": "https://www.att.com/plans/wireless-b/"
+        },
+        {
+          "name": "AT&T 55+",
+          "standard_monthly_price": null,
+          "display_price": null,
+          "pricing_note": "Age eligibility required. Includes 10GB hotspot per line and standard-definition streaming. Standalone price and maximum line count require confirmation because official pricing copy conflicts; check directly with AT&T.",
+          "source": "https://www.att.com/plans/wireless-b/",
+          "last_checked": "2026-10-10",
+          "verification_status": "needs_review"
         }
       ]
     },

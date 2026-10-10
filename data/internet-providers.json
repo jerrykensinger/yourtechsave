@@ -147,7 +147,7 @@
       "id": "starlink",
       "name": "Starlink Residential",
       "technology": "low-Earth-orbit satellite",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-09",
       "official_plans_url": "https://starlink.com/service-plans",
       "availability_check_url": "https://starlink.com/res-plans",
       "affiliate_url": null,
@@ -197,13 +197,14 @@
           "source": "https://starlink.com/service-plans"
         }
       ],
-      "promotions": []
+      "promotions": [],
+      "verification_note": "Pricing retained from the user-supplied October 9 official-source provider review. October 10 automated retrieval returned a JavaScript shell and did not independently reverify pricing."
     },
     {
       "id": "hughesnet",
       "name": "Hughesnet",
       "technology": "satellite / hybrid Fusion in select areas",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-10",
       "official_plans_url": "https://www.hughesnet.com/home-satellite-internet-plans",
       "availability_check_url": "https://www.hughesnet.com/get-started",
       "affiliate_url": null,
@@ -273,7 +274,7 @@
       "id": "viasat",
       "name": "Viasat",
       "technology": "satellite",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-10",
       "official_plans_url": "https://www.viasat.com/satellite-internet/plans/",
       "availability_check_url": "https://www.viasat.com/satellite-internet/plans/",
       "affiliate_url": null,
