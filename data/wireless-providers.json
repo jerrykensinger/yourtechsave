@@ -8,7 +8,7 @@
     {
       "id": "visible",
       "name": "Visible",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-10",
       "official_plans_url": "https://www.visible.com/m/plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -53,7 +53,7 @@
     {
       "id": "verizon",
       "name": "Verizon",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-10",
       "official_plans_url": "https://www.verizon.com/support/current-unlimited-plans/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -95,7 +95,7 @@
     {
       "id": "us-mobile",
       "name": "US Mobile",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-10",
       "official_plans_url": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -145,7 +145,7 @@
     {
       "id": "mint-mobile",
       "name": "Mint Mobile",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-10",
       "official_plans_url": "https://www.mintmobile.com/phone-plans/12-month-plans/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -201,7 +201,7 @@
     {
       "id": "att",
       "name": "AT&T",
-      "last_verified": "2026-10-05",
+      "last_verified": "2026-10-10",
       "official_plans_url": "https://www.att.com/plans/wireless-b/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -275,7 +275,7 @@
     {
       "id": "t-mobile",
       "name": "T-Mobile",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-10",
       "official_plans_url": "https://www.t-mobile.com/cell-phone-plans",
       "affiliate_url": null,
       "affiliate_label": null,
