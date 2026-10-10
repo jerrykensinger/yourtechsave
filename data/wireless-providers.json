@@ -118,7 +118,7 @@
         {
           "label": "Regular monthly pricing",
           "value": "Unlimited Flex $17.50, Unlimited Starter $25, Unlimited Premium $44",
-          "source": "https://www.usmobile.com/blog/best-phone-plans-for-one-august-2026/"
+          "source": "https://www.usmobile.com/plans"
         }
       ],
       "plans": [
@@ -126,7 +126,7 @@
           "name": "Unlimited Flex",
           "standard_monthly_price": 17.5,
           "pricing_note": "Regular monthly rate; 10 GB high-speed data and 5 GB hotspot before reduced speeds",
-          "source": "https://www.usmobile.com/blog/best-phone-plans-for-one-august-2026/"
+          "source": "https://www.usmobile.com/plans"
         },
         {
           "name": "Unlimited Starter",
