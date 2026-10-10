@@ -64,9 +64,23 @@
     if(window.ytsTrack)window.ytsTrack('checkup_start',{checkup_type:'tech_spending_checkup'});
   }
 
-  form.querySelectorAll('[data-next]').forEach(btn=>{
+  function validateDevicePayments(){
+const w=numberValue('quickWirelessCost'),d=numberValue('quickDevicePayments');
+const err=document.getElementById('quickDevicePaymentError'),inp=document.getElementById('quickDevicePayments');
+if(d>0&&d>w){
+if(err){err.hidden=false;err.textContent='Phone payments cannot be greater than the wireless total you entered.';}
+if(inp)inp.focus();
+return false;
+}
+if(err){err.hidden=true;err.textContent='';}
+return true;
+}
+['quickWirelessCost','quickDevicePayments'].forEach(id=>document.getElementById(id)?.addEventListener('change',()=>{if(current===2)validateDevicePayments();}));
+
+form.querySelectorAll('[data-next]').forEach(btn=>{
     btn.addEventListener('click',()=>{
       beginIfNeeded();
+      if(current===2&&!validateDevicePayments())return;
       show(current+1);
     });
   });
@@ -137,7 +151,19 @@
     return map[key]||'/compare/plan-finder.html';
   }
 
-  function buildWirelessBenchmark(data,lines,currentProvider,serviceTotal){
+  function exampleTitle(example){
+const p=String(example.provider||'').trim(),n=String(example.plan||'').trim();
+if(!n||n.toLowerCase()===p.toLowerCase())return escapeHtml(p+' (standard plan)');
+if(n.toLowerCase().startsWith(p.toLowerCase()))return escapeHtml(n);
+return escapeHtml(p+' — '+n);
+}
+function exampleLink(example){
+const generic=example.href==='/compare/plan-finder.html'&&/^https?:\/\//.test(example.source||'');
+return generic
+?{href:example.source,text:'View official plan page ↗',attrs:' target="_blank" rel="noopener noreferrer"'}
+:{href:example.href,text:'Review this option →',attrs:''};
+}
+function buildWirelessBenchmark(data,lines,currentProvider,serviceTotal){
     if(!data||!Array.isArray(data.providers)||!data.policy)return null;
     const maxAge=Math.max(0,parseInt(data.policy.max_age_days||'7',10)||7);
     const currentKey=normalizeName(currentProvider);
@@ -251,6 +277,7 @@
     else if(perLine>=40)wirelessScore=3;
     else if(perLine>=28)wirelessScore=2;
     if(!serviceEstimateClean&&wirelessScore>1)wirelessScore-=0.5;
+if(benchmark&&benchmark.examples.some(e=>e.listedDifference>=20))wirelessScore=Math.max(wirelessScore,4.5);
 
     let wirelessSummary='';
     let wirelessDetail='';
@@ -270,10 +297,10 @@
               if(diff>0)diffText=money(diff)+'/month lower listed price than your service-only estimate';
               if(diff<0)diffText=money(Math.abs(diff))+'/month higher listed price than your service-only estimate';
               return '<div class="wireless-example">'+
-                '<div class="wireless-example-head"><div><strong>'+escapeHtml(example.provider)+' — '+escapeHtml(example.plan)+'</strong><span>'+moneyPerLine(example.perLine)+'/line • '+money(example.monthlyTotal)+'/month for '+lines+' line'+(lines===1?'':'s')+'</span></div><span class="wireless-gap">'+escapeHtml(diffText)+'</span></div>'+
+                '<div class="wireless-example-head"><div><strong>'+exampleTitle(example)+'</strong><span>'+moneyPerLine(example.perLine)+'/line • '+money(example.monthlyTotal)+'/month for '+lines+' line'+(lines===1?'':'s')+'</span></div><span class="wireless-gap">'+escapeHtml(diffText)+'</span></div>'+
                 '<div class="wireless-meta"><span>'+escapeHtml(example.taxes)+'</span><span>'+escapeHtml(example.billing)+'</span><span>Verified '+escapeHtml(formatDate(example.verified))+'</span></div>'+
                 '<div class="wireless-note">'+escapeHtml(example.note)+'</div>'+
-                '<a href="'+escapeHtml(example.href)+'">Review this option →</a>'+
+                '<a href="'+escapeHtml(exampleLink(example).href)+'"'+exampleLink(example).attrs+'>'+exampleLink(example).text+'</a>'+
               '</div>';
             }).join('')+
             '<div class="wireless-examples-foot">Listed-price differences are not guaranteed savings. Promotions are excluded, and these examples are not automatically matched to your current data or feature tier.</div></div>';
@@ -324,7 +351,8 @@
 
     const mount=document.getElementById('quickOpportunities');
     mount.innerHTML=opportunities.map((o,index)=>{
-      const label=index===0?'Highest impact':(index===1?'Next':'Also worth checking');
+      const hasBenchmark=o.type==='wireless'&&benchmark&&benchmark.examples.length>0;
+const label=index===0?(hasBenchmark?'Highest impact':'Largest cost to review'):(index===1?'Next':'Also worth checking');
       return '<article class="quick-opportunity '+(index===0?'featured':'')+'">'+
         '<div class="quick-opportunity-rank"><span>'+(index+1)+'</span><div><small>'+label+'</small><h3>'+o.title+'</h3></div></div>'+
         '<div class="quick-opportunity-summary">'+o.summary+'</div>'+
