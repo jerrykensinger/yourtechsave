@@ -45,28 +45,32 @@
  window.dataLayer=window.dataLayer||[];
  window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
  const stored=localStorage.getItem(CONSENT_KEY);
+ const tz=(Intl.DateTimeFormat().resolvedOptions().timeZone)||'';
+ const regionRestricted=/^Europe\//.test(tz)||/^Atlantic\/(Reykjavik|Canary|Madeira|Azores|Faroe)/.test(tz);
+ const signalOptOut=navigator.globalPrivacyControl===true||navigator.doNotTrack==='1';
+ const analyticsOn=stored==='granted'||(stored!=='denied'&&!signalOptOut&&!regionRestricted);
+ function isOn(){return analyticsOn&&localStorage.getItem(CONSENT_KEY)!=='denied'}
  gtag('consent','default',{
-   analytics_storage:'denied',
+   analytics_storage:analyticsOn?'granted':'denied',
    ad_storage:'denied',
    ad_user_data:'denied',
    ad_personalization:'denied',
    wait_for_update:500
  });
- if(stored==='granted')gtag('consent','update',{analytics_storage:'granted'});
  const tag=document.createElement('script');
  tag.async=true;
  tag.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(MEASUREMENT_ID);
  document.head.appendChild(tag);
  gtag('js',new Date());
- gtag('config',MEASUREMENT_ID,{send_page_view:false});
+ gtag('config',MEASUREMENT_ID,{send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false});
 
  let pageViewSent=false;
  function track(name,params){
-   if(localStorage.getItem(CONSENT_KEY)!=='granted')return;
+   if(!isOn())return;
    gtag('event',name,params||{});
  }
  function sendPageView(){
-   if(pageViewSent||localStorage.getItem(CONSENT_KEY)!=='granted')return;
+   if(pageViewSent||!isOn())return;
    pageViewSent=true;
    gtag('event','page_view',{
      page_title:document.title,
@@ -75,7 +79,10 @@
    });
  }
  window.ytsTrack=track;
- if(stored==='granted')sendPageView();
+ window.ytsAnalyticsOptOut=function(){localStorage.setItem(CONSENT_KEY,'denied');gtag('consent','update',{analytics_storage:'denied'})};
+ window.ytsAnalyticsOptIn=function(){localStorage.setItem(CONSENT_KEY,'granted');gtag('consent','update',{analytics_storage:'granted'});sendPageView()};
+ window.ytsAnalyticsStatus=function(){return isOn()};
+ if(isOn())sendPageView();
 
  function removeBanner(){document.getElementById('analyticsConsent')?.remove()}
  function showBanner(){
@@ -99,7 +106,6 @@
  }
 
  function bindEvents(){
-   if(!stored)showBanner();
 
    const checkup=document.getElementById('checkupForm');
    if(checkup){
