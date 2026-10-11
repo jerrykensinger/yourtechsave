@@ -21,7 +21,7 @@
       "id": "t-mobile-home",
       "name": "T-Mobile 5G Home Internet",
       "technology": "5G fixed wireless",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-11",
       "official_plans_url": "https://www.t-mobile.com/home-internet/plans",
       "availability_check_url": "https://www.t-mobile.com/home-internet/eligibility.html",
       "affiliate_url": null,
@@ -84,7 +84,7 @@
       "id": "verizon-home",
       "name": "Verizon 5G Home Internet",
       "technology": "5G fixed wireless",
-      "last_verified": "2026-10-03",
+      "last_verified": "2026-10-11",
       "official_plans_url": "https://www.verizon.com/home/internet/5g/",
       "availability_check_url": "https://www.verizon.com/home/internet/5g/",
       "affiliate_url": null,
@@ -115,22 +115,22 @@
         {
           "name": "5G Home",
           "standard_monthly_price": 60,
-          "display_price": "$60/mo before eligible discounts",
-          "pricing_note": "Current base advertised rate before eligible Auto Pay and Mobile + Home discounts.",
+          "display_price": "As low as $60/mo with Auto Pay and a Verizon mobile plan",
+          "pricing_note": "Advertised price with eligible Auto Pay and Mobile + Home discounts, per the official page. The undiscounted price is not listed there.",
           "source": "https://www.verizon.com/home/internet/5g/"
         },
         {
           "name": "5G Home Plus",
           "standard_monthly_price": 70,
-          "display_price": "$70/mo before eligible discounts",
-          "pricing_note": "Current base advertised rate before eligible discounts.",
+          "display_price": "As low as $70/mo with Auto Pay and a Verizon mobile plan",
+          "pricing_note": "Advertised price with eligible discounts, per the official page. The undiscounted price is not listed there.",
           "source": "https://www.verizon.com/home/internet/5g/"
         },
         {
           "name": "5G Home Ultimate",
           "standard_monthly_price": 85,
-          "display_price": "$85/mo before eligible discounts",
-          "pricing_note": "Current base advertised rate before eligible discounts.",
+          "display_price": "As low as $85/mo with Auto Pay and a Verizon mobile plan",
+          "pricing_note": "Advertised price with eligible discounts, per the official page. The undiscounted price is not listed there.",
           "source": "https://www.verizon.com/home/internet/5g/"
         }
       ],
@@ -147,7 +147,7 @@
       "id": "starlink",
       "name": "Starlink Residential",
       "technology": "low-Earth-orbit satellite",
-      "last_verified": "2026-10-09",
+      "last_verified": "2026-10-11",
       "official_plans_url": "https://starlink.com/service-plans",
       "availability_check_url": "https://starlink.com/res-plans",
       "affiliate_url": null,
@@ -198,7 +198,7 @@
         }
       ],
       "promotions": [],
-      "verification_note": "Pricing retained from the user-supplied October 9 official-source provider review. October 10 automated retrieval returned a JavaScript shell and did not independently reverify pricing."
+      "verification_note": "Prices ($55, $85, $130) confirmed on the official Starlink residential page in a browser on October 11, 2026."
     },
     {
       "id": "hughesnet",
