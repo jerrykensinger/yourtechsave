@@ -8,7 +8,7 @@
     {
       "id": "visible",
       "name": "Visible",
-      "last_verified": "2026-10-10",
+      "last_verified": "2026-10-11",
       "official_plans_url": "https://www.visible.com/m/plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -201,7 +201,7 @@
     {
       "id": "att",
       "name": "AT&T",
-      "last_verified": "2026-10-10",
+      "last_verified": "2026-10-11",
       "official_plans_url": "https://www.att.com/plans/wireless-b/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -275,7 +275,7 @@
     {
       "id": "t-mobile",
       "name": "T-Mobile",
-      "last_verified": "2026-10-10",
+      "last_verified": "2026-10-11",
       "official_plans_url": "https://www.t-mobile.com/cell-phone-plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -294,6 +294,11 @@
           "label": "Taxes & fees",
           "value": "Extra; provider recovery fees, government taxes and other surcharges may apply",
           "source": "https://www.t-mobile.com/cell-phone-plans"
+        },
+        {
+          "label": "Recovery fee increase",
+          "value": "T-Mobile's Regulatory Programs & Telco Recovery Fee rises from $4.49 to $5.49 per voice line per month and from $2.10 to $2.60 per mobile internet line per month, effective October 12, 2026. T-Mobile states the fee is not a government tax. Whether it applies on top of a plan price depends on whether that plan includes taxes and fees.",
+          "source": "https://www.t-mobile.com/support/account/whats-impacting-your-bill"
         },
         {
           "label": "Data and hotspot",
