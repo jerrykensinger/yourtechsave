@@ -31,10 +31,12 @@
      (p.plans||[]).forEach(pl=>{
        let price='Check address pricing';
        if(!isStale){
-         if(pl.display_price)price=esc(pl.display_price);
-         else if(typeof pl.standard_monthly_price==='number')price='$'+pl.standard_monthly_price+'/mo';
+         if(typeof pl.standard_monthly_price==='number' && Number.isFinite(pl.standard_monthly_price)){
+           const detail=pl.display_price ? String(pl.display_price).replace(/^\$[\d,.]+\/mo\s*/, '').trim() : '';
+           price='$'+pl.standard_monthly_price+'/mo'+(detail?' '+esc(detail):'');
+         } else if(pl.display_price)price=esc(pl.display_price);
        } else if(typeof pl.standard_monthly_price==='number'||pl.display_price) price='Price hidden until reverified';
-       html+='<div class="plan-card"><strong>'+esc(pl.name)+'</strong><div class="plan-price">'+price+'</div><div class="micro">'+esc(pl.pricing_note)+'</div>'+(pl.source?'<div class="micro" style="margin-top:8px"><a href="'+esc(pl.source)+'" rel="external">Plan/source details</a></div>':'')+'</div>';
+       html+='<div class="plan-card"><strong>'+esc(pl.name)+'</strong><div class="plan-price" data-plan-name="'+esc(pl.name)+'">'+price+'</div><div class="micro">'+esc(pl.pricing_note)+'</div>'+(pl.source?'<div class="micro" style="margin-top:8px"><a href="'+esc(pl.source)+'" rel="external">Plan/source details</a></div>':'')+'</div>';
      });
      html+='</div>';
      if((p.promotions||[]).length)html+='<div class="comparison-policy" style="margin-top:18px"><strong>Promotions monitored separately.</strong> Limited-time offers and bundle discounts are not used as the regular-price baseline.</div>';
