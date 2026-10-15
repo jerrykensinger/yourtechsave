@@ -95,7 +95,7 @@
     {
       "id": "us-mobile",
       "name": "US Mobile",
-      "last_verified": "2026-10-10",
+      "last_verified": "2026-10-15",
       "official_plans_url": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -117,7 +117,12 @@
         },
         {
           "label": "Regular monthly pricing",
-          "value": "Unlimited Flex $17.50, Unlimited Starter $25, Unlimited Premium $44",
+          "value": "Unlimited Flex $17.50, Unlimited Starter $25, Unlimited Premium $39/month for the first 6 months for new lines, then $44/month",
+          "source": "https://www.usmobile.com/plans"
+        },
+        {
+          "label": "By the Gig option",
+          "value": "2GB for $10/month; the former Light 2GB $8 tier no longer appears on the official plans page",
           "source": "https://www.usmobile.com/plans"
         }
       ],
@@ -137,7 +142,7 @@
         {
           "name": "Unlimited Premium",
           "standard_monthly_price": 44,
-          "pricing_note": "Regular monthly rate; high-priority data on Warp and Dark Star, with the largest included roaming allowance",
+          "pricing_note": "Introductory $39/month for the first 6 months for new lines, then the regular $44/month rate. High-priority data on Warp and Dark Star, with the largest included roaming allowance",
           "source": "https://www.usmobile.com/help/docs/our-plans/core-plans/unlimited-data-plans"
         }
       ]
