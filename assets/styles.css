@@ -215,6 +215,9 @@ html[data-theme="dark"] .quick-opportunity p{color:#b9c6d8}
 .promo-status.current{background:#e9f8ee;color:#147a35}
 .promo-status.ending{background:#fff4d8;color:#8a5b00}
 .promo-status.ended{background:#eef1f5;color:#5c6675}
+.promo-status.review{background:#ffe9d6;color:#9a4a00}
+.promo-card.review{border-color:#e8a86e}
+.promo-review-note{background:#fff7ee;border:1px solid #f0d3ac;border-radius:10px;padding:10px 12px;margin:0 0 12px;color:#6b4a1f;font-size:.92rem}
 .promo-card h3{font-size:1rem;color:var(--muted);margin-bottom:3px}
 .promo-card h4{font-size:1.22rem;line-height:1.25;color:var(--navy);margin:0 0 10px}
 .promo-card p{color:#4c5b73}

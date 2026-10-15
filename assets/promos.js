@@ -3,6 +3,7 @@
  if(!mountCurrent)return;
  const mountEnding=document.getElementById('endingPromos');
  const mountEnded=document.getElementById('endedPromos');
+ const mountReview=document.getElementById('reviewPromos');
  const filters=document.getElementById('promoFilters');
  const notice=document.getElementById('promoFreshnessNotice');
  let all=[],policy={max_age_days:7},activeFilter='All';
@@ -16,6 +17,7 @@
  const esc=s=>String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
  function state(p){
+   if(p.status==='needs_review')return 'review';
    const end=p.end_date?daysUntil(p.end_date):null;
    if(p.status==='ended'||(end!==null&&end<0))return 'ended';
    const fresh=ageDays(p.last_verified)<=Number(policy.max_age_days||7);
@@ -30,11 +32,12 @@
    const link=p.affiliate_url||p.source;
    const linkLabel=p.affiliate_url?(p.affiliate_label||'View offer'):'Verify with provider';
    const endText=p.end_date?'<div><span>Published end date</span><strong>'+esc(fmt(p.end_date))+'</strong></div>':'<div><span>Published end date</span><strong>Not published</strong></div>';
-   const statusLabel=status==='ending'?'Ending soon':status==='ended'?'Ended':'Current';
+   const statusLabel=status==='ending'?'Ending soon':status==='ended'?'Ended':status==='review'?'Needs review':'Current';
    return '<article class="promo-card '+status+'">'+
      '<div class="promo-card-top"><span class="promo-category">'+esc(p.category)+'</span><span class="promo-status '+status+'">'+statusLabel+'</span></div>'+
      '<h3>'+esc(p.provider)+'</h3><h4>'+esc(p.title)+'</h4>'+
      '<p>'+esc(p.summary)+'</p>'+
+     (status==='review'&&p.review_reason?'<div class="promo-review-note"><strong>Under review:</strong> '+esc(p.review_reason)+'</div>':'')+
      '<div class="promo-meta"><div><span>Last confirmed active</span><strong>'+esc(fmt(p.last_verified))+'</strong></div>'+endText+'</div>'+
      '<div class="promo-eligibility"><strong>Who should check it:</strong> '+esc(p.eligibility)+'</div>'+
      '<a class="btn btn-outline promo-source" href="'+esc(link)+'" rel="external sponsored noopener" target="_blank">'+esc(linkLabel)+' →</a>'+
@@ -48,11 +51,13 @@
    const current=visible.filter(p=>state(p)==='current');
    const ending=visible.filter(p=>state(p)==='ending');
    const ended=visible.filter(p=>state(p)==='ended').sort((a,b)=>(b.end_date||b.last_verified).localeCompare(a.end_date||a.last_verified));
+   const review=visible.filter(p=>state(p)==='review');
    const stale=visible.filter(p=>state(p)==='stale');
 
    mountCurrent.innerHTML=current.length?current.map(p=>card(p,'current')).join(''):empty('No currently verified promotions in this category.');
    mountEnding.innerHTML=ending.length?ending.map(p=>card(p,'ending')).join(''):empty('No promotions with a published end date in the next 14 days.');
    mountEnded.innerHTML=ended.length?ended.slice(0,12).map(p=>card(p,'ended')).join(''):empty('No ended promotions have been archived yet.');
+   if(mountReview)mountReview.innerHTML=review.length?review.map(p=>card(p,'review')).join(''):empty('No promotions are under review right now.');
 
    if(stale.length){
      notice.className='freshness stale';

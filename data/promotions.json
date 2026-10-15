@@ -235,7 +235,24 @@
       "source": "https://www.visible.com/m/deals",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "November 1 deadline supplied by the user report; not independently verified."
+      "verification_note": "November 1 deadline supplied by the user report; not independently verified.",
+      "review_reason": "Reported $50 gift card with November 1 end date could not be found on official Visible pages on October 13-14. Kept out of Current until the offer is confirmed on an official source."
+    },
+    {
+      "id": "visible-5off5-2026-10",
+      "provider": "Visible",
+      "category": "Wireless",
+      "title": "5OFF5: $5/mo off Visible+ or Visible+ Pro for 60 months",
+      "summary": "New members who port in an eligible number get $5/mo off the $35/mo Visible+ plan or $5/mo off the $45/mo Visible+ Pro plan for the first 60 months by entering promo code 5OFF5 at checkout.",
+      "eligibility": "New members only. Port-in from an eligible carrier required within 30 days of activation; monthly Visible+ or Visible+ Pro plan required (annual plans excluded); bring your own device or purchase a new device. Discount forfeited if you switch to an ineligible plan or terminate service; it continues at $5/mo if you move between eligible plans without restarting the 60-month period. Cannot combine with other service or device promotions or Inner Circle credits. $5 minimum monthly service charge; taxes and fees are included in the amount paid.",
+      "first_seen": "2026-10-14",
+      "last_verified": "2026-10-14",
+      "end_date": "2026-10-29",
+      "status": "current",
+      "source": "https://www.visible.com/m/deals",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "Verified October 14, 2026 on the official Visible deals page. Offer disclosure: ends 10/29/2026 at 11:59pm EST."
     }
   ]
 }
