@@ -19,7 +19,7 @@
  function state(p){
    if(p.status==='needs_review')return 'review';
    const end=p.end_date?daysUntil(p.end_date):null;
-   if(p.status==='ended'||(end!==null&&end<0))return 'ended';
+   if(p.status==='ended')return 'ended';
    const fresh=ageDays(p.last_verified)<=Number(policy.max_age_days||7);
    if(p.status==='current'&&fresh){
      if(end!==null&&end>=0&&end<=14)return 'ending';
