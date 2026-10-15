@@ -253,6 +253,22 @@
       "affiliate_url": null,
       "affiliate_label": null,
       "verification_note": "Verified October 14, 2026 on the official Visible deals page. Offer disclosure: ends 10/29/2026 at 11:59pm EST."
+    },
+    {
+      "id": "hughesnet-free-installation-2026-10",
+      "provider": "Hughesnet",
+      "category": "Home Internet",
+      "title": "Free professional installation for new lease subscribers",
+      "summary": "Free standard professional installation for new lease subscribers. Limited-time offer; no end date published.",
+      "eligibility": "New subscribers on the Lease option only; not valid with the Purchase option. Verify address-specific rates and current offer terms directly with Hughesnet.",
+      "first_seen": "2026-10-14",
+      "last_verified": "2026-10-15",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.hughesnet.com/",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "Verified live on hughesnet.com homepage Oct 15, 2026; free standard professional installation for new Lease subscribers only, not valid with Purchase option; no end date published."
     }
   ]
 }
