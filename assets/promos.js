@@ -38,6 +38,8 @@
      '<h3>'+esc(p.provider)+'</h3><h4>'+esc(p.title)+'</h4>'+
      '<p>'+esc(p.summary)+'</p>'+
      (status==='review'&&p.review_reason?'<div class="promo-review-note"><strong>Under review:</strong> '+esc(p.review_reason)+'</div>':'')+
+     (status!=='review'&&status!=='ended'&&p.end_date&&daysUntil(p.end_date)<0?'<div class="promo-review-note"><strong>Check the end date:</strong> The published end date has passed, but the provider was still advertising this offer when we last checked ('+esc(fmt(p.last_verified))+'). Confirm it is still available before you act.</div>':'')+
+     (status==='current'&&p.review_reason?'<div class="promo-review-note"><strong>Note:</strong> '+esc(p.review_reason)+'</div>':'')+
      '<div class="promo-meta"><div><span>Last confirmed active</span><strong>'+esc(fmt(p.last_verified))+'</strong></div>'+endText+'</div>'+
      '<div class="promo-eligibility"><strong>Who should check it:</strong> '+esc(p.eligibility)+'</div>'+
      '<a class="btn btn-outline promo-source" href="'+esc(link)+'" rel="external sponsored noopener" target="_blank">'+esc(linkLabel)+' →</a>'+
