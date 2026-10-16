@@ -149,16 +149,15 @@
       "category": "Wireless",
       "title": "ONLY199: Unlimited Starter first year for $199",
       "summary": "New-line annual offer: pay $199 upfront for the first year of Unlimited Starter; the currently advertised renewal is $270/year. Taxes and fees included.",
-      "eligibility": "First-year annual offer for eligible new lines. US Mobile's promo archive lists this 'Only Deals' offer as September 30 - October 14, 2026 (the ONLY199/ONLY299 codes are not shown on the plans page; first-year prices are labeled 'New line offer'). Upfront annual payment required. Re-verified October 15, 2026: still advertised on usmobile.com/plans although the archive's published end date (October 14, 2026) has passed without an extension; verify availability directly with US Mobile.",
+      "eligibility": "First-year annual offer for eligible new lines; annual upfront payment required. Official Only Deals archive now lists September 30 through October 20, 2026. Confirm checkout eligibility and renewal terms directly with US Mobile; do not assume compatibility with the separate FlashBlack Friday monthly offer.",
       "first_seen": "2026-10-12",
-      "last_verified": "2026-10-15",
-      "end_date": "2026-10-14",
+      "last_verified": "2026-10-16",
+      "end_date": "2026-10-20",
       "status": "current",
       "source": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "October 15, 2026 (deployment gate for local commit b994d6b): usmobile.com/plans still advertises 'New line offer' Unlimited Starter first year $199, renews at $270 (codes ONLY199/ONLY299 not shown on plans page). usmobile.com/promo-archive still lists 'Only Deals' under Current Plan Offers with published end date October 14, 2026 - not extended, not moved to past offers. Per the approved promo lifecycle (a passed end date never proves endedness), status stays current with last_verified 2026-10-15. Evidence: https://www.usmobile.com/plans and https://www.usmobile.com/promo-archive, checked 2026-10-15 ~09:20 ET.",
-      "review_reason": "Published end date October 14, 2026 has passed without an official extension, but the offer is still advertised on usmobile.com/plans as of October 15, 2026. Watch the promo archive for an extension or removal."
+      "verification_note": "October 16, 2026: official promo archive confirms Only Deals extended to October 20, 2026; plans page confirms first-year $199 Starter/$299 Premium and $270/$390 annual renewals. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans"
     },
     {
       "id": "us-mobile-only299-2026-10",
@@ -166,16 +165,15 @@
       "category": "Wireless",
       "title": "ONLY299: Unlimited Premium first year for $299",
       "summary": "New-line annual offer: pay $299 upfront for the first year of Unlimited Premium; the currently advertised renewal is $390/year. Taxes and fees included.",
-      "eligibility": "First-year annual offer for eligible new lines. US Mobile's promo archive lists this 'Only Deals' offer as September 30 - October 14, 2026 (the ONLY199/ONLY299 codes are not shown on the plans page; first-year prices are labeled 'New line offer'). Upfront annual payment required. Re-verified October 15, 2026: still advertised on usmobile.com/plans although the archive's published end date (October 14, 2026) has passed without an extension; verify availability directly with US Mobile.",
+      "eligibility": "First-year annual offer for eligible new lines; annual upfront payment required. Official Only Deals archive now lists September 30 through October 20, 2026. Confirm checkout eligibility and renewal terms directly with US Mobile; do not assume compatibility with the separate FlashBlack Friday monthly offer.",
       "first_seen": "2026-10-12",
-      "last_verified": "2026-10-15",
-      "end_date": "2026-10-14",
+      "last_verified": "2026-10-16",
+      "end_date": "2026-10-20",
       "status": "current",
       "source": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "October 15, 2026 (deployment gate for local commit b994d6b): usmobile.com/plans still advertises 'New line offer' Unlimited Premium first year $299, renews at $390 (codes ONLY199/ONLY299 not shown on plans page). usmobile.com/promo-archive still lists 'Only Deals' under Current Plan Offers with published end date October 14, 2026 - not extended, not moved to past offers. Per the approved promo lifecycle (a passed end date never proves endedness), status stays current with last_verified 2026-10-15. Evidence: https://www.usmobile.com/plans and https://www.usmobile.com/promo-archive, checked 2026-10-15 ~09:20 ET.",
-      "review_reason": "Published end date October 14, 2026 has passed without an official extension, but the offer is still advertised on usmobile.com/plans as of October 15, 2026. Watch the promo archive for an extension or removal."
+      "verification_note": "October 16, 2026: official promo archive confirms Only Deals extended to October 20, 2026; plans page confirms first-year $199 Starter/$299 Premium and $270/$390 annual renewals. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans"
     },
     {
       "id": "viasat-max-easycare-2026-10",
@@ -270,6 +268,38 @@
       "affiliate_url": null,
       "affiliate_label": null,
       "verification_note": "Verified live on hughesnet.com homepage Oct 15, 2026; free standard professional installation for new Lease subscribers only, not valid with Purchase option; no end date published."
+    },
+    {
+      "id": "us-mobile-flashblack-friday-2026-10",
+      "provider": "US Mobile",
+      "category": "Wireless",
+      "title": "FlashBlack Friday: Starter $10/mo or Premium $20/mo for six months",
+      "summary": "Eligible new port-in lines can get monthly Unlimited Starter for $10/mo or Unlimited Premium for $20/mo for the first six months. Regular $25/$44 monthly rates apply afterward; this is separate from the annual offers.",
+      "eligibility": "Eligible port-in required according to the provider review; confirm eligible carriers, networks, activation deadline, any checkout code and continued-service requirements before ordering. Monthly offer, not annual pricing. Published offer window: October 15\u201320, 2026. Do not assume offers combine.",
+      "first_seen": "2026-10-15",
+      "last_verified": "2026-10-16",
+      "end_date": "2026-10-20",
+      "status": "current",
+      "source": "https://www.usmobile.com/promo-archive",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "October 16 official archive confirms offer dates, prices and six-month term. Detailed eligibility was not exposed in the retrieved archive; port-in requirement is retained from the supplied provider review."
+    },
+    {
+      "id": "visible-six-month-75-2026-10",
+      "provider": "Visible",
+      "category": "Wireless",
+      "title": "Six months of Visible for $75 upfront ($12.50/mo equivalent)",
+      "summary": "New members bringing their own device can prepay $75 for the first six months of the base Visible plan. Standard $25/month billing resumes in month seven; taxes and fees included.",
+      "eligibility": "New members only; bring your own compatible device and choose the Visible six-month promo bundle at checkout. Excludes annual plans, Visible+ and Visible+ Pro. Cannot combine with other service promotions or new-member Bring a Friend credits. Offer ends October 29, 2026; official disclosure states 11:59pm EST.",
+      "first_seen": "2026-10-16",
+      "last_verified": "2026-10-16",
+      "end_date": "2026-10-29",
+      "status": "current",
+      "source": "https://www.visible.com/plans",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "Verified October 16, 2026 against official plans page banner and six-month offer disclosure: $75 upfront, $25/mo from month 7, BYOD/new-member restrictions, and October 29 end date."
     }
   ]
 }

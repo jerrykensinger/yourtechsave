@@ -45,8 +45,11 @@
         {
           "name": "Visible+ Pro",
           "standard_monthly_price": 45,
-          "pricing_note": "Standard monthly rate; temporary promotions excluded",
-          "source": "https://www.visible.com/m/plans"
+          "pricing_note": "Standard monthly rate; temporary promotions excluded. Hotspot speed is under review following a reported 10Mbps/15Mbps source inconsistency; confirm the applicable speed directly with Visible.",
+          "source": "https://www.visible.com/m/plans",
+          "verification_status": "needs_review",
+          "verification_note": "October 16: retrieved detailed plans text and help feature table both show up to 15Mbps for Pro. The reported 10Mbps Pro claim was not reproduced. Retain conservative review note pending reconciliation; no numeric hotspot speed is asserted in the comparison.",
+          "last_checked": "2026-10-16"
         }
       ]
     },
