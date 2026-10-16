@@ -274,7 +274,7 @@
       "id": "viasat",
       "name": "Viasat",
       "technology": "satellite",
-      "last_verified": "2026-10-10",
+      "last_verified": "2026-10-15",
       "official_plans_url": "https://www.viasat.com/satellite-internet/plans/",
       "availability_check_url": "https://www.viasat.com/satellite-internet/plans/",
       "affiliate_url": null,
@@ -311,7 +311,7 @@
           "name": "Essentials",
           "standard_monthly_price": null,
           "display_price": null,
-          "pricing_note": "Current public offer starts at $39.99/mo for the first 12 months, then $69.99/mo; address-specific availability applies and equipment lease fees are extra.",
+          "pricing_note": "Current public offer starts at $39.99/mo for the first 12 months, then $69.99/mo; 24-month service term; address-specific availability applies and equipment lease fees are extra.",
           "source": "https://www.viasat.com/satellite-internet/plans/"
         },
         {
