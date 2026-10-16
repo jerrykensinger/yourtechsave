@@ -29,12 +29,13 @@
       "summary": "For a limited time, new Mint Mobile customers can get any 6-month plan, including Unlimited, for $10/mo. A $60 upfront payment is required for the first six months.",
       "eligibility": "New customers only. Offer applies to the first 6 months; full-price plan options apply after the promotional term. Taxes and fees are extra. Purchase must be activated within Mint's stated activation window.",
       "first_seen": "2026-10-08",
-      "last_verified": "2026-10-14",
+      "last_verified": "2026-10-15",
       "end_date": null,
       "status": "current",
       "source": "https://www.mintmobile.com/help/what-is-mints-10-year-anniversary-promotion/",
       "affiliate_url": null,
-      "affiliate_label": null
+      "affiliate_label": null,
+      "verification_note": "Confirmed live Oct 15, 2026 via manual check of mintmobile.com/plans/ FCC labels: all four 6-month tiers at $10/mo introductory rate ($60 upfront). No published end date."
     },
     {
       "id": "viasat-intro-pricing-2026-10",
@@ -229,13 +230,13 @@
       "summary": "Provider-check report identifies a $50 gift-card offer ending November 1. The offer and eligibility were not found in the official pages retrieved on October 13; hidden from Current pending confirmation.",
       "eligibility": "Plan, port-in, payment, redemption and qualifying-service requirements remain unconfirmed. Do not treat this as an available savings offer.",
       "first_seen": "2026-10-13",
-      "last_verified": null,
+      "last_verified": "2026-10-15",
       "end_date": "2026-11-01",
       "status": "needs_review",
       "source": "https://www.visible.com/m/deals",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "November 1 deadline supplied by the user report; not independently verified.",
+      "verification_note": "Not found on visible.com/deals Oct 12-14 (automated checks) or Oct 15 (manual check by site owner). Never published; remains hidden pending official confirmation.",
       "review_reason": "Reported $50 gift card with November 1 end date could not be found on official Visible pages on October 13-14. Kept out of Current until the offer is confirmed on an official source."
     },
     {
