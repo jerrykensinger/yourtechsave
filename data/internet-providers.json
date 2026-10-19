@@ -84,7 +84,7 @@
       "id": "verizon-home",
       "name": "Verizon 5G Home Internet",
       "technology": "5G fixed wireless",
-      "last_verified": "2026-10-11",
+      "last_verified": "2026-10-18",
       "official_plans_url": "https://www.verizon.com/home/internet/5g/",
       "availability_check_url": "https://www.verizon.com/home/internet/5g/",
       "affiliate_url": null,
@@ -98,6 +98,11 @@
         {
           "label": "Equipment",
           "value": "Router included on current 5G Home plans",
+          "source": "https://www.verizon.com/home/internet/5g/"
+        },
+        {
+          "label": "Installation",
+          "value": "$99 professional setup charge may apply. Waived for select plans and locations.",
           "source": "https://www.verizon.com/home/internet/5g/"
         },
         {
@@ -116,21 +121,21 @@
           "name": "5G Home",
           "standard_monthly_price": 60,
           "display_price": "As low as $60/mo with Auto Pay and a Verizon mobile plan",
-          "pricing_note": "Advertised price with eligible Auto Pay and Mobile + Home discounts, per the official page. The undiscounted price is not listed there.",
+          "pricing_note": "Undiscounted $60/mo with Auto Pay; as low as $35/mo with Auto Pay + eligible Mobile + Home discount (per Oct 14, 2026 live-browser verification; discounted figures not re-readable via text fetch Oct 17).",
           "source": "https://www.verizon.com/home/internet/5g/"
         },
         {
           "name": "5G Home Plus",
           "standard_monthly_price": 70,
           "display_price": "As low as $70/mo with Auto Pay and a Verizon mobile plan",
-          "pricing_note": "Advertised price with eligible discounts, per the official page. The undiscounted price is not listed there.",
+          "pricing_note": "Undiscounted $70/mo with Auto Pay; as low as $45/mo with Auto Pay + eligible Mobile + Home discount (per Oct 14, 2026 live-browser verification; discounted figures not re-readable via text fetch Oct 17).",
           "source": "https://www.verizon.com/home/internet/5g/"
         },
         {
           "name": "5G Home Ultimate",
           "standard_monthly_price": 85,
           "display_price": "As low as $85/mo with Auto Pay and a Verizon mobile plan",
-          "pricing_note": "Advertised price with eligible discounts, per the official page. The undiscounted price is not listed there.",
+          "pricing_note": "Undiscounted $85/mo with Auto Pay; as low as $60/mo with Auto Pay + eligible Mobile + Home discount (per Oct 14, 2026 live-browser verification; discounted figures not re-readable via text fetch Oct 17).",
           "source": "https://www.verizon.com/home/internet/5g/"
         }
       ],
