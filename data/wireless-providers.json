@@ -8,7 +8,7 @@
     {
       "id": "visible",
       "name": "Visible",
-      "last_verified": "2026-10-11",
+      "last_verified": "2026-10-20",
       "official_plans_url": "https://www.visible.com/m/plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -56,14 +56,14 @@
     {
       "id": "verizon",
       "name": "Verizon",
-      "last_verified": "2026-10-10",
+      "last_verified": "2026-10-20",
       "official_plans_url": "https://www.verizon.com/support/current-unlimited-plans/",
       "affiliate_url": null,
       "affiliate_label": null,
       "facts": [
         {
           "label": "Current unlimited plan family",
-          "value": "Unlimited Welcome, Unlimited Plus, Unlimited Ultimate",
+          "value": "Simplicity Plan, Unlimited Welcome, Unlimited Plus, Unlimited Ultimate",
           "source": "https://www.verizon.com/support/current-unlimited-plans/"
         },
         {
@@ -78,6 +78,12 @@
         }
       ],
       "plans": [
+        {
+          "name": "Simplicity Plan",
+          "standard_monthly_price": null,
+          "pricing_note": "Verizon advertises $30 per line at any line count after Auto Pay and a $15/mo switch discount, plus taxes and fees. The price before those discounts is not stated, so no standard price is recorded. Confirm eligibility with Verizon.",
+          "source": "https://www.verizon.com/plans/unlimited/"
+        },
         {
           "name": "Unlimited Welcome",
           "standard_monthly_price": null,
@@ -209,7 +215,7 @@
     {
       "id": "att",
       "name": "AT&T",
-      "last_verified": "2026-10-11",
+      "last_verified": "2026-10-20",
       "official_plans_url": "https://www.att.com/plans/wireless-b/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -284,7 +290,7 @@
     {
       "id": "t-mobile",
       "name": "T-Mobile",
-      "last_verified": "2026-10-11",
+      "last_verified": "2026-10-20",
       "official_plans_url": "https://www.t-mobile.com/cell-phone-plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -296,7 +302,7 @@
         },
         {
           "label": "4-line standard account pricing",
-          "value": "Essentials 2.0 $140, Experience More 2.0 $220, Experience Beyond 2.0 $280 before AutoPay or other discounts",
+          "value": "Essentials 4 Line Offer 2.0 $120 (limited-time 4-line offer), Experience More 2.0 $220, Experience Beyond 2.0 $280, as shown on T-Mobile's plan page, which states that displayed plan prices include AutoPay and paper-free billing discounts",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
@@ -319,22 +325,22 @@
         {
           "name": "Essentials 2.0",
           "standard_monthly_price": null,
-          "display_price": "$140/mo for 4 lines",
-          "pricing_note": "Standard 4-line account price before AutoPay or other discounts; 50GB premium data; taxes and fees extra",
+          "display_price": "$120/mo for 4 lines",
+          "pricing_note": "Limited-time 4-line offer price as shown on the plan page (original price; a lower sale price is shown separately and is not used here); page states prices include AutoPay and paper-free billing discounts; 50GB premium data; taxes and fees extra",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
           "name": "Experience More 2.0",
           "standard_monthly_price": null,
           "display_price": "$220/mo for 4 lines",
-          "pricing_note": "Standard 4-line account price before AutoPay or other discounts; unlimited premium data and 60GB high-speed hotspot",
+          "pricing_note": "Original 4-line price as shown on the plan page (page states prices include AutoPay and paper-free billing discounts; sale and 3rd-line-free pricing are separate); unlimited premium data and 60GB high-speed hotspot",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
           "name": "Experience Beyond 2.0",
           "standard_monthly_price": null,
           "display_price": "$280/mo for 4 lines",
-          "pricing_note": "Standard 4-line account price before AutoPay or other discounts; unlimited premium data plus higher-tier entertainment, international and upgrade benefits",
+          "pricing_note": "Original 4-line price as shown on the plan page (page states prices include AutoPay and paper-free billing discounts; sale and 3rd-line-free pricing are separate); unlimited premium data plus higher-tier entertainment, international and upgrade benefits",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         }
       ]
