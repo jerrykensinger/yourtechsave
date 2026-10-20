@@ -1,0 +1,511 @@
+{
+ "policy": {
+  "max_age_days": 7,
+  "pricing_basis": "Prices are US dollars for personal plans, as shown on each provider's official page. Monthly price is the price when billed monthly. Annual price is the total for one year when billed yearly. Prices exclude sales tax.",
+  "promotion_policy": "First-year, sale and lifetime prices are not used as standard prices. They are noted separately.",
+  "storage_units": "Cost per TB uses 1 TB = 1,000 GB, as providers advertise.",
+  "excluded_providers": "MEGA could not be checked from an official source and Carbonite lists only business plans, so neither is included.",
+  "affiliate_policy": "No affiliate links are used on this comparison."
+ },
+ "providers": [
+  {
+   "id": "google-one",
+   "name": "Google One",
+   "category": "cloud_storage",
+   "last_verified": "2026-10-20",
+   "official_plans_url": "https://one.google.com/about/plans",
+   "affiliate_url": null,
+   "affiliate_label": null,
+   "facts": [
+    {
+     "label": "Free storage",
+     "value": "Every Google account includes 15 GB, shared across Google Photos, Drive and Gmail.",
+     "source": "https://one.google.com/about/plans"
+    },
+    {
+     "label": "Plan naming",
+     "value": "The 2 TB and 5 TB plans are Google AI plans that bundle Gemini features with the storage.",
+     "source": "https://one.google.com/about/plans"
+    }
+   ],
+   "plans": [
+    {
+     "name": "Google One Basic",
+     "storage_gb": 100,
+     "storage_label": "100 GB",
+     "tier": "small",
+     "standard_monthly_price": 1.99,
+     "annual_billed_price": null,
+     "extras": "Photos, Drive and Gmail storage; share with up to 5 others",
+     "pricing_note": "Annual price was not shown on the annual view when checked.",
+     "source": "https://one.google.com/about/plans",
+     "users": "Share with up to 5 others"
+    },
+    {
+     "name": "Google AI Plus",
+     "storage_gb": 2000,
+     "storage_label": "2 TB",
+     "tier": "large",
+     "standard_monthly_price": 9.99,
+     "annual_billed_price": 99.99,
+     "extras": "Includes Gemini AI features",
+     "pricing_note": "Annual plan is billed once per year.",
+     "source": "https://one.google.com/about/plans",
+     "users": "Share with up to 5 others"
+    },
+    {
+     "name": "Google AI Pro",
+     "storage_gb": 5000,
+     "storage_label": "5 TB",
+     "tier": "xlarge",
+     "standard_monthly_price": 19.99,
+     "annual_billed_price": 199.99,
+     "extras": "Includes expanded Gemini AI, YouTube Premium Lite and Google Home Premium (Standard)",
+     "pricing_note": "Annual plan is billed once per year.",
+     "source": "https://one.google.com/about/plans",
+     "users": "Share with up to 5 others"
+    }
+   ]
+  },
+  {
+   "id": "icloud",
+   "name": "iCloud+",
+   "category": "cloud_storage",
+   "last_verified": "2026-10-20",
+   "official_plans_url": "https://support.apple.com/en-us/108047",
+   "affiliate_url": null,
+   "affiliate_label": null,
+   "facts": [
+    {
+     "label": "Billing",
+     "value": "Apple lists monthly prices; some US residents may have sales tax added.",
+     "source": "https://support.apple.com/en-us/108047"
+    }
+   ],
+   "plans": [
+    {
+     "name": "iCloud+ 50 GB",
+     "storage_gb": 50,
+     "storage_label": "50 GB",
+     "tier": "small",
+     "standard_monthly_price": 0.99,
+     "annual_billed_price": null,
+     "extras": "Private Relay, Hide My Email, HomeKit Secure Video for one camera",
+     "pricing_note": "Monthly billing only.",
+     "source": "https://support.apple.com/en-us/108047",
+     "users": "Share with up to 5 others"
+    },
+    {
+     "name": "iCloud+ 200 GB",
+     "storage_gb": 200,
+     "storage_label": "200 GB",
+     "tier": "small",
+     "standard_monthly_price": 2.99,
+     "annual_billed_price": null,
+     "extras": "Same features; HomeKit Secure Video for up to five cameras",
+     "pricing_note": "Monthly billing only.",
+     "source": "https://support.apple.com/en-us/108047",
+     "users": "Share with up to 5 others"
+    },
+    {
+     "name": "iCloud+ 2 TB",
+     "storage_gb": 2000,
+     "storage_label": "2 TB",
+     "tier": "large",
+     "standard_monthly_price": 9.99,
+     "annual_billed_price": null,
+     "extras": "Same features; unlimited HomeKit Secure Video cameras",
+     "pricing_note": "Monthly billing only.",
+     "source": "https://support.apple.com/en-us/108047",
+     "users": "Share with up to 5 others"
+    },
+    {
+     "name": "iCloud+ 6 TB",
+     "storage_gb": 6000,
+     "storage_label": "6 TB",
+     "tier": "xlarge",
+     "standard_monthly_price": 29.99,
+     "annual_billed_price": null,
+     "extras": "Same features as 2 TB",
+     "pricing_note": "Monthly billing only.",
+     "source": "https://support.apple.com/en-us/108047",
+     "users": "Share with up to 5 others"
+    },
+    {
+     "name": "iCloud+ 12 TB",
+     "storage_gb": 12000,
+     "storage_label": "12 TB",
+     "tier": "xlarge",
+     "standard_monthly_price": 59.99,
+     "annual_billed_price": null,
+     "extras": "Same features as 2 TB",
+     "pricing_note": "Monthly billing only.",
+     "source": "https://support.apple.com/en-us/108047",
+     "users": "Share with up to 5 others"
+    }
+   ]
+  },
+  {
+   "id": "dropbox",
+   "name": "Dropbox",
+   "category": "cloud_storage",
+   "last_verified": "2026-10-20",
+   "official_plans_url": "https://www.dropbox.com/plans",
+   "affiliate_url": null,
+   "affiliate_label": null,
+   "facts": [
+    {
+     "label": "Free plan",
+     "value": "Dropbox Basic includes 2 GB.",
+     "source": "https://www.dropbox.com/plans"
+    }
+   ],
+   "plans": [
+    {
+     "name": "Dropbox Plus",
+     "storage_gb": 2000,
+     "storage_label": "2 TB",
+     "tier": "large",
+     "standard_monthly_price": 11.99,
+     "annual_billed_price": 119.88,
+     "extras": "30 days to restore deleted files, transfers up to 50 GB, PDF editing and signatures",
+     "pricing_note": "Dropbox shows $9.99 a month when billed yearly; the annual total is 12 times that.",
+     "source": "https://www.dropbox.com/plans",
+     "users": "1 person"
+    }
+   ]
+  },
+  {
+   "id": "microsoft-onedrive",
+   "name": "Microsoft OneDrive / Microsoft 365",
+   "category": "cloud_storage",
+   "last_verified": "2026-10-20",
+   "official_plans_url": "https://www.microsoft.com/en-us/microsoft-365/onedrive/compare-onedrive-plans",
+   "affiliate_url": null,
+   "affiliate_label": null,
+   "facts": [
+    {
+     "label": "Included apps",
+     "value": "Microsoft 365 Personal, Family and Premium also include Microsoft 365 apps; Basic is storage and online protection.",
+     "source": "https://www.microsoft.com/en-us/microsoft-365/onedrive/compare-onedrive-plans"
+    }
+   ],
+   "plans": [
+    {
+     "name": "Microsoft 365 Basic",
+     "storage_gb": 100,
+     "storage_label": "100 GB",
+     "tier": "small",
+     "standard_monthly_price": 1.99,
+     "annual_billed_price": 19.99,
+     "extras": "Online protection and 100 GB OneDrive storage",
+     "pricing_note": "Annual plan is billed once per year.",
+     "source": "https://www.microsoft.com/en-us/microsoft-365/onedrive/compare-onedrive-plans",
+     "users": "1 person"
+    },
+    {
+     "name": "Microsoft 365 Personal",
+     "storage_gb": 1000,
+     "storage_label": "1 TB",
+     "tier": "medium",
+     "standard_monthly_price": 9.99,
+     "annual_billed_price": 99.99,
+     "extras": "Includes Microsoft 365 apps",
+     "pricing_note": "Annual plan is billed once per year.",
+     "source": "https://www.microsoft.com/en-us/microsoft-365/onedrive/compare-onedrive-plans",
+     "users": "1 person"
+    },
+    {
+     "name": "Microsoft 365 Family",
+     "storage_gb": 2000,
+     "storage_label": "2 TB shared",
+     "tier": "large",
+     "standard_monthly_price": 12.99,
+     "annual_billed_price": 129.99,
+     "extras": "Includes Microsoft 365 apps; 2 TB is shared across the group",
+     "pricing_note": "Annual plan is billed once per year.",
+     "source": "https://www.microsoft.com/en-us/microsoft-365/onedrive/compare-onedrive-plans",
+     "users": "1 to 6 people"
+    },
+    {
+     "name": "Microsoft 365 Premium",
+     "storage_gb": 6000,
+     "storage_label": "Up to 6 TB (1 TB per person)",
+     "tier": "xlarge",
+     "standard_monthly_price": 19.99,
+     "annual_billed_price": 199.99,
+     "extras": "Includes Microsoft 365 apps and expanded Copilot access",
+     "pricing_note": "Cost per TB assumes all six people use their full 1 TB.",
+     "source": "https://www.microsoft.com/en-us/microsoft-365/onedrive/compare-onedrive-plans",
+     "users": "1 to 6 people"
+    }
+   ]
+  },
+  {
+   "id": "pcloud",
+   "name": "pCloud",
+   "category": "cloud_storage",
+   "last_verified": "2026-10-20",
+   "official_plans_url": "https://www.pcloud.com/cloud-storage-pricing-plans",
+   "affiliate_url": null,
+   "affiliate_label": null,
+   "facts": [
+    {
+     "label": "Lifetime plans",
+     "value": "pCloud also sells one-time lifetime plans: 500 GB for $219, 2 TB for $499, 10 TB for $1,499 (shown with higher crossed-out list prices). These are not compared above because they are a one-time purchase, not a subscription.",
+     "source": "https://www.pcloud.com/cloud-storage-pricing-plans"
+    },
+    {
+     "label": "File history",
+     "value": "Up to 30 days of file history on the plans listed.",
+     "source": "https://www.pcloud.com/cloud-storage-pricing-plans"
+    }
+   ],
+   "plans": [
+    {
+     "name": "pCloud Premium 500 GB",
+     "storage_gb": 500,
+     "storage_label": "500 GB",
+     "tier": "medium",
+     "standard_monthly_price": 4.99,
+     "annual_billed_price": 49.99,
+     "extras": "Total shared link traffic: 1,000 GB",
+     "pricing_note": "The page crosses out $59.88 for the annual plan; $49.99 is the current annual price.",
+     "source": "https://www.pcloud.com/cloud-storage-pricing-plans",
+     "users": "1 person"
+    },
+    {
+     "name": "pCloud Premium Plus 2 TB",
+     "storage_gb": 2000,
+     "storage_label": "2 TB",
+     "tier": "large",
+     "standard_monthly_price": 9.99,
+     "annual_billed_price": 99.99,
+     "extras": "Total shared link traffic: 4 TB",
+     "pricing_note": "The page crosses out $119.88 for the annual plan; $99.99 is the current annual price.",
+     "source": "https://www.pcloud.com/cloud-storage-pricing-plans",
+     "users": "1 person"
+    },
+    {
+     "name": "pCloud Ultra 10 TB",
+     "storage_gb": 10000,
+     "storage_label": "10 TB",
+     "tier": "xlarge",
+     "standard_monthly_price": 29.99,
+     "annual_billed_price": 299.99,
+     "extras": "Total shared link traffic: 20 TB",
+     "pricing_note": "The page crosses out $359.88 for the annual plan; $299.99 is the current annual price.",
+     "source": "https://www.pcloud.com/cloud-storage-pricing-plans",
+     "users": "1 person"
+    }
+   ]
+  },
+  {
+   "id": "proton",
+   "name": "Proton Drive",
+   "category": "cloud_storage",
+   "last_verified": "2026-10-20",
+   "official_plans_url": "https://proton.me/drive/pricing",
+   "affiliate_url": null,
+   "affiliate_label": null,
+   "facts": [
+    {
+     "label": "Version history",
+     "value": "Drive Plus lists 10 years to recover previous file versions.",
+     "source": "https://proton.me/drive/pricing"
+    },
+    {
+     "label": "Discount labels",
+     "value": "Proton shows percentage-off labels on its yearly prices. The page does not say whether those prices renew unchanged.",
+     "source": "https://proton.me/drive/pricing"
+    }
+   ],
+   "plans": [
+    {
+     "name": "Proton Drive Plus",
+     "storage_gb": 200,
+     "storage_label": "200 GB",
+     "tier": "small",
+     "standard_monthly_price": 4.99,
+     "annual_billed_price": 47.88,
+     "extras": "End-to-end encrypted Drive; 30-day money-back guarantee",
+     "pricing_note": "Yearly price shown as $3.99 a month, billed $47.88 every 12 months.",
+     "source": "https://proton.me/drive/pricing",
+     "users": "1 person"
+    },
+    {
+     "name": "Proton Unlimited",
+     "storage_gb": 500,
+     "storage_label": "500 GB + VPN",
+     "tier": "medium",
+     "standard_monthly_price": 12.99,
+     "annual_billed_price": 119.88,
+     "extras": "Bundle: Proton VPN, Mail, Calendar and Pass",
+     "pricing_note": "Yearly price shown as $9.99 a month, billed $119.88 every 12 months. This is a bundle, so cost per TB overstates the storage-only price.",
+     "source": "https://proton.me/drive/pricing",
+     "users": "1 person"
+    },
+    {
+     "name": "Proton Duo",
+     "storage_gb": 2000,
+     "storage_label": "2 TB + VPN",
+     "tier": "large",
+     "standard_monthly_price": 19.99,
+     "annual_billed_price": 179.88,
+     "extras": "Bundle: everything in Unlimited, up to 2 users, advanced account protection",
+     "pricing_note": "Yearly price shown as $14.99 a month, billed $179.88 every 12 months. This is a bundle, so cost per TB overstates the storage-only price.",
+     "source": "https://proton.me/drive/pricing",
+     "users": "Up to 2 users"
+    }
+   ]
+  },
+  {
+   "id": "sync",
+   "name": "Sync.com",
+   "category": "cloud_storage",
+   "last_verified": "2026-10-20",
+   "official_plans_url": "https://www.sync.com/pricing-individual/",
+   "affiliate_url": null,
+   "affiliate_label": null,
+   "facts": [
+    {
+     "label": "Promotion kept separate",
+     "value": "Sync advertises 25% off for the first year on these plans; plans renew at the regular price. The prices compared here are the regular prices.",
+     "source": "https://www.sync.com/pricing-individual/"
+    }
+   ],
+   "plans": [
+    {
+     "name": "Sync Personal 1TB",
+     "storage_gb": 1000,
+     "storage_label": "1 TB",
+     "tier": "medium",
+     "standard_monthly_price": 16,
+     "annual_billed_price": 144,
+     "extras": "Advanced sharing",
+     "pricing_note": "Regular price: $16 a month, or $12 a month billed annually ($144 a year). First-year promotion is not used here.",
+     "source": "https://www.sync.com/pricing-individual/",
+     "users": "1 person"
+    },
+    {
+     "name": "Sync Solo 5TB",
+     "storage_gb": 5000,
+     "storage_label": "5 TB",
+     "tier": "xlarge",
+     "standard_monthly_price": 32,
+     "annual_billed_price": 336,
+     "extras": "Advanced sharing, custom branding",
+     "pricing_note": "Regular price: $32 a month, or $28 a month billed annually ($336 a year). First-year promotion is not used here.",
+     "source": "https://www.sync.com/pricing-individual/",
+     "users": "1 person"
+    },
+    {
+     "name": "Sync Personal Unlimited",
+     "storage_gb": null,
+     "storage_label": "Unlimited",
+     "tier": "unlimited",
+     "standard_monthly_price": 54,
+     "annual_billed_price": 540,
+     "extras": "365-day file recovery",
+     "pricing_note": "Regular price: $54 a month, or $45 a month billed annually ($540 a year). First-year promotion is not used here.",
+     "source": "https://www.sync.com/pricing-individual/",
+     "users": "1 person"
+    }
+   ]
+  },
+  {
+   "id": "backblaze",
+   "name": "Backblaze Personal Backup",
+   "category": "backup",
+   "last_verified": "2026-10-20",
+   "official_plans_url": "https://www.backblaze.com/cloud-backup/personal",
+   "affiliate_url": null,
+   "affiliate_label": null,
+   "facts": [
+    {
+     "label": "What it backs up",
+     "value": "Backs up your Mac or PC, including connected external drives, with no storage limit.",
+     "source": "https://www.backblaze.com/cloud-backup/personal"
+    },
+    {
+     "label": "Version history",
+     "value": "Extended version history is available; keeping versions forever costs extra.",
+     "source": "https://www.backblaze.com/cloud-backup/personal"
+    }
+   ],
+   "plans": [
+    {
+     "name": "Backblaze Personal Backup",
+     "storage_gb": null,
+     "storage_label": "Unlimited",
+     "tier": "backup",
+     "standard_monthly_price": 9,
+     "annual_billed_price": 99,
+     "extras": "Mailed restore drive available (refunded if returned within 30 days)",
+     "pricing_note": "Also sold for 2 years at $189. The page does not state how many computers one subscription covers, so check the terms before buying for several computers.",
+     "source": "https://www.backblaze.com/cloud-backup/personal",
+     "annual_note": "Page shows $8.25 a month paid annually"
+    }
+   ]
+  },
+  {
+   "id": "idrive",
+   "name": "IDrive Personal",
+   "category": "backup",
+   "last_verified": "2026-10-20",
+   "official_plans_url": "https://www.idrive.com/pricing",
+   "affiliate_url": null,
+   "affiliate_label": null,
+   "facts": [
+    {
+     "label": "Promotion kept separate",
+     "value": "IDrive discounts the first year (about 30% off yearly, up to 50% off two years) for new customers; standard pricing applies after that. The prices compared here are the standard prices.",
+     "source": "https://www.idrive.com/pricing"
+    },
+    {
+     "label": "Overuse charge",
+     "value": "Going over your storage limit may be charged at $0.25 per GB per month.",
+     "source": "https://www.idrive.com/pricing"
+    }
+   ],
+   "plans": [
+    {
+     "name": "IDrive Personal 5 TB",
+     "storage_gb": 5000,
+     "storage_label": "5 TB",
+     "tier": "backup",
+     "standard_monthly_price": 11.99,
+     "annual_billed_price": 119.88,
+     "extras": "One user, multiple computers",
+     "pricing_note": "Standard yearly price is $9.99 a month; first-year price for new customers is $6.99 a month.",
+     "source": "https://www.idrive.com/pricing",
+     "users": "One user, multiple computers"
+    },
+    {
+     "name": "IDrive Personal 10 TB",
+     "storage_gb": 10000,
+     "storage_label": "10 TB",
+     "tier": "backup",
+     "standard_monthly_price": 17.99,
+     "annual_billed_price": 179.88,
+     "extras": "One user, multiple computers",
+     "pricing_note": "Standard yearly price is $14.99 a month; first-year price for new customers is $10.49 a month.",
+     "source": "https://www.idrive.com/pricing",
+     "users": "One user, multiple computers"
+    },
+    {
+     "name": "IDrive Personal 20 TB",
+     "storage_gb": 20000,
+     "storage_label": "20 TB",
+     "tier": "backup",
+     "standard_monthly_price": 29.99,
+     "annual_billed_price": 299.88,
+     "extras": "One user, multiple computers",
+     "pricing_note": "Standard yearly price is $24.99 a month; first-year price for new customers is $17.49 a month.",
+     "source": "https://www.idrive.com/pricing",
+     "users": "One user, multiple computers"
+    }
+   ]
+  }
+ ]
+}
