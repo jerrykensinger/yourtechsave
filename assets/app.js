@@ -260,3 +260,18 @@
  };
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
 })(); /* storage-link */
+
+(function(){
+ const mount=()=>{
+   const nav=document.querySelector('.nav-links');
+   if(nav&&!nav.querySelector('a[href="/storage/"]')){
+     const a=document.createElement('a');a.href='/storage/';a.textContent='Storage';
+     const cmp=nav.querySelector('a[href="/compare/"]');
+     if(cmp&&cmp.nextSibling)nav.insertBefore(a,cmp.nextSibling);else nav.appendChild(a);
+     const st=document.createElement('style');
+     st.textContent='@media(min-width:1201px) and (max-width:1360px){.nav-links{gap:14px;font-size:.86rem}.nav-links .btn{padding-left:12px;padding-right:12px;white-space:nowrap}.site-header .nav{gap:12px}}@media(min-width:851px) and (max-width:1200px){.nav-links{display:none}.menu-btn{display:block}.nav-actions{margin-left:auto}.nav.open .nav-links{position:absolute;top:71px;left:0;right:0;display:flex;flex-direction:column;align-items:stretch;background:#fff;padding:20px 4vw;border-bottom:1px solid var(--line)}html[data-theme="dark"] .nav.open .nav-links{background:#0d1929}}';
+     document.head.appendChild(st);
+   }
+ };
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+})(); /* storage-nav */
