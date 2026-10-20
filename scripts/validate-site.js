@@ -26,6 +26,7 @@ function isUrl(v) { return typeof v === 'string' && /^https:\/\//.test(v); }
 const wireless = load('data/wireless-providers.json');
 const internet = load('data/internet-providers.json');
 const promos = load('data/promotions.json');
+const storage = load('data/storage-providers.json');
 const numbers = new Set(); // every price-like number found in the data files
 
 function checkProviders(rel, data) {
@@ -41,7 +42,8 @@ function checkProviders(rel, data) {
     const d = checkDate(w, 'last_verified', p.last_verified);
     if (d && max) {
       const age = Math.floor((today - d) / DAY);
-      if (age >= max - 1) warn(w + ': verified ' + age + ' day(s) ago; goes stale soon (limit ' + max + ')');
+      if (age > max) warn(w + ': STALE: verified ' + age + ' day(s) ago (limit ' + max + '); its prices are hidden on the site until re-verified');
+      else if (age >= max - 1) warn(w + ': verified ' + age + ' day(s) ago; goes stale soon (limit ' + max + ')');
     }
     if (!isUrl(p.official_plans_url)) err(w + ': official_plans_url missing or not https');
     if (!Array.isArray(p.plans) || !p.plans.length) err(w + ': no plans');
@@ -60,6 +62,23 @@ function checkProviders(rel, data) {
 }
 checkProviders('data/wireless-providers.json', wireless);
 checkProviders('data/internet-providers.json', internet);
+checkProviders('data/storage-providers.json', storage);
+if (storage && Array.isArray(storage.providers)) {
+  const TIERS = ['small', 'medium', 'large', 'xlarge', 'unlimited', 'backup'];
+  storage.providers.forEach(p => {
+    if (!['cloud_storage', 'backup'].includes(p.category)) err('storage [' + p.id + ']: category must be cloud_storage or backup');
+    (p.plans || []).forEach(pl => {
+      const w = 'storage [' + p.id + '] plan "' + pl.name + '"';
+      if (!TIERS.includes(pl.tier)) err(w + ': tier must be one of ' + TIERS.join(', '));
+      if (pl.storage_gb !== null && !(typeof pl.storage_gb === 'number' && pl.storage_gb > 0)) err(w + ': storage_gb must be a positive number or null');
+      if (!pl.storage_label) err(w + ': missing storage_label');
+      if (pl.annual_billed_price !== null && pl.annual_billed_price !== undefined) {
+        if (typeof pl.annual_billed_price !== 'number' || !(pl.annual_billed_price > 0)) err(w + ': annual_billed_price is not a valid number');
+        else if (typeof pl.standard_monthly_price === 'number' && pl.annual_billed_price > pl.standard_monthly_price * 12 + 0.01) warn(w + ': yearly total is higher than 12 monthly payments; check the prices');
+      }
+    });
+  });
+}
 
 if (promos) {
   const max = promos.policy && promos.policy.max_age_days;
@@ -81,7 +100,8 @@ if (promos) {
       const lv = checkDate(w, 'last_verified', p.last_verified);
       if (lv && max) {
         const age = Math.floor((today - lv) / DAY);
-        if (p.status === 'current' && age >= max - 1) warn(w + ': verified ' + age + ' day(s) ago; will be hidden from Current soon');
+        if (p.status === 'current' && age > max) warn(w + ': STALE: verified ' + age + ' day(s) ago (limit ' + max + '); hidden from Current until re-verified');
+        else if (p.status === 'current' && age >= max - 1) warn(w + ': verified ' + age + ' day(s) ago; will be hidden from Current soon');
       }
     }
     // Lifecycle rule: a passed end_date is a review trigger, never proof of ending.
@@ -120,7 +140,7 @@ pages.forEach(f => {
     const abs = u.startsWith('/') ? u : path.posix.normalize(here + '/' + u);
     if (!exists(abs.replace(/^\//, ''))) err(rel(f) + ': broken internal link ' + m[1]);
   }
-  if (/^(compare|guides)\//.test(rel(f))) {
+  if (/^(compare|guides|storage)\//.test(rel(f))) {
     const text = html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>/g, ' ');
     const found = [...new Set((text.match(/\$[\d,]+(?:\.\d+)?/g) || []))];
     const unknown = found.filter(x => !numbers.has(parseFloat(x.replace(/[$,]/g, ''))));
@@ -146,7 +166,7 @@ try {
   });
 } catch (e) { warn('sitemap.xml not readable'); }
 
-console.log('Checked ' + pages.length + ' HTML pages and 3 data files.');
+console.log('Checked ' + pages.length + ' HTML pages and 4 data files.');
 warnings.forEach(w => console.log('WARNING  ' + w));
 errors.forEach(e => console.log('ERROR    ' + e));
 console.log(errors.length + ' error(s), ' + warnings.length + ' warning(s).');
