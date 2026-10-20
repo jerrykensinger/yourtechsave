@@ -250,3 +250,13 @@
  };
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
 })(); /* bill-explainer-link */
+
+(function(){
+ const mount=()=>{
+   const ul=document.querySelector('.footer-grid ul.list-clean');
+   if(ul&&!ul.querySelector('a[href="/storage/"]')){
+     const li=document.createElement('li');li.innerHTML='<a href="/storage/">Cloud Storage &amp; Backup</a>';ul.appendChild(li);
+   }
+ };
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+})(); /* storage-link */
