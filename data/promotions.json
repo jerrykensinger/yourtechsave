@@ -60,13 +60,13 @@
       "summary": "Get up to $200 off per qualifying new phone line through $5.56 monthly bill credits for 36 months when ordering online or by phone with an eligible wireless plan.",
       "eligibility": "New phone line and eligible wireless plan required. Order online or by phone. Confirm device-specific eligibility, credit timing and continued-service requirements directly with AT&T. Limited time; no published end date.",
       "first_seen": "2026-10-05",
-      "last_verified": "2026-10-14",
+      "last_verified": "2026-10-22",
       "end_date": null,
-      "status": "needs_review",
-      "review_reason": "The up-to-$200 bill-credit offer with $5.56 monthly credits for 36 months could not be found on AT&T's switch-and-save, plans or BYOD pages on October 20. Kept out of Current until it is confirmed on an official AT&T source; it may be device-specific or may have been replaced by the up-to-$800 reward card offer.",
-      "source": "https://www.att.com/wireless/switch-and-save/",
+      "status": "current",
+      "source": "https://www.att.com/wireless/try-and-switch/",
       "affiliate_url": null,
-      "affiliate_label": null
+      "affiliate_label": null,
+      "verification_note": "Re-confirmed Oct 22, 2026: offer live on att.com/wireless/try-and-switch/ verbatim; corroborated by the about.att.com newsroom story."
     },
     {
       "id": "hughesnet-intro-savings-2026-10",
@@ -152,13 +152,13 @@
       "summary": "New-line annual offer: pay $199 upfront for the first year of Unlimited Starter; the currently advertised renewal is $270/year. Taxes and fees included.",
       "eligibility": "First-year annual offer for eligible new lines; annual upfront payment required. Official Only Deals archive now lists September 30 through October 20, 2026. Confirm checkout eligibility and renewal terms directly with US Mobile; do not assume compatibility with the separate FlashBlack Friday monthly offer.",
       "first_seen": "2026-10-12",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-10-22",
       "end_date": "2026-10-20",
-      "status": "current",
+      "status": "ended",
       "source": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "October 20, 2026: official promo archive still lists Only Deals through October 20, 2026 (its last day); the plans page Annual view shows first-year $199 Starter/$299 Premium and $270/$390 renewals, plus Unlimited Flex at $210/year. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans"
+      "verification_note": "October 20, 2026: official promo archive still lists Only Deals through October 20, 2026 (its last day); the plans page Annual view shows first-year $199 Starter/$299 Premium and $270/$390 renewals, plus Unlimited Flex at $210/year. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans Verified ended Oct 22, 2026: Only Deals branded offer + 199US code absent from official pages 2 straight days (archive still lists under Current with stale Oct-20 end date). The $199 Starter / $299 Premium first-year price points continue as standard 'New line offer' annual-tab pricing, not the branded promo."
     },
     {
       "id": "us-mobile-only299-2026-10",
@@ -168,13 +168,13 @@
       "summary": "New-line annual offer: pay $299 upfront for the first year of Unlimited Premium; the currently advertised renewal is $390/year. Taxes and fees included.",
       "eligibility": "First-year annual offer for eligible new lines; annual upfront payment required. Official Only Deals archive now lists September 30 through October 20, 2026. Confirm checkout eligibility and renewal terms directly with US Mobile; do not assume compatibility with the separate FlashBlack Friday monthly offer.",
       "first_seen": "2026-10-12",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-10-22",
       "end_date": "2026-10-20",
-      "status": "current",
+      "status": "ended",
       "source": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "October 20, 2026: official promo archive still lists Only Deals through October 20, 2026 (its last day); the plans page Annual view shows first-year $199 Starter/$299 Premium and $270/$390 renewals, plus Unlimited Flex at $210/year. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans"
+      "verification_note": "October 20, 2026: official promo archive still lists Only Deals through October 20, 2026 (its last day); the plans page Annual view shows first-year $199 Starter/$299 Premium and $270/$390 renewals, plus Unlimited Flex at $210/year. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans Verified ended Oct 22, 2026: Only Deals branded offer + 299UP code absent from official pages 2 straight days (archive still lists under Current with stale Oct-20 end date). The $199 Starter / $299 Premium first-year price points continue as standard 'New line offer' annual-tab pricing, not the branded promo."
     },
     {
       "id": "viasat-max-easycare-2026-10",
@@ -278,13 +278,13 @@
       "summary": "Eligible new port-in lines can get monthly Unlimited Starter for $10/mo or Unlimited Premium for $20/mo for the first six months. Regular $25/$44 monthly rates apply afterward; this is separate from the annual offers.",
       "eligibility": "Eligible port-in required according to the provider review; confirm eligible carriers, networks, activation deadline, any checkout code and continued-service requirements before ordering. Monthly offer, not annual pricing. Published offer window: October 15\u201320, 2026. Do not assume offers combine.",
       "first_seen": "2026-10-15",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-10-22",
       "end_date": "2026-10-20",
-      "status": "current",
+      "status": "ended",
       "source": "https://www.usmobile.com/promo-archive",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "October 20 official archive confirms the offer window (October 15-20, 2026) and prices; the plans page shows codes FBF10 (Starter) and FBF20 (Premium), port-ins only, renewing at $25/$44 after 6 months."
+      "verification_note": "October 20 official archive confirms the offer window (October 15-20, 2026) and prices; the plans page shows codes FBF10 (Starter) and FBF20 (Premium), port-ins only, renewing at $25/$44 after 6 months. Verified ended Oct 22, 2026: offer moved to 'Past Plan Offers' in the official promo archive (window Oct 15\u201320, 2026); FBF10/FBF20 banner removed from usmobile.com/plans."
     },
     {
       "id": "visible-six-month-75-2026-10",
@@ -333,6 +333,54 @@
       "affiliate_url": null,
       "affiliate_label": null,
       "verification_note": "Oct 17-18, 2026: advertised code changed from ONEMONTHONUS to MONTHONUS per t-mobile.com/home-internet/deals; terms unchanged ($100 Rely / $100 Amplified / $200 All-In virtual prepaid card, limited-time, no published end date)."
+    },
+    {
+      "id": "us-mobile-no-marketing-sale-2026-10",
+      "provider": "US Mobile",
+      "category": "Wireless",
+      "title": "No Marketing Sale: Starter $15/mo or Premium $25/mo for six months",
+      "summary": "Port-in lines can get monthly Unlimited Starter for $15/mo with code SALE15 or Unlimited Premium for $25/mo with code SALE25 for the first six months. Regular $25/$44 monthly rates apply afterward.",
+      "eligibility": "Port-in required. Monthly offer, not annual pricing. Published offer window: October 21\u201327, 2026. Confirm eligible carriers, activation deadline and continued-service requirements before ordering. Do not assume offers combine.",
+      "first_seen": "2026-10-22",
+      "last_verified": "2026-10-22",
+      "end_date": "2026-10-27",
+      "status": "current",
+      "source": "https://www.usmobile.com/plans",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "October 22, 2026: live on the usmobile.com/plans banner and confirmed in the official promo archive (start Oct 21 / end Oct 27, 2026)."
+    },
+    {
+      "id": "us-mobile-iphone-duo-2026-10",
+      "provider": "US Mobile",
+      "category": "Wireless",
+      "title": "iPhone Duo release: $100 in bill credits with qualifying iPhone activation",
+      "summary": "Get $100 in bill credits with a qualifying iPhone activation; existing lines get the Multi-Network Add-On free. Published window: October 21 \u2013 November 5, 2026.",
+      "eligibility": "Qualifying iPhone activation required for the bill credits; confirm qualifying models, credit timing and continued-service requirements directly with US Mobile before ordering. Do not assume offers combine.",
+      "first_seen": "2026-10-22",
+      "last_verified": "2026-10-22",
+      "end_date": "2026-11-05",
+      "status": "current",
+      "source": "https://www.usmobile.com/promo-archive",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "October 22, 2026: listed in the official promo archive with window October 21 \u2013 November 5, 2026."
+    },
+    {
+      "id": "hulu-live-tv-49-99-first-month-2026-10",
+      "provider": "Hulu",
+      "category": "Live TV streaming",
+      "title": "Hulu + Live TV first month for $49.99",
+      "summary": "New and eligible returning subscribers can get the first month of Hulu (With Ads) + Live TV for $49.99 (regularly $99.99/mo). Auto-renews at $99.99/mo after the first month unless cancelled.",
+      "eligibility": "New and eligible returning subscribers only. Hulu (With Ads) + Live TV plan. Offer ends 9:00 AM PT on October 26, 2026.",
+      "first_seen": "2026-10-22",
+      "last_verified": "2026-10-22",
+      "end_date": "2026-10-26",
+      "status": "current",
+      "source": "https://www.hulu.com/live-tv",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "October 22, 2026: confirmed on hulu.com/live-tv (official). First month $49.99, regularly $99.99; ends 9:00 AM PT October 26, 2026."
     }
   ]
 }
