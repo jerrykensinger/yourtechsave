@@ -29,13 +29,13 @@
       "summary": "For a limited time, new Mint Mobile customers can get any 6-month plan, including Unlimited, for $10/mo. A $60 upfront payment is required for the first six months.",
       "eligibility": "New customers only. Offer applies to the first 6 months; full-price plan options apply after the promotional term. Taxes and fees are extra. Purchase must be activated within Mint's stated activation window.",
       "first_seen": "2026-10-08",
-      "last_verified": "2026-10-15",
+      "last_verified": "2026-10-25",
       "end_date": null,
-      "status": "current",
+      "status": "ended",
       "source": "https://www.mintmobile.com/help/what-is-mints-10-year-anniversary-promotion/",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "Confirmed live Oct 15, 2026 via manual check of mintmobile.com/plans/ FCC labels: all four 6-month tiers at $10/mo introductory rate ($60 upfront). No published end date."
+      "verification_note": "Confirmed live Oct 15, 2026 via manual check of mintmobile.com/plans/ FCC labels: all four 6-month tiers at $10/mo introductory rate ($60 upfront). No published end date. Marked ended October 25, 2026: the offer has been absent from the mintmobile.com homepage and /plans/ on three consecutive daily checks (October 23, 24, 25); the anniversary help page remains live but the offer is no longer shown for sale. No published end date."
     },
     {
       "id": "viasat-intro-pricing-2026-10",
@@ -150,15 +150,15 @@
       "category": "Wireless",
       "title": "199US: Unlimited Starter first year for $199",
       "summary": "New-line annual offer: pay $199 upfront for the first year of Unlimited Starter; the currently advertised renewal is $270/year. Taxes and fees included.",
-      "eligibility": "First-year annual offer for eligible new lines; annual upfront payment required. Official Only Deals archive now lists September 30 through October 20, 2026. Confirm checkout eligibility and renewal terms directly with US Mobile; do not assume compatibility with the separate FlashBlack Friday monthly offer.",
+      "eligibility": "First-year annual offer for eligible new lines; annual upfront payment required. Official Only Deals archive now lists September 30 through October 27, 2026. Confirm checkout eligibility and renewal terms directly with US Mobile; do not assume compatibility with the separate FlashBlack Friday monthly offer.",
       "first_seen": "2026-10-12",
-      "last_verified": "2026-10-22",
-      "end_date": "2026-10-20",
-      "status": "ended",
+      "last_verified": "2026-10-25",
+      "end_date": "2026-10-27",
+      "status": "current",
       "source": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "October 20, 2026: official promo archive still lists Only Deals through October 20, 2026 (its last day); the plans page Annual view shows first-year $199 Starter/$299 Premium and $270/$390 renewals, plus Unlimited Flex at $210/year. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans Verified ended Oct 22, 2026: Only Deals branded offer + 199US code absent from official pages 2 straight days (archive still lists under Current with stale Oct-20 end date). The $199 Starter / $299 Premium first-year price points continue as standard 'New line offer' annual-tab pricing, not the branded promo."
+      "verification_note": "October 20, 2026: official promo archive still lists Only Deals through October 20, 2026 (its last day); the plans page Annual view shows first-year $199 Starter/$299 Premium and $270/$390 renewals, plus Unlimited Flex at $210/year. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans Verified ended Oct 22, 2026: Only Deals branded offer + 199US code absent from official pages 2 straight days (archive still lists under Current with stale Oct-20 end date). The $199 Starter / $299 Premium first-year price points continue as standard 'New line offer' annual-tab pricing, not the branded promo. Restored to current October 25, 2026: the official promo archive lists Only Deals under Current Plan Offers with a September 30 \u2013 October 27, 2026 window, superseding the October 22 ended call (which was based on the branded offer/code being absent from the plans pages). Source: https://www.usmobile.com/promo-archive"
     },
     {
       "id": "us-mobile-only299-2026-10",
@@ -166,15 +166,15 @@
       "category": "Wireless",
       "title": "299UP: Unlimited Premium first year for $299",
       "summary": "New-line annual offer: pay $299 upfront for the first year of Unlimited Premium; the currently advertised renewal is $390/year. Taxes and fees included.",
-      "eligibility": "First-year annual offer for eligible new lines; annual upfront payment required. Official Only Deals archive now lists September 30 through October 20, 2026. Confirm checkout eligibility and renewal terms directly with US Mobile; do not assume compatibility with the separate FlashBlack Friday monthly offer.",
+      "eligibility": "First-year annual offer for eligible new lines; annual upfront payment required. Official Only Deals archive now lists September 30 through October 27, 2026. Confirm checkout eligibility and renewal terms directly with US Mobile; do not assume compatibility with the separate FlashBlack Friday monthly offer.",
       "first_seen": "2026-10-12",
-      "last_verified": "2026-10-22",
-      "end_date": "2026-10-20",
-      "status": "ended",
+      "last_verified": "2026-10-25",
+      "end_date": "2026-10-27",
+      "status": "current",
       "source": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "October 20, 2026: official promo archive still lists Only Deals through October 20, 2026 (its last day); the plans page Annual view shows first-year $199 Starter/$299 Premium and $270/$390 renewals, plus Unlimited Flex at $210/year. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans Verified ended Oct 22, 2026: Only Deals branded offer + 299UP code absent from official pages 2 straight days (archive still lists under Current with stale Oct-20 end date). The $199 Starter / $299 Premium first-year price points continue as standard 'New line offer' annual-tab pricing, not the branded promo."
+      "verification_note": "October 20, 2026: official promo archive still lists Only Deals through October 20, 2026 (its last day); the plans page Annual view shows first-year $199 Starter/$299 Premium and $270/$390 renewals, plus Unlimited Flex at $210/year. Sources: https://www.usmobile.com/promo-archive and https://www.usmobile.com/plans Verified ended Oct 22, 2026: Only Deals branded offer + 299UP code absent from official pages 2 straight days (archive still lists under Current with stale Oct-20 end date). The $199 Starter / $299 Premium first-year price points continue as standard 'New line offer' annual-tab pricing, not the branded promo. Restored to current October 25, 2026: the official promo archive lists Only Deals under Current Plan Offers with a September 30 \u2013 October 27, 2026 window, superseding the October 22 ended call (which was based on the branded offer/code being absent from the plans pages). Source: https://www.usmobile.com/promo-archive"
     },
     {
       "id": "viasat-max-easycare-2026-10",
@@ -381,6 +381,38 @@
       "affiliate_url": null,
       "affiliate_label": null,
       "verification_note": "October 22, 2026: confirmed on hulu.com/live-tv (official). First month $49.99, regularly $99.99; ends 9:00 AM PT October 26, 2026."
+    },
+    {
+      "id": "mint-device-bundle-180-2026-10",
+      "provider": "Mint Mobile",
+      "category": "Wireless",
+      "title": "Device bundle: 12-month Unlimited for $180/yr with a new phone",
+      "summary": "New customers who buy an eligible new phone can bundle a 12-month Unlimited plan for $180 upfront (a $15/mo equivalent). Mint's homepage presents it as a limited-time new customer offer.",
+      "eligibility": "New customers only. Requires purchase of an eligible device bundled with a 12-month Unlimited plan; $180 upfront for the plan year. Taxes and fees are extra. Confirm eligible devices and full terms at checkout on mintmobile.com.",
+      "first_seen": "2026-10-23",
+      "last_verified": "2026-10-25",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.mintmobile.com/",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "Live on the Mint Mobile homepage October 23, 24 and 25, 2026: 'GET A YEAR OF UNLIMITED FOR $15/MO \u2014 Buy a new phone and this offer is all yours. Limited time new customer offer. Bundle eligible device w/ 12-month Unlimited plan; $180 upfront.' No published end date."
+    },
+    {
+      "id": "visible-save6-2026-10",
+      "provider": "Visible",
+      "category": "Wireless",
+      "title": "SAVE6: $6/mo off any monthly plan",
+      "summary": "Entering promo code SAVE6 takes $6/mo off any Visible monthly plan (plans from $19/mo after the discount), with a 1-year rate guarantee.",
+      "eligibility": "Monthly plans only. Confirm new-member, port-in and rate-guarantee terms on the official Visible deals page before ordering; do not assume the code combines with other promotions.",
+      "first_seen": "2026-10-24",
+      "last_verified": "2026-10-25",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.visible.com/content/visible-aem/deals.html",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "Live October 24 and 25, 2026 on Visible's official deals page: SAVE6, $6/mo off any monthly plan, 1-year rate guarantee, from $19/mo. No published end date; end dates suggested by third-party aggregators were not adopted."
     }
   ]
 }
