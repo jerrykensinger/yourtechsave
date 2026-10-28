@@ -374,13 +374,13 @@
       "summary": "New and eligible returning subscribers can get the first month of Hulu (With Ads) + Live TV for $49.99 (regularly $99.99/mo). Auto-renews at $99.99/mo after the first month unless cancelled.",
       "eligibility": "New and eligible returning subscribers only. Hulu (With Ads) + Live TV plan. Offer ends 9:00 AM PT on October 26, 2026.",
       "first_seen": "2026-10-22",
-      "last_verified": "2026-10-22",
+      "last_verified": "2026-10-28",
       "end_date": "2026-10-26",
-      "status": "current",
+      "status": "ended",
       "source": "https://www.hulu.com/live-tv",
       "affiliate_url": null,
       "affiliate_label": null,
-      "verification_note": "October 22, 2026: confirmed on hulu.com/live-tv (official). First month $49.99, regularly $99.99; ends 9:00 AM PT October 26, 2026."
+      "verification_note": "October 22, 2026: confirmed on hulu.com/live-tv (official). First month $49.99, regularly $99.99; ends 9:00 AM PT October 26, 2026. Re-checked October 27-28, 2026: offer no longer on hulu.com/live-tv (current offer is a 3-day free trial, then $99.99/mo) - marked ended."
     },
     {
       "id": "mint-device-bundle-180-2026-10",
