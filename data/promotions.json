@@ -493,6 +493,22 @@
       "affiliate_url": null,
       "affiliate_label": null,
       "verification_note": "Verified live October 30, 2026 on Verizon’s official home internet page: “Limited time only: Get 2 Months on us — with any 5G Home Internet plan.” No calendar end date published."
+    },
+    {
+      "id": "visible-savehalf-2026-10",
+      "provider": "Visible",
+      "category": "Wireless",
+      "title": "SAVEHALF: 50% off the Visible+ Pro annual plan ($225/yr)",
+      "summary": "Entering promo code SAVEHALF takes 50% off the Visible+ Pro annual plan — $225 for the year instead of the standard $450 annual price.",
+      "eligibility": "Annual Visible+ Pro plan required. Confirm new-member, activation and renewal terms on Visible’s official site before ordering; the discounted price is an introductory annual rate, not the renewal price.",
+      "first_seen": "2026-10-30",
+      "last_verified": "2026-10-30",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.visible.com/m/deals",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "Surfaced and live-checked October 30, 2026 during the daily provider pass on Visible’s official pages: code SAVEHALF, 50% off the Visible+ Pro annual plan ($225/yr). No published end date."
     }
   ]
 }
