@@ -44,7 +44,7 @@
    }
    root.innerHTML=html;
    root.querySelectorAll('.internet-provider-directory-link').forEach(a=>a.addEventListener('click',()=>{
-     if(window.ytsTrack)window.ytsTrack('internet_provider_click',{provider_name:a.dataset.provider||'unknown',link_type:a.dataset.linkType||'official_availability',source:'provider_directory'});
+     if(window.ytsTrack){window.ytsTrack('internet_provider_click',{provider_name:a.dataset.provider||'unknown',link_type:a.dataset.linkType||'official_availability',source:'provider_directory'});window.ytsTrack('provider_link_click',{provider_name:a.dataset.provider||'unknown',link_type:a.dataset.linkType||'official_availability',source:'provider_directory'});}
    }));
  }catch(e){
    if(status){status.className='freshness stale';status.innerHTML='<strong>Internet provider data could not be loaded.</strong> Use the official availability links on this page for current information.'}

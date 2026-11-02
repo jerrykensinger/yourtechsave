@@ -3,7 +3,7 @@
  function trackExternal(){
    document.addEventListener('pointerdown',e=>{
      const a=e.target.closest('.internet-provider-outbound'); if(!a)return;
-     if(window.ytsTrack)window.ytsTrack('internet_provider_click',{provider_name:a.dataset.provider||'unknown',link_type:'official_availability'});
+     if(window.ytsTrack){window.ytsTrack('internet_provider_click',{provider_name:a.dataset.provider||'unknown',link_type:'official_availability'});window.ytsTrack('provider_link_click',{provider_name:a.dataset.provider||'unknown',link_type:'official_availability',source:'internet_finder'});}
    },true);
  }
  trackExternal();
