@@ -415,6 +415,22 @@
       "verification_note": "Live on the Mint Mobile homepage October 23, 24 and 25, 2026: 'GET A YEAR OF UNLIMITED FOR $15/MO — Buy a new phone and this offer is all yours. Limited time new customer offer. Bundle eligible device w/ 12-month Unlimited plan; $180 upfront.' No published end date."
     },
     {
+      "id": "mint-black-friday-2026-11",
+      "provider": "Mint Mobile",
+      "category": "Wireless",
+      "title": "Black Friday: all plans $15/mo for the first 3, 6, or 12 months",
+      "summary": "For Mint Mobile's Black Friday offer, new customers can get any plan, including Unlimited, for $15/mo for the first 3, 6, or 12 months, paid upfront ($45, $90, or $180). After the initial term, the plan renews at the full regular price.",
+      "eligibility": "New customers only. Offer applies to the initial term only; full-price plan options apply after the promotional term. Taxes and fees are extra.",
+      "first_seen": "2026-11-03",
+      "last_verified": "2026-11-03",
+      "end_date": null,
+      "status": "current",
+      "source": "https://www.mintmobile.com/plans/",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "Confirmed live November 3, 2026 on mintmobile.com and mintmobile.com/plans/: 'ALL MINT PLANS $15/MO EVEN UNLIMITED' for the first 3/6/12 months, $45/$90/$180 upfront, new customers, initial term only. Plans page labels it limited-time ('50% off Unlimited': $180 vs $360). No published end date (site says 'offer ends soon')."
+    },
+    {
       "id": "visible-save6-2026-10",
       "provider": "Visible",
       "category": "Wireless",
