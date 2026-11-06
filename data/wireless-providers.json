@@ -8,7 +8,7 @@
     {
       "id": "visible",
       "name": "Visible",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-11-06",
       "official_plans_url": "https://www.visible.com/m/plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -53,7 +53,7 @@
     {
       "id": "verizon",
       "name": "Verizon",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-11-06",
       "official_plans_url": "https://www.verizon.com/support/current-unlimited-plans/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -101,7 +101,7 @@
     {
       "id": "us-mobile",
       "name": "US Mobile",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-11-06",
       "official_plans_url": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -123,7 +123,7 @@
         },
         {
           "label": "Regular monthly pricing",
-          "value": "Unlimited Flex $17.50, Unlimited Starter $25, Unlimited Premium $44/month; port-in lines can get Starter for $15/month or Premium for $25/month for the first 6 months under the current bring-your-number sale",
+          "value": "Unlimited Flex $17.50, Unlimited Starter $25, Unlimited Premium $44/month; port-in lines can get Starter for $15/month or Premium for $25/month for the first 6 months under the Flash Black Friday offer (November 6-12, 2026)",
           "source": "https://www.usmobile.com/plans"
         },
         {
@@ -148,7 +148,7 @@
         {
           "name": "Unlimited Premium",
           "standard_monthly_price": 44,
-          "pricing_note": "Regular $44/month rate; a current port-in (bring-your-number) sale offers $25/month for the first 6 months. High-priority data on Warp and Dark Star, with the largest included roaming allowance",
+          "pricing_note": "Regular $44/month rate; the Flash Black Friday port-in offer (November 6-12, 2026) offers $25/month for the first 6 months. High-priority data on Warp and Dark Star, with the largest included roaming allowance",
           "source": "https://www.usmobile.com/help/docs/our-plans/core-plans/unlimited-data-plans"
         }
       ]
@@ -156,7 +156,7 @@
     {
       "id": "mint-mobile",
       "name": "Mint Mobile",
-      "last_verified": "2026-10-15",
+      "last_verified": "2026-11-06",
       "official_plans_url": "https://www.mintmobile.com/phone-plans/12-month-plans/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -212,7 +212,7 @@
     {
       "id": "att",
       "name": "AT&T",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-11-06",
       "official_plans_url": "https://www.att.com/plans/wireless-b/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -287,19 +287,19 @@
     {
       "id": "t-mobile",
       "name": "T-Mobile",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-11-06",
       "official_plans_url": "https://www.t-mobile.com/cell-phone-plans",
       "affiliate_url": null,
       "affiliate_label": null,
       "facts": [
         {
           "label": "Current popular plan family",
-          "value": "Experience Beyond 2.0, Experience More 2.0, Essentials 2.0",
+          "value": "T-Mix Loaded, T-Mix More, T-Mix Standard (a T-Mix Saver tier is referenced in plan-page footnotes but has no plan card)",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
           "label": "4-line standard account pricing",
-          "value": "Essentials 4 Line Offer 2.0 $120 (limited-time 4-line offer), Experience More 2.0 $220, Experience Beyond 2.0 $280, as shown on T-Mobile's plan page, which states that displayed plan prices include AutoPay and paper-free billing discounts",
+          "value": "T-Mix Loaded $280 for 4 lines before AutoPay ($240 with AutoPay), T-Mix More $220 ($180 with AutoPay), T-Mix Standard on sale at $100 with AutoPay for 4 lines, as shown on T-Mobile's plan page. T-Mix Standard's list price rendered inconsistently across November 5-6, 2026 checks ($115 vs $155), so the sale price is the reliable figure; taxes and fees extra",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
@@ -314,30 +314,30 @@
         },
         {
           "label": "Data and hotspot",
-          "value": "Essentials 2.0 includes 50GB premium data; Experience More 2.0 includes unlimited premium data and 60GB high-speed hotspot; Experience Beyond 2.0 includes unlimited premium data and unlimited hotspot subject to plan terms",
+          "value": "T-Mix Loaded includes 250GB of high-speed hotspot. T-Mix More's hotspot allotment rendered inconsistently across November 6, 2026 checks (60GB and 160GB both appeared on T-Mobile's pages) and is being re-verified. Premium-data amounts for the T-Mix tiers were not consistently published on the plan page at the November 6, 2026 check",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         }
       ],
       "plans": [
         {
-          "name": "Essentials 2.0",
+          "name": "T-Mix Standard",
           "standard_monthly_price": null,
-          "display_price": "$120/mo for 4 lines",
-          "pricing_note": "Limited-time 4-line offer price as shown on the plan page (original price; a lower sale price is shown separately and is not used here); page states prices include AutoPay and paper-free billing discounts; 50GB premium data; taxes and fees extra",
+          "display_price": "$100/mo for 4 lines",
+          "pricing_note": "Sale price with AutoPay as shown on the plan page on November 5-6, 2026; the list price rendered inconsistently ($115-$155) across checks, so the sale price is shown; taxes and fees extra",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
-          "name": "Experience More 2.0",
+          "name": "T-Mix More",
           "standard_monthly_price": null,
-          "display_price": "$220/mo for 4 lines",
-          "pricing_note": "Original 4-line price as shown on the plan page (page states prices include AutoPay and paper-free billing discounts; sale and 3rd-line-free pricing are separate); unlimited premium data and 60GB high-speed hotspot",
+          "display_price": "$180/mo for 4 lines",
+          "pricing_note": "$220/mo for 4 lines before AutoPay; $180 with AutoPay and paper-free billing discounts, as shown on the plan page; taxes and fees extra",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
-          "name": "Experience Beyond 2.0",
+          "name": "T-Mix Loaded",
           "standard_monthly_price": null,
-          "display_price": "$280/mo for 4 lines",
-          "pricing_note": "Original 4-line price as shown on the plan page (page states prices include AutoPay and paper-free billing discounts; sale and 3rd-line-free pricing are separate); unlimited premium data plus higher-tier entertainment, international and upgrade benefits",
+          "display_price": "$240/mo for 4 lines",
+          "pricing_note": "$280/mo for 4 lines before AutoPay; $240 with AutoPay and paper-free billing discounts, as shown on the plan page; 250GB high-speed hotspot; taxes and fees extra",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         }
       ]
