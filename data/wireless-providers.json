@@ -287,7 +287,7 @@
     {
       "id": "t-mobile",
       "name": "T-Mobile",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-09",
       "official_plans_url": "https://www.t-mobile.com/cell-phone-plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -299,7 +299,7 @@
         },
         {
           "label": "4-line standard account pricing",
-          "value": "T-Mix Loaded $280 for 4 lines before AutoPay ($240 with AutoPay), T-Mix More $220 ($180 with AutoPay), T-Mix Standard on sale at $100 with AutoPay for 4 lines, as shown on T-Mobile's plan page. T-Mix Standard's list price rendered inconsistently across November 5-6, 2026 checks ($115 vs $155), so the sale price is the reliable figure; taxes and fees extra",
+          "value": "T-Mix Loaded $280 for 4 lines before AutoPay ($240 with AutoPay), T-Mix More $220 ($180 with AutoPay), T-Mix Standard $155 for 4 lines before AutoPay (list $115 with AutoPay), on sale at $100 with AutoPay for 4 lines, as shown on T-Mobile's plan page and confirmed across November 7-9, 2026 checks; taxes and fees extra",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
@@ -309,12 +309,12 @@
         },
         {
           "label": "Recovery fee increase",
-          "value": "T-Mobile's Regulatory Programs & Telco Recovery Fee rises from $4.49 to $5.49 per voice line per month and from $2.10 to $2.60 per mobile internet line per month, effective October 12, 2026. T-Mobile states the fee is not a government tax. Whether it applies on top of a plan price depends on whether that plan includes taxes and fees.",
+          "value": "T-Mobile's Regulatory Programs & Telco Recovery Fee rises from $4.49 to $5.49 per voice line per month and from $2.10 to $2.60 per mobile internet line per month, effective December 31, 2026. T-Mobile states the fee is not a government tax. Whether it applies on top of a plan price depends on whether that plan includes taxes and fees.",
           "source": "https://www.t-mobile.com/support/account/whats-impacting-your-bill"
         },
         {
           "label": "Data and hotspot",
-          "value": "T-Mix Loaded includes 250GB of high-speed hotspot. T-Mix More's hotspot allotment rendered inconsistently across November 6, 2026 checks (60GB and 160GB both appeared on T-Mobile's pages) and is being re-verified. Premium-data amounts for the T-Mix tiers were not consistently published on the plan page at the November 6, 2026 check",
+          "value": "T-Mix Loaded includes 250GB of high-speed hotspot and T-Mix More includes 60GB of high-speed hotspot, confirmed across November 7-9, 2026 checks. Premium-data amounts for the T-Mix tiers were not consistently published on the plan page",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         }
       ],
@@ -323,7 +323,7 @@
           "name": "T-Mix Standard",
           "standard_monthly_price": null,
           "display_price": "$100/mo for 4 lines",
-          "pricing_note": "Sale price with AutoPay as shown on the plan page on November 5-6, 2026; the list price rendered inconsistently ($115-$155) across checks, so the sale price is shown; taxes and fees extra",
+          "pricing_note": "Sale price $100 with AutoPay for 4 lines (list $115 with AutoPay; $155 before AutoPay), confirmed across November 7-9, 2026 checks; taxes and fees extra",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
