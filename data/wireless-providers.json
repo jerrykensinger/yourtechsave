@@ -8,7 +8,7 @@
     {
       "id": "visible",
       "name": "Visible",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-13",
       "official_plans_url": "https://www.visible.com/m/plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -53,7 +53,7 @@
     {
       "id": "verizon",
       "name": "Verizon",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-13",
       "official_plans_url": "https://www.verizon.com/support/current-unlimited-plans/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -101,7 +101,7 @@
     {
       "id": "us-mobile",
       "name": "US Mobile",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-13",
       "official_plans_url": "https://www.usmobile.com/plans",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -156,7 +156,7 @@
     {
       "id": "mint-mobile",
       "name": "Mint Mobile",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-13",
       "official_plans_url": "https://www.mintmobile.com/phone-plans/12-month-plans/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -212,7 +212,7 @@
     {
       "id": "att",
       "name": "AT&T",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-13",
       "official_plans_url": "https://www.att.com/plans/wireless-b/",
       "affiliate_url": null,
       "affiliate_label": null,
@@ -282,19 +282,19 @@
           "verification_status": "needs_review"
         }
       ],
-      "pricing_last_checked": "2026-10-12"
+      "pricing_last_checked": "2026-11-13"
     },
     {
       "id": "t-mobile",
       "name": "T-Mobile",
-      "last_verified": "2026-11-09",
+      "last_verified": "2026-11-13",
       "official_plans_url": "https://www.t-mobile.com/cell-phone-plans",
       "affiliate_url": null,
       "affiliate_label": null,
       "facts": [
         {
           "label": "Current popular plan family",
-          "value": "T-Mix Loaded, T-Mix More, T-Mix Standard (a T-Mix Saver tier is referenced in plan-page footnotes but has no plan card)",
+          "value": "T-Mix Loaded, T-Mix More, T-Mix Standard, plus an advertised T-Mix Saver tier ($30/mo with $540 back over 36 months when switching, per T-Mobile's deals page, confirmed November 13, 2026)",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
@@ -314,7 +314,7 @@
         },
         {
           "label": "Data and hotspot",
-          "value": "T-Mix Loaded includes 250GB of high-speed hotspot and T-Mix More includes 60GB of high-speed hotspot, confirmed across November 7-9, 2026 checks. Premium-data amounts for the T-Mix tiers were not consistently published on the plan page",
+          "value": "T-Mix Loaded includes 250GB of high-speed hotspot and T-Mix More includes 60GB of high-speed hotspot, confirmed across November 7-9, 2026 checks. Premium-data amounts published on the plan page as of November 13, 2026: Standard 50GB, More 100GB, Loaded 300GB",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         }
       ],
@@ -339,6 +339,13 @@
           "display_price": "$240/mo for 4 lines",
           "pricing_note": "$280/mo for 4 lines before AutoPay; $240 with AutoPay and paper-free billing discounts, as shown on the plan page; 250GB high-speed hotspot; taxes and fees extra",
           "source": "https://www.t-mobile.com/cell-phone-plans"
+        },
+        {
+          "name": "T-Mix Saver",
+          "standard_monthly_price": null,
+          "display_price": "$30/mo",
+          "pricing_note": "$30/mo as advertised on T-Mobile's deals page, with $540 back over 36 months when switching, confirmed November 13, 2026; taxes and fees extra",
+          "source": "https://www.t-mobile.com/offers"
         }
       ]
     }
