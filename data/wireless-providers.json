@@ -123,7 +123,7 @@
         },
         {
           "label": "Regular monthly pricing",
-          "value": "Unlimited Flex $17.50, Unlimited Starter $25, Unlimited Premium $44/month; port-in lines can get Starter for $15/month or Premium for $25/month for the first 6 months under the Flash Black Friday offer (November 6-12, 2026)",
+          "value": "Unlimited Flex $17.50, Unlimited Starter $25, Unlimited Premium $44/month",
           "source": "https://www.usmobile.com/plans"
         },
         {
@@ -148,7 +148,7 @@
         {
           "name": "Unlimited Premium",
           "standard_monthly_price": 44,
-          "pricing_note": "Regular $44/month rate; the Flash Black Friday port-in offer (November 6-12, 2026) offers $25/month for the first 6 months. High-priority data on Warp and Dark Star, with the largest included roaming allowance",
+          "pricing_note": "Regular $44/month rate. High-priority data on Warp and Dark Star, with the largest included roaming allowance",
           "source": "https://www.usmobile.com/help/docs/our-plans/core-plans/unlimited-data-plans"
         }
       ]
@@ -275,11 +275,11 @@
         {
           "name": "AT&T 55+",
           "standard_monthly_price": null,
-          "display_price": null,
-          "pricing_note": "Age eligibility required. Includes 10GB hotspot per line and standard-definition streaming. Standalone price and maximum line count require confirmation because official pricing copy conflicts; check directly with AT&T.",
-          "source": "https://www.att.com/plans/wireless-b/",
-          "last_checked": "2026-10-10",
-          "verification_status": "needs_review"
+          "display_price": "$55/line with 2 lines",
+          "pricing_note": "Per line with two lines (reduced from $65), confirmed on AT&T's wireless plans page November 14 and 15, 2026. Age eligibility required. Includes 10GB hotspot per line and standard-definition streaming. Taxes and fees extra; confirm AutoPay and paperless billing requirements and the maximum line count directly with AT&T.",
+          "source": "https://www.att.com/plans/wireless/",
+          "last_checked": "2026-11-15",
+          "verification_status": "verified"
         }
       ],
       "pricing_last_checked": "2026-11-13"
