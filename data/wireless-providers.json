@@ -287,14 +287,14 @@
     {
       "id": "t-mobile",
       "name": "T-Mobile",
-      "last_verified": "2026-11-13",
+      "last_verified": "2026-11-20",
       "official_plans_url": "https://www.t-mobile.com/cell-phone-plans",
       "affiliate_url": null,
       "affiliate_label": null,
       "facts": [
         {
           "label": "Current popular plan family",
-          "value": "T-Mix Loaded, T-Mix More, T-Mix Standard, plus an advertised T-Mix Saver tier ($30/mo with $540 back over 36 months when switching, per T-Mobile's deals page, confirmed November 13, 2026)",
+          "value": "T-Mix Loaded, T-Mix More, T-Mix Standard, plus a T-Mix Saver tier (standard price $45/mo for 1 line with AutoPay; a $30/mo price is available only through conditional 55+, Student Savings, or port-in offers, confirmed November 20, 2026)",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
@@ -314,7 +314,7 @@
         },
         {
           "label": "Data and hotspot",
-          "value": "T-Mix Loaded includes 250GB of high-speed hotspot and T-Mix More includes 60GB of high-speed hotspot, confirmed across November 7-9, 2026 checks. Premium-data amounts published on the plan page as of November 13, 2026: Standard 50GB, More 100GB, Loaded 300GB",
+          "value": "T-Mix Loaded includes 250GB of high-speed hotspot and T-Mix More includes 60GB of high-speed hotspot, confirmed across November 7-9, 2026 checks. Premium data as published on the plan page as of November 20, 2026: T-Mix Standard 50GB; T-Mix More and T-Mix Loaded include Unlimited Premium Data",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         }
       ],
@@ -323,7 +323,7 @@
           "name": "T-Mix Standard",
           "standard_monthly_price": null,
           "display_price": "$100/mo for 4 lines",
-          "pricing_note": "Sale price $100 with AutoPay for 4 lines (list $115 with AutoPay; $155 before AutoPay), confirmed across November 7-9, 2026 checks; taxes and fees extra",
+          "pricing_note": "Sale price $100 with AutoPay for 4 lines (list $115 with AutoPay; $155 before AutoPay), confirmed across November 7-9, 2026 checks; taxes and fees extra. Port-in offer: $540 back over 36 months ($15/mo credit) for switchers on 4 lines, per T-Mobile's deals page, confirmed November 20, 2026",
           "source": "https://www.t-mobile.com/cell-phone-plans"
         },
         {
@@ -343,8 +343,8 @@
         {
           "name": "T-Mix Saver",
           "standard_monthly_price": null,
-          "display_price": "$30/mo",
-          "pricing_note": "$30/mo as advertised on T-Mobile's deals page, with $540 back over 36 months when switching, confirmed November 13, 2026; taxes and fees extra",
+          "display_price": "$45/mo for 1 line",
+          "pricing_note": "Standard price $45/mo for 1 line with AutoPay ($55/mo without AutoPay); $80/mo for 2 lines with AutoPay ($100/mo without); no 4-line tier. A $30/mo price is available only through conditional offers (55+, Student Savings, or port-in credits), not as standard pricing; taxes and fees extra. Confirmed November 20, 2026",
           "source": "https://www.t-mobile.com/offers"
         }
       ]
