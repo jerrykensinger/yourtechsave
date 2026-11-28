@@ -87,16 +87,17 @@
       "id": "verizon-welcome-four-lines-2026-10",
       "provider": "Verizon",
       "category": "Wireless",
-      "title": "Four new Unlimited Welcome lines: $27.50/line/mo with Auto Pay",
-      "summary": "Verizon currently advertises four new Unlimited Welcome lines for $27.50 per line per month ($110/month for four lines), plus taxes and fees. This offer is kept separate from standard plan pricing.",
-      "eligibility": "Four new lines on Unlimited Welcome and Auto Pay required. Check current offer-credit, paper-free billing, payment-method and continued-service conditions directly with Verizon before ordering; no published offer end date.",
+      "title": "Four new Unlimited Welcome lines: $25/line/mo with Auto Pay and limited-time account credit",
+      "summary": "Verizon currently advertises four new Unlimited Welcome lines for $25 per line per month with Auto Pay, after a limited-time account credit ($10/mo for 3 lines, $20/mo for 4 or more lines, applied over 36 months), plus taxes and fees. This offer is kept separate from standard plan pricing; the standard 4-line Unlimited Welcome price is $30/line/mo.",
+      "eligibility": "Four new lines on Unlimited Welcome, Auto Pay and the limited-time account credit required. Check current paper-free billing, payment-method and continued-service conditions directly with Verizon before ordering; no published offer end date.",
       "first_seen": "2026-10-10",
-      "last_verified": "2026-11-21",
+      "last_verified": "2026-11-27",
       "end_date": null,
       "status": "current",
       "source": "https://www.verizon.com/plans/unlimited/myplan",
       "affiliate_url": null,
-      "affiliate_label": null
+      "affiliate_label": null,
+      "verification_note": "Updated November 27, 2026 (weekly deep audit): the four-new-Welcome-lines offer now shows $25/line via a limited-time account credit ($10/mo for 3 lines, $20/mo for 4+ lines, over 36 months), replacing the previous $27.50/line figure. Standard myPlan 4-line pricing ($30/$45/$60) is unchanged. Source: https://www.verizon.com/plans/unlimited/myplan"
     },
     {
       "id": "att-new-line-5-off-12-months-2026-10",
@@ -592,6 +593,38 @@
       "affiliate_url": null,
       "affiliate_label": null,
       "verification_note": "Standing add candidate since October 21, 2026; re-confirmed live November 13, 2026 on tv.youtube.com: Sports + News at $49.99/mo for 5 months, then $71.99/mo, with a published end date of November 16, 2026."
+    },
+    {
+      "id": "att-military-switch-2026-11",
+      "provider": "AT&T",
+      "category": "Wireless",
+      "title": "Military appreciation: up to $1,150 when you switch and buy a new phone, plus up to 20% off popular plans",
+      "summary": "Military members who switch to AT&T and buy a new phone can get up to $1,150 ($800 in reward cards plus $350 in bill credits), plus up to 20% off popular wireless plans (Value 10% off, Extra 15% off, Premium 20% off; Elite excluded). Ends November 30, 2026.",
+      "eligibility": "Military eligibility required. Switch and new-phone purchase required for the up-to-$1,150 offer. Plan discount by plan: Value 10%, Extra 15%, Premium 20%; Elite excluded. Ends November 30, 2026. Confirm full terms directly with AT&T.",
+      "first_seen": "2026-11-27",
+      "last_verified": "2026-11-27",
+      "end_date": "2026-11-30",
+      "status": "current",
+      "source": "https://www.att.com/deals",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "Confirmed November 27, 2026 on att.com/deals: up to $1,150 when switching and buying a new phone ($800 reward cards + $350 bill credits), plus up to 20% off popular plans (Value 10% / Extra 15% / Premium 20%; Elite excluded); published end date November 30, 2026."
+    },
+    {
+      "id": "starlink-black-friday-2026-11",
+      "provider": "Starlink",
+      "category": "Home Internet",
+      "title": "Black Friday: 50% off Residential service",
+      "summary": "Starlink is offering 50% off Residential service for Black Friday in select areas. Ends November 30, 2026. Residential plan prices are address-specific and were not verified in this check; this entry covers the promotion only.",
+      "eligibility": "Select areas only; availability and pricing are confirmed by service address on starlink.com. Ends November 30, 2026.",
+      "first_seen": "2026-11-27",
+      "last_verified": "2026-11-27",
+      "end_date": "2026-11-30",
+      "status": "current",
+      "source": "https://www.starlink.com/residential",
+      "affiliate_url": null,
+      "affiliate_label": null,
+      "verification_note": "Confirmed November 27, 2026 on starlink.com/residential during the weekly deep audit, the first day Starlink pages rendered since November 4, 2026. Promotion only: Residential base prices remain address-gated and unverified, so the Starlink provider record's last_verified stays 2026-11-03."
     }
   ]
 }
